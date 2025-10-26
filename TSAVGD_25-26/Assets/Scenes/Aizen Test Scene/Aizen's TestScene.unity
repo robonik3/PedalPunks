@@ -5237,6 +5237,7 @@ MonoBehaviour:
     delaySpawnTime: 7
     ypos: -5
   activeEnemies: 0
+  readyToEndLevel: 0
   FinishLevel:
     m_PersistentCalls:
       m_Calls:
@@ -5802,7 +5803,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1354814125
 MonoBehaviour:
   m_ObjectHideFlags: 0
