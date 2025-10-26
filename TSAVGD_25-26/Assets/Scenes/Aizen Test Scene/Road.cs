@@ -17,6 +17,6 @@ public class Road : MonoBehaviour
         {
             timer++;
         }
-        transform.position = new Vector3(timer, 0, 0);
+        transform.position = new Vector3(timer, -1.35f, 0);
     }
 }
