@@ -22,9 +22,11 @@ public class PlayerScript : MonoBehaviour
     private float decay;
     [SerializeField] private Image fuelIndicator;
     [SerializeField] private ParticleSystem smoke;
-    [SerializeField] private SpriteRenderer playerVisual;
+    [SerializeField] private Animator playerVisual;
     [SerializeField] private Transform shadow;
+    [SerializeField] private BikeType currentBike;
 
+    private Collider2D hopTo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,16 +44,14 @@ public class PlayerScript : MonoBehaviour
         shadow.localPosition = new Vector3(0, -.5f, 0);
         shadow.localScale = Vector3.Lerp(new Vector3(1, .2f, 1), Vector3.zero,height/5);
 
+        playerVisual.SetBool("Accelerating", accelerating);
         if(accelerating) 
         {
-            playerVisual.transform.localPosition += new Vector3(-.33f, .1f, 0);
-            shadow.localPosition += new Vector3(-.25f,0, 0);
-
             ultraBoost += Time.deltaTime;
             if (ultraBoost > 5)
             {
                 Time.timeScale = 1.5f + ultraBoost / 40;
-                playerVisual.color = Color.red;
+                playerVisual.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
@@ -70,10 +70,11 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         mover.linearVelocity = speed * new Vector2(movement.x*4,movement.y*3);
+        playerVisual.SetFloat("SpeedY", mover.linearVelocityY);
 
         if(height!=0)fallingVelocity += -9.81f * Time.deltaTime;
         height = Mathf.Clamp(height+fallingVelocity*Time.deltaTime,0,15);
-        
+        playerVisual.SetFloat("Height", height);
 
         if (fuel == 0)
         {
@@ -99,13 +100,11 @@ public class PlayerScript : MonoBehaviour
         if (context.ReadValueAsButton())
         {
             accelerating = true;
-            playerVisual.transform.eulerAngles = new Vector3(0, 0, 45);
         }
         else
         {
             accelerating = false;
-            playerVisual.color = Color.white;
-            playerVisual.transform.eulerAngles = new Vector3(0, 0, 0);
+            playerVisual.GetComponent<SpriteRenderer>().color = Color.white;
             Time.timeScale = 1;
         }
     }
@@ -117,7 +116,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (context.ReadValueAsButton() && height == 0) 
         {
-            Collider2D hopTo = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Bike"));
+            hopTo = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Bike"));
             if(hopTo == null)
             {
                 fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2); 
@@ -125,7 +124,7 @@ public class PlayerScript : MonoBehaviour
             }
             else
             {
-                //
+                StartCoroutine("HopToBike");
             }
 
         }
@@ -138,5 +137,29 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
         trickBoost += .2f;
+    }
+    IEnumerator HopToBike()
+    {
+        BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
+        leftBike.fuel = fuel-2;
+
+        playerVisual.SetTrigger("Hop");
+        fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
+        float timer = 0;
+        Vector3 og = transform.position;
+        height += 0.01f;
+
+        while (height > 0)
+        {
+            timer += Time.deltaTime;
+            transform.position = Vector3.Lerp(og, hopTo.transform.position, timer);
+            yield return null;
+        }
+
+        transform.position = hopTo.transform.position;
+        fuel = hopTo.GetComponent<BikeScript>().fuel;
+        currentBike = hopTo.GetComponent<BikeScript>().type;
+        Destroy(hopTo.gameObject);
+        trickBoost += .4f;
     }
 }

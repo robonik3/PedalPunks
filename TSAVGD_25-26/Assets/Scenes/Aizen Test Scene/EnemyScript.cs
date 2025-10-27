@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     {
         mover.AddForce(Vector2.right);
         mover.AddForce(Vector2.up *(PlayerScript.instance.transform.position.y>transform.position.y?1:-1));
-        if (transform.position.x > 10) { Dead(); }
+        if (transform.position.x > 10) { Dead(); Destroy(gameObject); }
     }
 
     void Dead()
