@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
 
     private Rigidbody2D mover;
     private Vector2 movement;
+    private float shoveDir;
     public float speed=1;
     private float height;
     private float fallingVelocity;
@@ -94,6 +95,7 @@ public class PlayerScript : MonoBehaviour
     public void MoveInput(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>().normalized;
+        if(movement.y != 0) { shoveDir = Mathf.Abs(movement.y) / movement.y; }
     }
     public void AccelerateInput(InputAction.CallbackContext context)
     {
@@ -110,7 +112,15 @@ public class PlayerScript : MonoBehaviour
     }
     public void AttackInput(InputAction.CallbackContext context)
     {
-        if(context.performed)fuel = 1;
+        if (context.performed) 
+        {
+            playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
+            Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
+            if(hit != null)
+            {
+                hit.GetComponent<EnemyScript>().Shoved(mover.linearVelocityY);
+            }
+        }
     }
     public void TrickInput(InputAction.CallbackContext context)
     {
@@ -141,7 +151,7 @@ public class PlayerScript : MonoBehaviour
     IEnumerator HopToBike()
     {
         BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
-        leftBike.fuel = fuel-2;
+        leftBike.fuel = fuel-3f/15f;
 
         playerVisual.SetTrigger("Hop");
         fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
