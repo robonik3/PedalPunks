@@ -52,8 +52,8 @@ public class EnemySpawner : MonoBehaviour
                     if (timer > 126)
                     {
                         timer -= 4;
-                        Instantiate(waves[0].enemy, new Vector3(-10, 3, 0), new Quaternion());
-                        Instantiate(waves[0].enemy, new Vector3(-10, -3, 0), new Quaternion());
+                        Instantiate(waves[0].enemy, new Vector3(-10, 1f, 0), new Quaternion());
+                        Instantiate(waves[0].enemy, new Vector3(-10, -2, 0), new Quaternion());
 
                     }
                 }

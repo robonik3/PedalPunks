@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
 
             if (transform.position.x > 10) { Dead(); }
 
-            if (Physics2D.OverlapCircle(transform.position + new Vector3(.2f, 0, 0), .2f, LayerMask.GetMask("Player")))
+            if (Physics2D.OverlapCircle(transform.position + new Vector3(.2f, 0, 0), .2f, LayerMask.GetMask("Player","Default"))) //hits enemy and player and crashes them
             {
                 crash = true;
                 gameObject.layer = 0;
@@ -47,8 +47,8 @@ public class EnemyScript : MonoBehaviour
     }
     private void Crashed()
     {
-        transform.eulerAngles += new Vector3(0, 0, Time.deltaTime*-360);
-        mover.AddForce(Vector2.left*3);
+        transform.eulerAngles += new Vector3(0, 0, (Time.deltaTime*-360)*2);
+        mover.linearVelocityX = -6;
         if (transform.position.x < -10) { Destroy(gameObject); }
 
     }
