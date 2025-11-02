@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     private Vector2 movement;
     private float shoveDir;
     public float speed=1;
-    private float height;
+    public float height;
     private float fallingVelocity;
 
     private bool accelerating;

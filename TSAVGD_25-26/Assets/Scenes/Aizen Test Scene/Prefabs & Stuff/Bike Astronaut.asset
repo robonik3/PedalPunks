@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ac587b67ad6fe4187b7bc7477a0e2d, type: 3}
   m_Name: Bike Astronaut
   m_EditorClassIdentifier: Assembly-CSharp::BikeType
-  prefab: {fileID: 6818917336632415414, guid: ee4e592fa408181408def25dcb2fb4f9, type: 3}
+  prefab: {fileID: 6818917336632415414, guid: 2be50f048c38e0e44b6a109c6f971c8e, type: 3}

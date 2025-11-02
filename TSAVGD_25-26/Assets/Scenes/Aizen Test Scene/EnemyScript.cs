@@ -5,6 +5,7 @@ public class EnemyScript : MonoBehaviour
 {
     private Rigidbody2D mover;
     [SerializeField] private BikeType bike;
+    private bool crash;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +15,42 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        mover.AddForce(Vector2.right);
-        mover.AddForce(Vector2.up *(PlayerScript.instance.transform.position.y>transform.position.y?1:-1));
-        if (transform.position.x > 10) { Dead(); }
+        if (!crash)
+        {
+            mover.linearVelocityX = 3;
+            if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1 
+                && Vector3.Distance(PlayerScript.instance.transform.position,transform.position)<3
+                && transform.position.x<PlayerScript.instance.transform.position.x)
+            {
+                mover.linearVelocityY = Mathf.Clamp((transform.position.y-PlayerScript.instance.transform.position.y +.01f)*10,-1,1)*3;
+            }
+            else
+            {
+                mover.linearVelocityY = 0;
+
+            }
+
+            if (transform.position.x > 10) { Dead(); }
+
+            if (Physics2D.OverlapCircle(transform.position + new Vector3(.2f, 0, 0), .2f, LayerMask.GetMask("Player")))
+            {
+                crash = true;
+                gameObject.layer = 0;
+                EnemySpawner.instance.activeEnemies--;
+                mover.linearVelocityX = 0;
+            }
+        }
+        else
+        {
+            Crashed();
+        }
     }
     private void Crashed()
     {
-        transform.eulerAngles += new Vector3(0, 0, Time.deltaTime*30);
+        transform.eulerAngles += new Vector3(0, 0, Time.deltaTime*-360);
+        mover.AddForce(Vector2.left*3);
+        if (transform.position.x < -10) { Destroy(gameObject); }
+
     }
     public void Shoved(float velocity)
     {
