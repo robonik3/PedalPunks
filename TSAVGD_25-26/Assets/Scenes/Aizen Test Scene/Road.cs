@@ -7,14 +7,14 @@ public class Road : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (roadLength == 0) { roadLength = 1; }
+        if (roadLength <= 0) { roadLength = 1; }
     }
 
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime*8;
-        while (timer < -roadLength/2)
+        while (timer < -roadLength && !(roadLength <= 0))
         {
             timer += roadLength;
         }
