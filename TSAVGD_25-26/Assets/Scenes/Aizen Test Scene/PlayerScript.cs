@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     private float decay;
     [SerializeField] private Image fuelIndicator;
     [SerializeField] private ParticleSystem smoke;
+    [SerializeField] private ParticleSystem dirt;
     [SerializeField] private Animator playerVisual;
     [SerializeField] private Transform shadow;
     [SerializeField] private BikeType currentBike;
@@ -66,6 +67,17 @@ public class PlayerScript : MonoBehaviour
         }
         Time.timeScale += trickBoost;
         trickBoost = Mathf.Clamp(trickBoost-Time.deltaTime,0,1);
+
+        //slows the bike down if it touches grass
+        if((transform.position.y >= 1.5f || transform.position.y <= -2.5f) && height == 0)
+        {
+            if (!dirt.isPlaying) { dirt.Play(); }
+            fuel = Mathf.Clamp(fuel - Time.deltaTime / 13, 0, 1); //fuel goes down quicker
+        }
+        else
+        {
+            dirt.Stop();
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
