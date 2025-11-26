@@ -24,9 +24,22 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Image fuelIndicator;
     [SerializeField] private ParticleSystem smoke;
     [SerializeField] private ParticleSystem dirt;
+    [SerializeField] private ParticleSystem boostTrail;
     [SerializeField] private Animator playerVisual;
     [SerializeField] private Transform shadow;
     [SerializeField] private BikeType currentBike;
+    public AudioSource engineSource;
+    public AudioSource hitSoundEffect;
+
+    //Engine pitch changing stuff
+    [Header("Engine Sound")]
+    private float idlePitch = 1.3f;
+    private float accelPitch = 2.0f;
+    private float noFuelPitch = 0.5f;
+    private float pitchChangeSpeed = 5f;
+    private float targetPitch;
+
+
 
     private Collider2D hopTo;
 
@@ -78,6 +91,20 @@ public class PlayerScript : MonoBehaviour
         {
             dirt.Stop();
         }
+        if(height != 0)
+        {
+            boostTrail.Stop();
+        }
+
+            if(fuel<=0f)
+            {
+                targetPitch = noFuelPitch;
+            }
+            else
+            {
+                targetPitch = accelerating ? accelPitch : idlePitch;
+            }
+        engineSource.pitch = Mathf.Lerp(engineSource.pitch, targetPitch, Time.deltaTime * pitchChangeSpeed);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -114,10 +141,13 @@ public class PlayerScript : MonoBehaviour
         if (context.ReadValueAsButton())
         {
             accelerating = true;
+            if(height == 0) { boostTrail.Play(); };
+            
         }
         else
         {
             accelerating = false;
+            boostTrail.Stop();
             playerVisual.GetComponent<SpriteRenderer>().color = Color.white;
             Time.timeScale = 1;
         }
@@ -130,6 +160,7 @@ public class PlayerScript : MonoBehaviour
             Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
             if(hit != null)
             {
+                hitSoundEffect.Play();
                 hit.GetComponent<EnemyScript>().Shoved(mover.linearVelocityY);
             }
         }
@@ -141,7 +172,7 @@ public class PlayerScript : MonoBehaviour
             hopTo = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Bike"));
             if(hopTo == null)
             {
-                fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2); 
+                fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
                 StartCoroutine("WaitToLand");
             }
             else
@@ -162,6 +193,7 @@ public class PlayerScript : MonoBehaviour
     }
     IEnumerator HopToBike()
     {
+        engineSource.Stop();
         BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
         leftBike.fuel = fuel-3f/15f;
 
@@ -183,5 +215,6 @@ public class PlayerScript : MonoBehaviour
         currentBike = hopTo.GetComponent<BikeScript>().type;
         Destroy(hopTo.gameObject);
         trickBoost += .4f;
+        engineSource.Play();
     }
 }

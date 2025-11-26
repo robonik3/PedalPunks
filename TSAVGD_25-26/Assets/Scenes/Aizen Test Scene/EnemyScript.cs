@@ -6,6 +6,8 @@ public class EnemyScript : MonoBehaviour
     private Rigidbody2D mover;
     [SerializeField] private BikeType bike;
     private bool crash;
+    public AudioSource explosion;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +44,7 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
+            explosion.Play();
             Crashed();
         }
     }
