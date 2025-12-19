@@ -17,6 +17,11 @@ public class buttonHandler : MonoBehaviour
     public void loadLevels() {
             SceneManager.LoadScene("LevelSelect");
         }
-
+    public void loadL1() {
+            SceneManager.LoadScene("Level 1");
+    }
+    public void loadL2() {
+            SceneManager.LoadScene("Level 2");
+        }
     
 }

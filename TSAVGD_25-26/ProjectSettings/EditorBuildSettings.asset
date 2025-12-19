@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: ae86d4b169bde4e409f8c40956e1c58c
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: c4169c630f885054097e3799be95763d
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 515ef0e8a06449146a514b13d699d52f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a58f20c0db003184382eaea62aeab6b0
+  - enabled: 1
+    path: Assets/Scenes/Aizen Test Scene/Level 1.unity
+    guid: 4a3857e82893ee64c884bcd26d22532a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
