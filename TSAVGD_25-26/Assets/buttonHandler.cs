@@ -10,6 +10,8 @@ public class buttonHandler : MonoBehaviour
 
 
     // Update is called once per frame
+    bool isPaused = false;
+    [SerializeField] GameObject pauseCanvas;
 
     public void loadCredits() {
             SceneManager.LoadScene("Credits");
@@ -22,6 +24,13 @@ public class buttonHandler : MonoBehaviour
     }
     public void loadL2() {
             SceneManager.LoadScene("Level 2");
+        }
+
+        //loads pause menu
+    public void loadPause() //function not tied yet
+        {
+                pauseCanvas.SetActive(true);
+                isPaused = true;
         }
     
 }
