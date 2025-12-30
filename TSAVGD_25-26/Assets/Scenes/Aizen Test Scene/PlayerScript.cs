@@ -39,7 +39,9 @@ public class PlayerScript : MonoBehaviour
     private float pitchChangeSpeed = 5f;
     private float targetPitch;
 
-
+    //The limit or boundary y positions that player cant cross
+    public float upperYLimit;
+    public float lowerYLimit;
 
     private Collider2D hopTo;
 
