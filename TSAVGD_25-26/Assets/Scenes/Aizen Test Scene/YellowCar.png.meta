@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 8f460f6e4f5a90545b091595af6c6bbc
+guid: 5cb874233d960ce4e83bbf26e87c181a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6947908207949566423
-    second: Cars_0
-  - first:
-      213: -592538902078482287
-    second: Cars_1
-  - first:
-      213: -931598462713293962
-    second: Cars_2
+      213: -248327258264204992
+    second: YellowCar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,45 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cars_0
+      name: YellowCar_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 14
+        y: 0
+        width: 64
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d1dada14bdeb6060800000000000000
-      internalID: 6947908207949566423
+      spriteID: 0498d1f9ca3cd8cf0800000000000000
+      internalID: -248327258264204992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cars_1
+      name: YellowCar_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 14
+        x: 64
+        y: 0
+        width: 64
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 198130a0201e6c7f0800000000000000
-      internalID: -592538902078482287
+      spriteID: cd33fefa63f6e104098da652033e9792
+      internalID: 1847997674
       vertices: []
       indices: 
       edges: []
@@ -153,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7c172191ca80f9c4cb72ec76a8abef33
+    spriteID: aab71ae200c662e4ab7c15dd890b6bab
     internalID: 0
     vertices: []
     indices: 
@@ -163,12 +157,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cars_0: 6947908207949566423
-      Cars_1: -592538902078482287
-      Cars_2: -931598462713293962
-      Cars_3: -751405
-      Cars_4: -45192107
-      Cars_5: 49604271
+      YellowCar_0: -248327258264204992
+      YellowCar_1: 1847997674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
