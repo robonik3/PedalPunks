@@ -11,8 +11,24 @@ public class CarScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        sr.sprite = carSprites[Random.Range(0, carSprites.Length)];
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        Debug.Log("Found SpriteRenderer: " + (sr != null));
+        Debug.Log("Using SpriteRenderer: " + sr.name);
+
+
+        if (sr != null && carSprites.Length > 0)
+        {
+            sr.sprite = carSprites[Random.Range(0, carSprites.Length)];
+            Debug.Log("Chosen Sprite: " + sr.sprite.name);
+        }
+        else if (sr == null)
+        {
+            Debug.LogWarning("No SpriteRenderer found!");
+        }
+        else
+        {
+            Debug.LogWarning("No Car Sprites assigned!");
+        }
 
         Debug.Log("Car Spawned");
         speed = Random.Range(minSpeed, maxSpeed);

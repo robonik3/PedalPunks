@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1344907312585894193}
   - component: {fileID: 4453111344912640329}
   m_Layer: 0
-  m_Name: BlueCar
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1848675445, guid: 56f00360425787c42815c642a276c087, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3975410122862343817
@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3c9db6a9b4f2840a99e62e2f799fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarScript
+  carSprites:
+  - {fileID: 1848675445, guid: 56f00360425787c42815c642a276c087, type: 3}
+  - {fileID: -6153957836141548594, guid: 0832bd109bc803a429331d784c791c6d, type: 3}
+  - {fileID: -248327258264204992, guid: 5cb874233d960ce4e83bbf26e87c181a, type: 3}
   minSpeed: 3
   maxSpeed: 7
 --- !u!61 &4453111344912640329
