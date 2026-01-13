@@ -7,8 +7,9 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
-
+    public steal bikeScript;
     private Rigidbody2D mover;
+    [SerializeField] private BoxCollider2D back;
     private Vector2 movement;
     private float shoveDir;
     public float speed=1;
@@ -19,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     private float ultraBoost;
     private float trickBoost;
 
-    public float fuel=1;
+    public static float fuel=1;
     private float decay;
     [SerializeField] private Image fuelIndicator;
     [SerializeField] private ParticleSystem smoke;
@@ -51,12 +52,18 @@ public class PlayerScript : MonoBehaviour
         Application.targetFrameRate = 60;
         instance = this;
         mover = GetComponent<Rigidbody2D>();
+        Debug.Log(bikeScript.fuelTrig);
     }
     private void Update()
     {
+        if (bikeScript.fuelTrig == 1)
+        {
+            fuel = 0;
+        } else {
         fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
+        }
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
-
+    
         playerVisual.transform.localPosition = new Vector3(0, height, 0);
         shadow.localPosition = new Vector3(0, -.5f, 0);
         shadow.localScale = Vector3.Lerp(new Vector3(1, .2f, 1), Vector3.zero,height/5);

@@ -5,6 +5,7 @@ public class EnemyScript : MonoBehaviour
 {
     private Rigidbody2D mover;
     [SerializeField] private BikeType bike;
+    [SerializeField] private BoxCollider2D back;
     private bool crash;
     public AudioSource explosion;
 
@@ -34,13 +35,13 @@ public class EnemyScript : MonoBehaviour
 
             if (transform.position.x > 10) { Dead(); }
 
-            if (Physics2D.OverlapCircle(transform.position + new Vector3(.2f, 0, 0), .2f, LayerMask.GetMask("Player","Default"))) //hits enemy and player and crashes them
-            {
-                crash = true;
-                gameObject.layer = 0;
-                EnemySpawner.instance.activeEnemies--;
-                mover.linearVelocityX = 0;
-            }
+            // if (Physics2D.OverlapCircle(transform.position + new Vector3(.2f, 0, 0), .2f, LayerMask.GetMask("Player","Default"))) //hits enemy and player and crashes them
+            // {
+            //     crash = true;
+            //     gameObject.layer = 0;
+            //     EnemySpawner.instance.activeEnemies--;
+            //     mover.linearVelocityX = 0;
+            // }
         }
         else
         {
