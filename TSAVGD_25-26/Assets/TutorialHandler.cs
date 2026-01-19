@@ -31,7 +31,7 @@ public class TutorialHandler : MonoBehaviour
         while (timer<1)
         {
 
-            PlayerScript.instance.fuel = 1;
+            //PlayerScript.instance.fuel = 1; MADE COMMENT BECAUSE OF COMPILE ERROR
             if (Mathf.Abs(Input.GetAxis("Horizontal")) > .1f|| Mathf.Abs(Input.GetAxis("Vertical")) > .1f)
             {
                 press = true;
@@ -56,7 +56,7 @@ public class TutorialHandler : MonoBehaviour
         //Wait until Player tries to take down Enemy
         while (timer < 1)
         {
-            PlayerScript.instance.fuel = 1;
+            //PlayerScript.instance.fuel = 1; MADE COMMENT BECAUSE OF COMPILE ERROR
             if (Input.GetKeyDown(KeyCode.C))
             {
                 press = true;
