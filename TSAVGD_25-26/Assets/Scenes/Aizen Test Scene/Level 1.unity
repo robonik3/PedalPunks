@@ -803,20 +803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4090e3dfa8b7eb45bbc11d22231f6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  waves:
-  - car: {fileID: 9066666420941251432, guid: 2783bae7e8ec8304aa318f11160f0631, type: 3}
-    delaySpawnTime: 6
-    ypos: 0
-  - car: {fileID: 9066666420941251432, guid: 2783bae7e8ec8304aa318f11160f0631, type: 3}
-    delaySpawnTime: 10
-    ypos: 2
-  - car: {fileID: 9066666420941251432, guid: 2783bae7e8ec8304aa318f11160f0631, type: 3}
-    delaySpawnTime: 2
-    ypos: 0
-  activeCars: 0
-  FinishLevel:
-    m_PersistentCalls:
-      m_Calls: []
+  carPrefab: {fileID: 0}
+  spawnDelay: 3
 --- !u!4 &70815254
 Transform:
   m_ObjectHideFlags: 0
@@ -16351,7 +16339,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &658086721
@@ -17434,6 +17422,7 @@ GameObject:
   - component: {fileID: 1037473913}
   - component: {fileID: 1037473912}
   - component: {fileID: 1037473911}
+  - component: {fileID: 1037473914}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -17555,6 +17544,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037473908}
   m_CullTransparentMesh: 1
+--- !u!114 &1037473914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037473908}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7e1ce2950534988947d7e2faeca0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseCode
+  pauseScreen: {fileID: 0}
 --- !u!1 &1071433734
 GameObject:
   m_ObjectHideFlags: 0
@@ -18765,9 +18767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efdf8d5f835b014fb59c7273ffb87e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  bikeScript: {fileID: 0}
+  back: {fileID: 0}
   speed: 1
   height: 0
-  fuel: 1
   fuelIndicator: {fileID: 1605796030}
   smoke: {fileID: 186228804}
   dirt: {fileID: 1740720619}
