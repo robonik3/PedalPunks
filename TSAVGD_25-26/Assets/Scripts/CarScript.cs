@@ -70,7 +70,7 @@ public class CarScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                other.GetComponent<PlayerScript>().Die();
         }
     }
 

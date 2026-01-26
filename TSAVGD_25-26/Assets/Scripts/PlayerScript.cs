@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour
@@ -19,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     private float ultraBoost;
     private float trickBoost;
 
-    public static float fuel=1;
+    public float fuel=1;
     private float decay;
     [SerializeField] private Image fuelIndicator;
     [SerializeField] private ParticleSystem smoke;
@@ -43,6 +45,12 @@ public class PlayerScript : MonoBehaviour
     public float upperYLimit;
     public float lowerYLimit;
 
+    //player sprite (sprite renderer so I can use it in this script)
+    public GameObject visualRoot;
+    public GameObject shadowSprite;
+    public GameObject explosionPrefab;
+    FadeScript screenFade;
+
     private Collider2D hopTo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,6 +59,7 @@ public class PlayerScript : MonoBehaviour
         Application.targetFrameRate = 60;
         instance = this;
         mover = GetComponent<Rigidbody2D>();
+        screenFade = FindObjectOfType<FadeScript>();
 
     }
     private void Update()
@@ -186,6 +195,10 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+    public void Die()
+    {
+        StartCoroutine(DeathSequence());
+    }
     IEnumerator WaitToLand()
     {
         height += 0.01f;
@@ -220,5 +233,17 @@ public class PlayerScript : MonoBehaviour
         Destroy(hopTo.gameObject);
         trickBoost += .4f;
         engineSource.Play();
+    }
+    IEnumerator DeathSequence()
+    {
+
+        visualRoot.SetActive(false);
+        shadowSprite.SetActive(false);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        //wait for explosion
+        yield return new WaitForSeconds(0.4f);
+        //Fade to black
+        yield return StartCoroutine(screenFade.FadeIn());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

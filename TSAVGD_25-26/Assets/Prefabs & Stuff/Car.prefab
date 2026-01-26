@@ -160,7 +160,7 @@ MonoBehaviour:
   - {fileID: -6153957836141548594, guid: 0832bd109bc803a429331d784c791c6d, type: 3}
   - {fileID: -248327258264204992, guid: 5cb874233d960ce4e83bbf26e87c181a, type: 3}
   minSpeed: 3
-  maxSpeed: 7
+  maxSpeed: 5
 --- !u!61 &4453111344912640329
 BoxCollider2D:
   m_ObjectHideFlags: 0
