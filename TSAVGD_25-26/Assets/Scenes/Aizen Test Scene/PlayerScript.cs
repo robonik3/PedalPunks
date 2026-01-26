@@ -7,7 +7,6 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
-    public steal bikeScript;
     private Rigidbody2D mover;
     [SerializeField] private BoxCollider2D back;
     private Vector2 movement;
@@ -52,16 +51,12 @@ public class PlayerScript : MonoBehaviour
         Application.targetFrameRate = 60;
         instance = this;
         mover = GetComponent<Rigidbody2D>();
-        Debug.Log(bikeScript.fuelTrig);
+
     }
     private void Update()
     {
-        if (bikeScript.fuelTrig == 1)
-        {
-            fuel = 0;
-        } else {
+
         fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
-        }
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
     
         playerVisual.transform.localPosition = new Vector3(0, height, 0);
