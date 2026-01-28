@@ -136,7 +136,11 @@ public class PlayerScript : MonoBehaviour
             mover.linearVelocity += Vector2.left * decay;
             if (!smoke.isPlaying) { smoke.Play(); }
 
-            if (transform.position.x < -10) { Debug.Log("You LOSE!!!"); }
+            if (transform.position.x < -15) { 
+                Debug.Log("You LOSE!!!"); 
+                Time.timeScale = 0f;
+                SceneManager.LoadScene("GameOver");
+                }
         }
         else 
         {
