@@ -19,11 +19,18 @@ public class buttonHandler : MonoBehaviour
             SceneManager.LoadScene("LevelSelect");
         }
     public void loadL1() {
-            SceneManager.LoadScene("Level 1");
+        bool tutorialCompleted = PlayerPrefs.GetInt("hasPlayedTheGame", 0) == 1; // makes sure tutorial has been played
+
+        if(!tutorialCompleted)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else { SceneManager.LoadScene("Level 1"); }
+            
     }
     public void loadL2() {
-            SceneManager.LoadScene("Level 2");
-        }
+         SceneManager.LoadScene("Level 2");
+    }
     public void loadHome()
         {
             SceneManager.LoadScene("Menu");

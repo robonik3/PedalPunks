@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class TutorialHandler : MonoBehaviour
 {
     [SerializeField] private GameObject gasTank;
@@ -13,14 +14,43 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] private GameObject attackControlsText;
     [SerializeField] private GameObject gasReminderText;
     [SerializeField] private GameObject progressReminderText;
-    
+    [SerializeField] private GameObject goodLuckText;
+
+    private bool skipped = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
-        StartCoroutine("Tutorial");
+        StartCoroutine(TutorialFlow());
+    }
+    void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.P)) 
+        {
+            SkipTutorial();
+        }
     }
 
+    void SkipTutorial()
+    {
+        skipped = true;
+
+        StopAllCoroutines();
+
+        SceneManager.LoadScene("Level 1");
+    }
+
+    IEnumerator TutorialFlow() 
+    {
+        yield return StartCoroutine(Tutorial());
+
+        yield return new WaitForSeconds(10f);
+        PlayerPrefs.SetInt("hasPlayedTheGame", 1);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("Level 1");
+    }
     IEnumerator Tutorial()
     {
 
@@ -106,6 +136,7 @@ public class TutorialHandler : MonoBehaviour
             yield return null;
         }
         progressReminderText.SetActive(false);
+        goodLuckText.SetActive(true);
     }
      
 }
