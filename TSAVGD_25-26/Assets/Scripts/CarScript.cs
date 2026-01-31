@@ -72,6 +72,14 @@ public class CarScript : MonoBehaviour
             {
                 other.GetComponent<PlayerScript>().Die();
         }
+        if (other.CompareTag("Bike"))
+        {
+            other.GetComponent<BikeScript>().Explode();
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyScript>().Explode();
+        }
     }
 
 }

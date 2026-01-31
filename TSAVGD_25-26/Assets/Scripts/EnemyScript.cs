@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,6 +7,7 @@ public class EnemyScript : MonoBehaviour
     private Rigidbody2D mover;
     [SerializeField] private BikeType bike;
     [SerializeField] private BoxCollider2D back;
+    [SerializeField] private GameObject explosionPrefab;
     private bool crash;
     public AudioSource explosion;
 
@@ -65,6 +67,18 @@ public class EnemyScript : MonoBehaviour
     void Dead()
     {
         EnemySpawner.instance.activeEnemies--;
+        Destroy(gameObject);
+    }
+    public void Explode()
+    {
+        StartCoroutine(ExplodeSequence());
+    }
+    IEnumerator ExplodeSequence()
+    {
+        EnemySpawner.instance.activeEnemies--;
+        this.gameObject.SetActive(false);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        yield return null;
         Destroy(gameObject);
     }
 }

@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7541585223897236380}
   m_Layer: 7
   m_Name: Bike Enemy
-  m_TagString: Untagged
+  m_TagString: Bike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   fuel: 15
   type: {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
+  explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
 --- !u!50 &7819998739683013462
 Rigidbody2D:
   serializedVersion: 5

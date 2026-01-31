@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1307650375562731226}
   m_Layer: 6
   m_Name: Enemy Biker
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bike: {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
   back: {fileID: 0}
+  explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
   explosion: {fileID: 1307650375562731226}
 --- !u!61 &7683136961449159710
 BoxCollider2D:

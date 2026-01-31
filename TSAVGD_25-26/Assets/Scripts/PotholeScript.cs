@@ -17,13 +17,19 @@ public class PotholeScript : MonoBehaviour
         }
     }
 
-    
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("TOUCHING POTHOLE!");
-            other.gameObject.GetComponent<PlayerScript>().Die();
+            other.GetComponent<PlayerScript>().Die();
+        }
+        if (other.CompareTag("Bike"))
+        {
+            other.GetComponent<BikeScript>().Explode();
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyScript>().Explode();
         }
     }
 }

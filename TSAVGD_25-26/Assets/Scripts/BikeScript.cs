@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BikeScript : MonoBehaviour
@@ -5,6 +6,11 @@ public class BikeScript : MonoBehaviour
     public float fuel;
     public BikeType type;
     private Rigidbody2D mover;
+
+    //exploding things
+    [SerializeField] private GameObject explosionPrefab;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,5 +25,16 @@ public class BikeScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void Explode()
+    {
+        StartCoroutine(ExplodeSequence());
+    }
+    IEnumerator ExplodeSequence()
+    {
+        this.gameObject.SetActive(false);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        yield return null;
+        Destroy(gameObject);
     }
 }

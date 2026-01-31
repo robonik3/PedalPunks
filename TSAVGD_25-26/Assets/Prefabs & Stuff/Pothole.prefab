@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7712679574531815099}
   - component: {fileID: 7977130672013317554}
   - component: {fileID: 1910804007019760267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pothole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
