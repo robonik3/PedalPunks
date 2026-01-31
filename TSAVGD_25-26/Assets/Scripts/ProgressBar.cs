@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using UnityEngine.SceneManagement;
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private float levelLengthTime;
@@ -10,6 +12,8 @@ public class ProgressBar : MonoBehaviour
     private bool finished;
     private float progressTimer;
     private float completionTimer;
+
+    FadeScript screenFade;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,5 +39,14 @@ public class ProgressBar : MonoBehaviour
         finished = true;
         bestTime.text = "Your Time: " + completionTimer.ToString("0.00") + System.Environment.NewLine + "Standard Time: " + levelLengthTime.ToString();
         bestTime.gameObject.SetActive(true);
+        StartCoroutine(NextLevel());
+    }
+
+    IEnumerator NextLevel()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        yield return StartCoroutine(screenFade.FadeIn());
+        SceneManager.LoadScene(currentScene++);
     }
 }
+
