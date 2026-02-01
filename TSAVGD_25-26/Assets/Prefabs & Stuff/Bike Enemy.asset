@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Bike Enemy
   m_EditorClassIdentifier: Assembly-CSharp::BikeType
   prefab: {fileID: 6818917336632415414, guid: ee4e592fa408181408def25dcb2fb4f9, type: 3}
+  visual: {fileID: 22100000, guid: 7ce8c5a836382e94b890b205e7129493, type: 2}

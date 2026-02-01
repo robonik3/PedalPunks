@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Bike Player
   m_EditorClassIdentifier: Assembly-CSharp::BikeType
   prefab: {fileID: 6818917336632415414, guid: a5c67293ffb2bd6438680eda1c461446, type: 3}
+  visual: {fileID: 22100000, guid: 18f95014806ca0043a428883bd56c7ca, type: 2}

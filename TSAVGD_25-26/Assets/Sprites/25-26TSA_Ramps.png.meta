@@ -1,70 +1,13 @@
 fileFormatVersion: 2
-guid: 674d3d26ef6b5d546b3a6809051694e3
+guid: 3da2635cf2394bf4b97fe05544306d25
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7992736006398553503
-    second: 25-26TSA_Character_0
+      213: -3721867567274214515
+    second: 25-26TSA_Ramps_0
   - first:
-      213: 1871434077972990050
-    second: 25-26TSA_Character_1
-  - first:
-      213: -7235990598556034821
-    second: 25-26TSA_Character_2
-  - first:
-      213: 6663587696838028451
-    second: 25-26TSA_Character_3
-  - first:
-      213: 5210106902140067743
-    second: 25-26TSA_Character_4
-  - first:
-      213: 308760591229066465
-    second: 25-26TSA_Character_5
-  - first:
-      213: 1648086459033258825
-    second: 25-26TSA_Character_6
-  - first:
-      213: 5196019090931422989
-    second: 25-26TSA_Character_7
-  - first:
-      213: 7311181052848259084
-    second: 25-26TSA_Character_8
-  - first:
-      213: -6345865288584063195
-    second: 25-26TSA_Character_9
-  - first:
-      213: 2370299977614387192
-    second: 25-26TSA_Character_10
-  - first:
-      213: -2021279497799924893
-    second: 25-26TSA_Character_11
-  - first:
-      213: 7040587884100562912
-    second: 25-26TSA_Character_12
-  - first:
-      213: 3510724329313630109
-    second: 25-26TSA_Character_13
-  - first:
-      213: -507550153782001185
-    second: 25-26TSA_Character_14
-  - first:
-      213: -8651812838797061885
-    second: 25-26TSA_Character_15
-  - first:
-      213: 8080171049536237835
-    second: 25-26TSA_Character_16
-  - first:
-      213: 5440455263915046269
-    second: 25-26TSA_Character_17
-  - first:
-      213: 3499812366231189261
-    second: 25-26TSA_Character_18
-  - first:
-      213: -2958832621528346910
-    second: 25-26TSA_Character_19
-  - first:
-      213: 5331146616322634949
-    second: 25-26TSA_Character_20
+      213: -6201219050710114954
+    second: 25-26TSA_Ramps_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -160,293 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mini Man
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 162d32313f8141190800000000000000
-      internalID: -7992736006398553503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gambling
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 268042ee06ba8f910800000000000000
-      internalID: 1871434077972990050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf8500773e8949b90800000000000000
-      internalID: -7235990598556034821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OG_Dirt
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3aca1bf74b1d97c50800000000000000
-      internalID: 6663587696838028451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Motorbike_Enemy
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9f9ed78f940e4840800000000000000
-      internalID: 5210106902140067743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ec19d03f10f84400800000000000000
-      internalID: 308760591229066465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Others
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94b0fcd07ed2fd610800000000000000
-      internalID: 1648086459033258825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Excitebike_Small
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d079d1165d7fb1840800000000000000
-      internalID: 5196019090931422989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corona
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0046976e68867560800000000000000
-      internalID: 7311181052848259084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Friend
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52717715425fee7a0800000000000000
-      internalID: -6345865288584063195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f762d0754ff4e020800000000000000
-      internalID: 2370299977614387192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Motorbike_Astronaut
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3630bd58109f2f3e0800000000000000
-      internalID: -2021279497799924893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Motorbike_Astronaut_Jet
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0efabb1c06135b160800000000000000
-      internalID: 7040587884100562912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pineapple
+      name: SideTop
       rect:
         serializedVersion: 2
         x: 0
@@ -461,19 +118,195 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd1012203d1d4f8f0800000000000000
-      internalID: -507550153782001185
+      spriteID: d8bb297ba25495cc0800000000000000
+      internalID: -3721867567274214515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Excitebike
+      name: Top
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67dd90cf028d0f9a0800000000000000
+      internalID: -6201219050710114954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt_Road
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12439972d8e33bb499865ba7e26d7178
+      internalID: 332704203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotDirt_Road
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed5e107d6f1cb74d8c9691a812ec4c6
+      internalID: -1412915356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Road_Road
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ec43e98f0f30b478ac8d9abbaf2699
+      internalID: 1114756193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Bits
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c328c5b683d334b8a4a8c6a6ea0506
+      internalID: -1095383653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramp_Dark
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9624f9a0e6e97fd4faab7aa1302f4117
+      internalID: -791225581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top2
       rect:
         serializedVersion: 2
         x: 16
         y: 32
-        width: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc7e038aa5616c439826cdb9eeed90f
+      internalID: 665989731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramp_Bright
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f1990609abc3744a78f77bf1e98c69
+      internalID: 216212988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TallRamp_Left_Top
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -481,82 +314,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3015658ff069ee780800000000000000
-      internalID: -8651812838797061885
+      spriteID: ae19d01100a4030408e61617b092e874
+      internalID: 1188426169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Astronaut
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d757f0edc31608b40800000000000000
-      internalID: 5440455263915046269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Astronaut_Jet
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d07bab5edc4d19030800000000000000
-      internalID: 3499812366231189261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Invisbike
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c4bf671a990cf940800000000000000
-      internalID: 5331146616322634949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Clown
+      name: TallRamp_Right_Top
       rect:
         serializedVersion: 2
         x: 112
@@ -571,193 +338,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f158f63271db44098c63cdeaa20796
-      internalID: 943557361
+      spriteID: a8fc3d30f759d464dbbbef95d8813269
+      internalID: 644059545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MatteoPrime
+      name: LongRamp_Left_Top
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce811e4f428b3f645be1ddab9f3decf9
-      internalID: -2104512624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Vampire
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b389c24da14e12478dcbe08e6bbe524
-      internalID: -1121294963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Enemy
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 651295016900e504a897daa7c5a0699c
-      internalID: -906401178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Scooter
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2f1b95f1538488499d2e7ae4c0496ea
-      internalID: -1198166295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_Tether
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83b5cfb9b32558648931888acc8bd8ff
-      internalID: -391535009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tony
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a509359606c838499c21ea5656bbff1
-      internalID: 589628780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Shove_Down
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36edf303044247247b3db7b5eadcbf40
-      internalID: -1729517166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Shove_Up
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f062fb29aed2ac14caef6039d095ae64
-      internalID: 275519464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton_Rider
-      rect:
-        serializedVersion: 2
-        x: 96
         y: 16
         width: 32
         height: 16
@@ -769,19 +360,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ac993af105a70442880295a8b64e801
-      internalID: -1932161357
+      spriteID: 8b68c394613d0504e98435641866d6ba
+      internalID: 430489545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player
+      name: LongRamp_Right_Top
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231ad2f6eb3eb9c47a2e328ddd312e91
+      internalID: 908074106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramp_Left_Top
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681a05af232006b49a7ef709f305acd8
+      internalID: -1831011426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramp_Right_Top
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee7906ac32689045a0ef70d259b7d98
+      internalID: 1266693374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Long_Bump
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fd4efc37a082b408be01afab8e6ad2
+      internalID: 1593452532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongRamp_Left_Bottom
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -791,41 +470,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c4d7e429a261234ca7a06650af9d520
-      internalID: 173018446
+      spriteID: 491c68185cb11bb44a09ee9f74931154
+      internalID: 1100107410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Drive
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c96332be7c46e5f40bf3df4af384754f
-      internalID: -1589391828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Turn_Up
+      name: LongRamp_RIght_Bottom
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -835,36 +492,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610acdb9d8ca33546be86a23094424a2
-      internalID: -160912547
+      spriteID: 9af8fc9ff3785a94a88cc8e725c38849
+      internalID: -1250866214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Turn_Down
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9cb617180fd0194d8e212c8de22967d
-      internalID: 595658691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Wheelie
+      name: Ramp_Left_Bottom
       rect:
         serializedVersion: 2
         x: 64
@@ -879,14 +514,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea08f6eecb3044f41b382c2dc87f2148
-      internalID: -886457413
+      spriteID: f63ff2ba4723c9d43ac4b282585221ba
+      internalID: -2080319699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Jump
+      name: Ramp_Right_Bottom
       rect:
         serializedVersion: 2
         x: 80
@@ -901,17 +536,105 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e31e541476f7fe4789cb8740820bbc8
-      internalID: 14902452
+      spriteID: 1b0da8e1634ebb94186003c310859940
+      internalID: -1491653769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Motorbike_Player
+      name: TallRamp_Left_Bottom
       rect:
         serializedVersion: 2
         x: 96
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801601053c7c81c4f99cc1b3fb316e12
+      internalID: -2036716209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TallRamp_Right_Bottom
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5801061acedf68a4e9180aabd820ea7f
+      internalID: 742929894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShortRamp_Left
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c10de448a01fc4f85e7105e211493f
+      internalID: 1216584049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShortRamp_Right
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8465b960cd70db438890f61018adfe0
+      internalID: -671250871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small_Bump
+      rect:
+        serializedVersion: 2
+        x: 160
         y: 0
         width: 16
         height: 16
@@ -923,30 +646,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 807d17071ff6ff14597c86e15eee133b
-      internalID: -337423755
+      spriteID: bc7cd9ca7d180e24d98221b17c9f1e73
+      internalID: -1423559386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 25-26TSA_Character_0
+      name: Boost_Ramp
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 48
-        height: 16
+        x: 176
+        y: 0
+        width: 16
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b237a2119d21f6f41912f4805b6cb486
-      internalID: 1595410070
+      spriteID: c722caaa512f43543b40a6f5b618ddba
+      internalID: -217867947
       vertices: []
       indices: 
       edges: []
@@ -955,7 +678,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 67b479b2dab5c9e448a8c9486ec886ae
+    spriteID: e752e14b61dc2684ca47f8d039b40f66
     internalID: 0
     vertices: []
     indices: 
@@ -967,52 +690,45 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      25-26TSA_Character_0: 1595410070
-      25-26TSA_Character_13: 3510724329313630109
-      25-26TSA_Character_16: 8080171049536237835
-      25-26TSA_Character_19: -2958832621528346910
-      25-26TSA_Character_23: 1400952209
-      25-26TSA_Character_24: 1606752562
-      25-26TSA_Character_29: -1275511470
-      25-26TSA_Character_37: -1308862052
-      Corona: 7311181052848259084
-      Dirt: -7235990598556034821
-      Enemy_Astronaut: 5440455263915046269
-      Enemy_Astronaut_Jet: 3499812366231189261
-      Enemy_Clown: 943557361
-      Enemy_Enemy: -906401178
-      Enemy_Invisbike: 5331146616322634949
-      Enemy_Scooter: -1198166295
-      Enemy_Tether: -391535009
-      Enemy_Vampire: -1121294963
-      Excitebike: -8651812838797061885
-      Excitebike_Small: 5196019090931422989
-      Friend: -6345865288584063195
-      Gambling: 1871434077972990050
-      Grass: 308760591229066465
-      MatteoPrime: -2104512624
-      Motorbike_Astronaut: -2021279497799924893
-      Motorbike_Astronaut_Jet: 7040587884100562912
-      Motorbike_Enemy: 5210106902140067743
-      Motorbike_Player: -337423755
-      OG_Dirt: 6663587696838028451
-      Others: 1648086459033258825
-      Pineapple: -507550153782001185
-      Player: 173018446
-      Player_Drive: -1589391828
-      Player_Jump: 14902452
-      Player_Shove_Down: -1729517166
-      Player_Shove_Up: 275519464
-      Player_Turn_Down: 595658691
-      Player_Turn_Up: -160912547
-      Player_Wheelie: -886457413
-      Road: 2370299977614387192
-      Skeleton_Rider: -1932161357
-      Tony: 589628780
-      Truck_Back: -1167524422
-      Truck_Front: -2411644
-      Truck_Mid: 2067005128
-      mini Man: -7992736006398553503
+      25-26TSA_Ramps_13: -131238789
+      25-26TSA_Ramps_14: 1513163143
+      25-26TSA_Ramps_16: 929747353
+      25-26TSA_Ramps_18: 640318813
+      25-26TSA_Ramps_21: -488677871
+      25-26TSA_Ramps_22: -1077013425
+      25-26TSA_Ramps_23: -1088545118
+      25-26TSA_Ramps_24: -2072612569
+      25-26TSA_Ramps_26: 1986681646
+      25-26TSA_Ramps_28: 313159680
+      25-26TSA_Ramps_30: -181201530
+      25-26TSA_Ramps_6: -448935749
+      25-26TSA_Ramps_7: -1674624788
+      Boost_Ramp: -217867947
+      Dirt_Road: 332704203
+      Grass_Bits: -1095383653
+      LongRamp_Left_Bottom: 1100107410
+      LongRamp_Left_Top: 430489545
+      LongRamp_RIght_Bottom: -1250866214
+      LongRamp_Right_Top: 908074106
+      Long_Bump: 1593452532
+      NotDirt_Road: -1412915356
+      Ramp_Bright: 216212988
+      Ramp_Dark: -791225581
+      Ramp_Left_Bottom: -2080319699
+      Ramp_Left_Top: -1831011426
+      Ramp_Right_Bottom: -1491653769
+      Ramp_Right_Top: 1266693374
+      Road_Road: 1114756193
+      ShortRamp_Left: 1216584049
+      ShortRamp_Right: -671250871
+      SideTop: -3721867567274214515
+      Small_Bump: -1423559386
+      TallRamp_Left_Bottom: -2036716209
+      TallRamp_Left_Top: 1188426169
+      TallRamp_Right_Bottom: 742929894
+      TallRamp_Right_Top: 644059545
+      Top: -6201219050710114954
+      Top2: 665989731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

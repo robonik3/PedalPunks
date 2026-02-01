@@ -13,9 +13,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private BoxCollider2D back;
     private Vector2 movement;
     private float shoveDir;
+
     public float speed=1;
+    private float speedForward=4; //This is left & Right movement
+    private float speedTurning=3; //This is up & down movement
+
     public float height;
     private float fallingVelocity;
+    private float gravity = -9.81f;
 
     private bool accelerating;
     private float ultraBoost;
@@ -28,6 +33,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ParticleSystem dirt;
     [SerializeField] private ParticleSystem boostTrail;
     [SerializeField] private Animator playerVisual;
+    [SerializeField] private Animator bikeVisual;
     [SerializeField] private Transform shadow;
     [SerializeField] private BikeType currentBike;
     public AudioSource engineSource;
@@ -59,7 +65,7 @@ public class PlayerScript : MonoBehaviour
         Application.targetFrameRate = 60;
         instance = this;
         mover = GetComponent<Rigidbody2D>();
-        screenFade = FindObjectOfType<FadeScript>();
+        screenFade = FindFirstObjectByType<FadeScript>();
 
     }
     private void Update()
@@ -69,10 +75,12 @@ public class PlayerScript : MonoBehaviour
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
     
         playerVisual.transform.localPosition = new Vector3(0, height, 0);
+        bikeVisual.transform.localPosition = new Vector3(0, height, 0);
         shadow.localPosition = new Vector3(0, -.5f, 0);
         shadow.localScale = Vector3.Lerp(new Vector3(1, .2f, 1), Vector3.zero,height/5);
 
         playerVisual.SetBool("Accelerating", accelerating);
+        bikeVisual.SetBool("Accelerating", accelerating);
         if(accelerating) 
         {
             ultraBoost += Time.deltaTime;
@@ -80,6 +88,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Time.timeScale = 1.5f + ultraBoost / 40;
                 playerVisual.GetComponent<SpriteRenderer>().color = Color.red;
+                bikeVisual.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
@@ -118,16 +127,19 @@ public class PlayerScript : MonoBehaviour
                 targetPitch = accelerating ? accelPitch : idlePitch;
             }
         engineSource.pitch = Mathf.Lerp(engineSource.pitch, targetPitch, Time.deltaTime * pitchChangeSpeed);
+
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        mover.linearVelocity = speed * new Vector2(movement.x*4,movement.y*3);
+        mover.linearVelocity = speed * new Vector2(movement.x*speedForward,movement.y*speedTurning);
         playerVisual.SetFloat("SpeedY", mover.linearVelocityY);
+        bikeVisual.SetFloat("SpeedY", mover.linearVelocityY);
 
-        if(height!=0)fallingVelocity += -9.81f * Time.deltaTime;
+        if(height!=0)fallingVelocity += gravity * Time.deltaTime;
         height = Mathf.Clamp(height+fallingVelocity*Time.deltaTime,0,15);
         playerVisual.SetFloat("Height", height);
+        bikeVisual.SetFloat("Height", height);
 
         if (fuel == 0)
         {
@@ -166,6 +178,7 @@ public class PlayerScript : MonoBehaviour
             accelerating = false;
             boostTrail.Stop();
             playerVisual.GetComponent<SpriteRenderer>().color = Color.white;
+            bikeVisual.GetComponent<SpriteRenderer>().color = Color.white;
             Time.timeScale = 1;
         }
     }
@@ -219,6 +232,7 @@ public class PlayerScript : MonoBehaviour
         leftBike.fuel = fuel-3f/15f;
 
         playerVisual.SetTrigger("Hop");
+        bikeVisual.SetTrigger("Hop");
         fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
         float timer = 0;
         Vector3 og = transform.position;
@@ -234,6 +248,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = hopTo.transform.position;
         fuel = hopTo.GetComponent<BikeScript>().fuel;
         currentBike = hopTo.GetComponent<BikeScript>().type;
+        bikeVisual.runtimeAnimatorController = currentBike.visual;
         Destroy(hopTo.gameObject);
         trickBoost += .4f;
         engineSource.Play();
