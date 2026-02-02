@@ -45,8 +45,8 @@ public class ProgressBar : MonoBehaviour
     IEnumerator NextLevel()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
-        yield return StartCoroutine(screenFade.FadeIn());
-        SceneManager.LoadScene(currentScene++);
+        yield return null;  //StartCoroutine(screenFade.FadeIn()); The screenfade variable isn't  set
+        SceneManager.LoadScene(currentScene+1);
     }
 }
 

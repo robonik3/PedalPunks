@@ -36,6 +36,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Animator bikeVisual;
     [SerializeField] private Transform shadow;
     [SerializeField] private BikeType currentBike;
+    [SerializeField] private CharacterSelect character;
     public AudioSource engineSource;
     public AudioSource hitSoundEffect;
 
@@ -67,6 +68,19 @@ public class PlayerScript : MonoBehaviour
         mover = GetComponent<Rigidbody2D>();
         screenFade = FindFirstObjectByType<FadeScript>();
 
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        if (data != null)
+        {
+            PlayerType c = character.characterList[data.selectedCharacter];
+
+            playerVisual.runtimeAnimatorController = c.visual;
+            speedTurning = c.turningSpeed;
+            speedForward = c.forwardSpeed;
+            gravity = c.gravity;
+
+            bikeVisual.runtimeAnimatorController = character.bikeList[data.selectedBike].visual;
+        }
     }
     private void Update()
     {

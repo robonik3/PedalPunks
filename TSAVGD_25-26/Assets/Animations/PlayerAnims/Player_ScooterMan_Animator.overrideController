@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_ScooterMan_Animator
+  m_Controller: {fileID: 9100000, guid: 1480605db760a6747bc6ee4f1fadd26f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4a0b98ab8f2b2a142ae3d1d923ff5c7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: db221e38951ac2343a1fb3cf2a75f150, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d877d850be73b8340bcc8fd0119fbfb8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 30850af23e15b934181fb14fb3481171, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dfbb0157154d08544819a22c01cacad8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 786155a8bf5bfdf47b8d4c4002366d67, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e082e5f60d2ffe248ba6012ce0b8180d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 697883386236db147a175f3ceb1779c9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 924e31032901fa04d9aba4c8853ce533, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 786155a8bf5bfdf47b8d4c4002366d67, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5bc0a652f3957194e821aff800daab97, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 697883386236db147a175f3ceb1779c9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 21489549ce28fe243acac2d43d4b7e9e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aaff389441022d345a60b5f033dfd187, type: 2}

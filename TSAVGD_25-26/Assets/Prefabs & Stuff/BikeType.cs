@@ -5,4 +5,6 @@ public class BikeType : ScriptableObject
 {
     public GameObject prefab;
     public AnimatorOverrideController visual;
+    public Sprite DisplaySprite;
+    public string bikeName;
 }

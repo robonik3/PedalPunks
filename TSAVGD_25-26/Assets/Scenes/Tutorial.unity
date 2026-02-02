@@ -14230,6 +14230,7 @@ MonoBehaviour:
   bikeVisual: {fileID: 577981574}
   shadow: {fileID: 401040098}
   currentBike: {fileID: 11400000, guid: d850486f6725365469ec4b378f87d91f, type: 2}
+  character: {fileID: 2129200598}
   engineSource: {fileID: 1464258131}
   hitSoundEffect: {fileID: 1464258130}
   upperYLimit: 0
@@ -14350,6 +14351,7 @@ Transform:
   - {fileID: 401040098}
   - {fileID: 372115772}
   - {fileID: 577981576}
+  - {fileID: 2129200599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579021950
@@ -20197,6 +20199,71 @@ Transform:
   m_Children:
   - {fileID: 271078399}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2129200597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129200599}
+  - component: {fileID: 2129200598}
+  m_Layer: 3
+  m_Name: CharacterList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2129200598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129200597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e8d5801044dff408380aa232efb157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelect
+  selectedCharacter: 0
+  selectedBike: 0
+  unlockedCharacters: 010000000000
+  characterList:
+  - {fileID: 11400000, guid: 92487245ef858894586b84d30ebd93a7, type: 2}
+  - {fileID: 11400000, guid: b0e1d0412973513418a8d16bc806e53e, type: 2}
+  - {fileID: 11400000, guid: e3f3d14bdbcbf5a4c84c83de769b093d, type: 2}
+  - {fileID: 11400000, guid: 4c8aecde60dbff040828050288b054b2, type: 2}
+  - {fileID: 11400000, guid: ce62487da1a858546912ed9a42228d0f, type: 2}
+  - {fileID: 11400000, guid: 476f40fbdaaf4a046a65fe1ded65e7c2, type: 2}
+  bikeList:
+  - {fileID: 11400000, guid: d850486f6725365469ec4b378f87d91f, type: 2}
+  - {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
+  - {fileID: 11400000, guid: f15f819e999072c4f96c9aba24bacc1e, type: 2}
+  - {fileID: 11400000, guid: ca23675db048e3e42a1af45ed18fe714, type: 2}
+  - {fileID: 11400000, guid: 8fb1191015d25b640bc0478ac48a1588, type: 2}
+  - {fileID: 11400000, guid: 1b3a8cc9315e6544083a28b6822b7210, type: 2}
+  PlayerPreview: {fileID: 0}
+  BikePreview: {fileID: 0}
+  CharacterName: {fileID: 0}
+  BikeName: {fileID: 0}
+--- !u!4 &2129200599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129200597}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464258136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135200163
 GameObject:

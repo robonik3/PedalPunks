@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166c36b0128a469448aa21edd2078b37, type: 3}
+  m_Name: Player Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerType
+  visual: {fileID: 22100000, guid: 1e71c74f5f1f7234b8e1231572b79775, type: 2}
+  DisplaySprite: {fileID: -1243242081418837360, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  turningSpeed: 3
+  forwardSpeed: 4
+  gravity: -9.81
+  characterName: Biker
