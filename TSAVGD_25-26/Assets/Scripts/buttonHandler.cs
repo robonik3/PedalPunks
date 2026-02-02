@@ -31,6 +31,10 @@ public class buttonHandler : MonoBehaviour
     public void loadL2() {
          SceneManager.LoadScene("Level 2");
     }
+    public void loadL3()
+    {
+        SceneManager.LoadScene("Level 3");
+    }
     public void loadHome()
         {
             SceneManager.LoadScene("Menu");

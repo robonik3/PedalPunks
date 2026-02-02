@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class CarScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+     
         SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
         Debug.Log("Found SpriteRenderer: " + (sr != null));
         Debug.Log("Using SpriteRenderer: " + sr.name);
@@ -31,28 +33,40 @@ public class CarScript : MonoBehaviour
         }
 
         Debug.Log("Car Spawned");
-        speed = Random.Range(minSpeed, maxSpeed);
-        //Spawn
-        int randomNum = Random.Range(0,4);
-        float Yposition = 0f;
-        if(randomNum == 0)
+        if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            Yposition = -2.2f;
+            speed = Random.Range(minSpeed, maxSpeed);
+            //Spawn
+            int randomNum = Random.Range(0, 4);
+            float Yposition = 0f;
+            if (randomNum == 0) { Yposition = -2.2f; }
+            if (randomNum == 1) { Yposition = -1.2f; }
+            if (randomNum == 2) { Yposition = -0.1f; }
+            if (randomNum == 3) { Yposition = 0.8f;  }
+            transform.position = new Vector3(12f, Yposition, 0f);
         }
-        if(randomNum == 1)
+        else //level 3
         {
-            Yposition = -1.2f;
-        }
-        if(randomNum == 2)
-        {
-            Yposition = -0.1f;
-        }    
-        if(randomNum == 3)
-        {
-            Yposition = 0.8f;
+            //Spawn
+            int randomNum = Random.Range(0, 2);
+            float Yposition = 0f;
+            if (randomNum == 0)
+            {
+                Yposition = -1.2f;
+                speed = Random.Range(minSpeed, maxSpeed);
+            }
+            if (randomNum == 1)
+            {
+                Yposition = -0.1f;
+                Vector3 s = transform.localScale;
+                s.x *= -1;
+                transform.localScale = s;
+                speed = 12f;
+            }
+            transform.position = new Vector3(12f, Yposition, 0f);
         }
 
-        transform.position = new Vector3(12f,Yposition, 0f);
+
 
     }
 
