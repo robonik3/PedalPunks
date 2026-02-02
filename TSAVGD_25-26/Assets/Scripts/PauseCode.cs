@@ -11,8 +11,9 @@ public class PauseCode : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)) //might need to import a package
+        if(Input.GetKeyUp(KeyCode.P))
         {
+            Debug.Log("P Pressed");
             if(isOn)
             {
                 SetResume();
