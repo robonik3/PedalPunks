@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour
         {
             PlayerType c = character.characterList[data.selectedCharacter];
 
-            playerVisual.runtimeAnimatorController = c.visual;
+            if(c.visual!=null)playerVisual.runtimeAnimatorController = c.visual;
             speedTurning = c.turningSpeed;
             speedForward = c.forwardSpeed;
             gravity = c.gravity;
