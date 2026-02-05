@@ -13,14 +13,14 @@ public class CarScript : MonoBehaviour
     void Start()
     {
      
-        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         Debug.Log("Found SpriteRenderer: " + (sr != null));
         Debug.Log("Using SpriteRenderer: " + sr.name);
 
 
         if (sr != null && carSprites.Length > 0)
         {
-            sr.sprite = carSprites[Random.Range(0, carSprites.Length)];
+            sr.sprite = carSprites[Random.Range(0, carSprites.Length-1)];
             Debug.Log("Chosen Sprite: " + sr.sprite.name);
         }
         else if (sr == null)
