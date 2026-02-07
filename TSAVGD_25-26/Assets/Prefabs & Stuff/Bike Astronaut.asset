@@ -16,3 +16,6 @@ MonoBehaviour:
   visual: {fileID: 22100000, guid: 4cbfad3e097447843bcf6a4ec8ae782b, type: 2}
   DisplaySprite: {fileID: 7380330285767848207, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Jet Bike
+  enemyRagdoll:
+  - {fileID: -3001158560838945532, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: 1401184760482923002, guid: 460191edc41b8bf429f3db617ea40205, type: 3}

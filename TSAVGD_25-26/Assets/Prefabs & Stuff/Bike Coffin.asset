@@ -16,3 +16,6 @@ MonoBehaviour:
   visual: {fileID: 22100000, guid: aeecc8fe7998072479b20e02c4604b1c, type: 2}
   DisplaySprite: {fileID: -1664002865, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Coffin Car
+  enemyRagdoll:
+  - {fileID: -1681223397, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: 2079114254, guid: 460191edc41b8bf429f3db617ea40205, type: 3}

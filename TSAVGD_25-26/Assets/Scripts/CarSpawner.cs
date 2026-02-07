@@ -12,6 +12,6 @@ public class CarSpawner : MonoBehaviour
 
     void SpawnCar()
     {
-        Instantiate(carPrefab);
+        Instantiate(carPrefab,new Vector3(13,0,0),new Quaternion());
     }
 }

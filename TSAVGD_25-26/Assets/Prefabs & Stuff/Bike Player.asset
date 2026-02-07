@@ -16,3 +16,6 @@ MonoBehaviour:
   visual: {fileID: 22100000, guid: 18f95014806ca0043a428883bd56c7ca, type: 2}
   DisplaySprite: {fileID: 6758261476955741388, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Purple Classic
+  enemyRagdoll:
+  - {fileID: -5265430432517013370, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: -345212712661455229, guid: 460191edc41b8bf429f3db617ea40205, type: 3}

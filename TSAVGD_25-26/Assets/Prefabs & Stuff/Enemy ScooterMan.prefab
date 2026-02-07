@@ -137,6 +137,7 @@ MonoBehaviour:
   bike: {fileID: 11400000, guid: ca23675db048e3e42a1af45ed18fe714, type: 2}
   back: {fileID: 0}
   explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
+  RagdollPrefab: {fileID: 9066666420941251432, guid: ff0ebe202ed053842a17b54d7b4f567b, type: 3}
   explosion: {fileID: 4726313471812420469}
 --- !u!61 &6175914042442216245
 BoxCollider2D:

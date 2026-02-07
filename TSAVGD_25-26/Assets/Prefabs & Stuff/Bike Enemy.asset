@@ -16,3 +16,6 @@ MonoBehaviour:
   visual: {fileID: 22100000, guid: 7ce8c5a836382e94b890b205e7129493, type: 2}
   DisplaySprite: {fileID: 2561405335167054026, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Biker Bike
+  enemyRagdoll:
+  - {fileID: -569420502893754761, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: -3101810881422575322, guid: 460191edc41b8bf429f3db617ea40205, type: 3}

@@ -7,4 +7,5 @@ public class BikeType : ScriptableObject
     public AnimatorOverrideController visual;
     public Sprite DisplaySprite;
     public string bikeName;
+    public Sprite[] enemyRagdoll;
 }

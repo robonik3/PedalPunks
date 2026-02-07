@@ -16,3 +16,6 @@ MonoBehaviour:
   visual: {fileID: 22100000, guid: c6ac1ff0cc92ef84d8692aef179b3a13, type: 2}
   DisplaySprite: {fileID: 1945124724, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Glider
+  enemyRagdoll:
+  - {fileID: 1074175266, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: -1937093129, guid: 460191edc41b8bf429f3db617ea40205, type: 3}

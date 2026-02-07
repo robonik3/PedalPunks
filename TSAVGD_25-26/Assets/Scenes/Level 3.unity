@@ -8859,7 +8859,7 @@ MonoBehaviour:
     delaySpawnTime: 40
     ypos: 0
   activeEnemies: 0
-  readyToEndLevel: 1
+  readyToEndLevel: 0
   FinishLevel:
     m_PersistentCalls:
       m_Calls:

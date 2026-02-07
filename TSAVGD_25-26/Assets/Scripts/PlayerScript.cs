@@ -73,6 +73,7 @@ public class PlayerScript : MonoBehaviour
         if (data != null)
         {
             PlayerType c = character.characterList[data.selectedCharacter];
+            currentBike = character.bikeList[data.selectedCharacter];
 
             if(c.visual!=null)playerVisual.runtimeAnimatorController = c.visual;
             speedTurning = c.turningSpeed;
@@ -276,7 +277,7 @@ public class PlayerScript : MonoBehaviour
         //wait for explosion
         yield return new WaitForSeconds(0.4f);
         //Fade to black
-        yield return StartCoroutine(screenFade.FadeIn());
+        if(screenFade != null) yield return StartCoroutine(screenFade.FadeIn());
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

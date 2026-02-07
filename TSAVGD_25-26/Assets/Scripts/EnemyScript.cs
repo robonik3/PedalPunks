@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -8,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private BikeType bike;
     [SerializeField] private BoxCollider2D back;
     [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private GameObject RagdollPrefab;
     private bool crash;
     public AudioSource explosion;
 
@@ -61,6 +63,10 @@ public class EnemyScript : MonoBehaviour
     public void Shoved(float velocity)
     {
         Instantiate(bike.prefab, transform.position, new Quaternion());
+        bool above = PlayerScript.instance.transform.position.y > transform.position.y;
+        GameObject r = Instantiate(RagdollPrefab, transform.position, new Quaternion());
+        r.GetComponent<SpriteRenderer>().sprite = bike.enemyRagdoll[(above?0:1)];
+        r.GetComponent<Rigidbody2D>().linearVelocity = mover.linearVelocity / 6 + new Vector2(0, (above?-1:1)*4);
         Dead();
         //add visual of guy flying off bike using the velocity
     }
