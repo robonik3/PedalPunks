@@ -19,9 +19,12 @@ public class PotholeScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&&PlayerScript.instance.height==0)
         {
-            other.GetComponent<PlayerScript>().Die();
+            //other.GetComponent<PlayerScript>().Die();
+            PlayerScript.instance.fuel -= 3f / 15f;
+            PlayerScript.instance.ultraBoost = 0;
+            AudioPlayer.instance.Play("explosion2");
         }
         if (other.CompareTag("Bike"))
         {
@@ -29,7 +32,7 @@ public class PotholeScript : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyScript>().Explode();
+            other.GetComponent<EnemyScript>().Shoved();
         }
     }
 }

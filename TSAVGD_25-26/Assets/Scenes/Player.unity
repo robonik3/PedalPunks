@@ -379,7 +379,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 0.7, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &8565063
 Rigidbody2D:
@@ -423,6 +423,7 @@ MonoBehaviour:
   back: {fileID: 0}
   speed: 1
   height: 0
+  ultraBoost: 0
   fuel: 1
   fuelIndicator: {fileID: 673860551}
   smoke: {fileID: 1213406467}

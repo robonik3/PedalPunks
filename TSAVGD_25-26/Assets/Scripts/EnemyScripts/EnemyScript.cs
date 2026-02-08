@@ -5,13 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyScript : MonoBehaviour
 {
-    private Rigidbody2D mover;
+    public Rigidbody2D mover;
     [SerializeField] private BikeType bike;
     [SerializeField] private BoxCollider2D back;
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private GameObject RagdollPrefab;
     private bool crash;
-    public AudioSource explosion;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,7 +48,7 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            explosion.Play();
+            AudioPlayer.instance.Play("explosion3");
             Crashed();
         }
     }
@@ -60,7 +59,7 @@ public class EnemyScript : MonoBehaviour
         if (transform.position.x < -10) { Destroy(gameObject); }
 
     }
-    public void Shoved(float velocity)
+    public void Shoved()
     {
         Instantiate(bike.prefab, transform.position, new Quaternion());
         bool above = PlayerScript.instance.transform.position.y > transform.position.y;

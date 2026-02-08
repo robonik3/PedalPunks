@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     private float gravity = -9.81f;
 
     private bool accelerating;
-    private float ultraBoost;
+    public float ultraBoost;
     private float trickBoost;
 
     public float fuel=1;
@@ -206,7 +206,7 @@ public class PlayerScript : MonoBehaviour
             if(hit != null)
             {
                 hitSoundEffect.Play();
-                hit.GetComponent<EnemyScript>().Shoved(mover.linearVelocityY);
+                hit.GetComponent<EnemyScript>().Shoved();
             }
         }
     }

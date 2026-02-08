@@ -1,0 +1,162 @@
+using UnityEngine;
+
+public class AstroEnemyScript : EnemyScript
+{
+
+    private int state;
+    private float timer;
+    private float antitimer;
+    private bool playsound;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        mover = GetComponent<Rigidbody2D>();
+
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        switch (state)
+        {
+            case 0:
+                Drive();
+                break;
+            case 1:
+                Target();
+                break;
+            case 2:
+                PrepareJet();
+                break;
+            case 3:
+                BlastOff();
+                break;
+            case 4:
+                Avoidance();
+                break;
+        }
+        Debug.Log("Astrobro is in state: " + state.ToString());
+    }
+    void Drive()
+    {
+        if (PlayerScript.instance.transform.position.x-3 < transform.position.x)
+        {
+            mover.linearVelocityX = -1.5f;
+
+            antitimer += Time.deltaTime;
+            if (antitimer > 1)
+            {
+                antitimer = 0;
+                state = 4;
+            }
+        }
+        else
+        {
+            mover.linearVelocityX = 4;
+            if (transform.position.x > 9) { mover.linearVelocityX = -4; }
+        }
+
+        mover.linearVelocityY = 0;
+        if (Physics2D.Raycast(transform.position, Vector2.right, 6, LayerMask.GetMask("Pothole"))) 
+        {
+            mover.linearVelocityY = -2;
+        }
+
+        if(transform.position.x>-9)timer += Time.deltaTime;
+        if (timer > 1.5f)
+        {
+            timer = 0;
+            state = 1;
+        }
+    }
+    void Target()
+    {
+        if (PlayerScript.instance.transform.position.x > transform.position.x)
+        {
+            if(Mathf.Abs(PlayerScript.instance.transform.position.y-transform.position.y) > 1)
+            {
+                mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 2;
+            }
+            else { mover.linearVelocityY = 0; }
+
+            mover.linearVelocityX = -1.25f;
+            if(transform.position.x < -5f)
+            {
+                mover.linearVelocityX = -.75f;
+                timer += Time.deltaTime;
+                if (timer > .75f)
+                {
+                    playsound = true;
+                    timer = 0;
+                    state = 2;
+                    return;
+                }
+            }
+        }
+        else
+        {
+            antitimer += Time.deltaTime;
+            if (antitimer > .75f)
+            {
+                antitimer = 0;
+                state = 0;
+                return;
+            }
+        }
+    }
+    void PrepareJet()
+    {
+        timer += Time.deltaTime;
+        mover.linearVelocityX = -.25f;
+        mover.linearVelocityY = 0;
+        if (playsound) { playsound= false; AudioPlayer.instance.Play("JetCharge"); }
+
+        if (timer > 1.5f)
+        {
+            playsound = true;
+            timer = 0;
+            state = 3;
+            return;
+        }
+    }
+    void BlastOff()
+    {
+        mover.linearVelocityX = 8;
+        if (Physics2D.OverlapCircle(transform.position, .35f, LayerMask.GetMask("Player")))
+        {
+            PlayerScript.instance.Die();
+            state = 0;
+            return;
+        }
+
+        if (playsound) { playsound = false; AudioPlayer.instance.Play("BlastOff"); }
+
+        if (transform.position.x > 8)
+        {
+            playsound = true;
+            state = 4;
+            return;
+        }
+    }
+    void Avoidance()
+    {
+        if (PlayerScript.instance.transform.position.y > transform.position.y) 
+        { 
+            mover.linearVelocityY = -2; 
+        }
+        else
+        {
+            mover.linearVelocityY = 2;
+        }
+        mover.linearVelocityX = -2f;
+
+        timer += Time.deltaTime;
+
+        if (timer > 1)
+        {
+            timer = 0;
+            state = 0;
+            return;
+        }
+    }
+}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 297123400486526678}
   - component: {fileID: 8352104313633353385}
   - component: {fileID: 5564671207611767717}
-  - component: {fileID: 5458823244085929958}
+  - component: {fileID: 3076575908347370478}
   - component: {fileID: 6175914042442216245}
   - component: {fileID: 4726313471812420469}
   m_Layer: 6
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5458823244085929958
+--- !u!114 &3076575908347370478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,14 +131,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9066666420941251432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc48f2b015de424a92dddcca5faf1f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 50bab4d2c49803c4984ef99f1caee6ae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::AstroEnemyScript
+  mover: {fileID: 0}
   bike: {fileID: 11400000, guid: f15f819e999072c4f96c9aba24bacc1e, type: 2}
   back: {fileID: 0}
   explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
   RagdollPrefab: {fileID: 9066666420941251432, guid: ff0ebe202ed053842a17b54d7b4f567b, type: 3}
-  explosion: {fileID: 4726313471812420469}
 --- !u!61 &6175914042442216245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7797171126830335069
 Transform:
   m_ObjectHideFlags: 0
@@ -308,8 +308,8 @@ Transform:
   m_GameObject: {fileID: 9194137634271238854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.47, z: 0}
-  m_LocalScale: {x: 1.0899999, y: 0.19999999, z: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 297123400486526678}
