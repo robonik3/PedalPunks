@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
         if (data != null)
         {
             PlayerType c = character.characterList[data.selectedCharacter];
-            currentBike = character.bikeList[data.selectedCharacter];
+            currentBike = character.bikeList[data.selectedBike];
 
             if(c.visual!=null)playerVisual.runtimeAnimatorController = c.visual;
             speedTurning = c.turningSpeed;

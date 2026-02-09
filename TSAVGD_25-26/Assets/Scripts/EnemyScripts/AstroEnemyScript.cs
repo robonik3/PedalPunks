@@ -35,7 +35,7 @@ public class AstroEnemyScript : EnemyScript
                 Avoidance();
                 break;
         }
-        Debug.Log("Astrobro is in state: " + state.ToString());
+
     }
     void Drive()
     {
@@ -73,7 +73,7 @@ public class AstroEnemyScript : EnemyScript
     {
         if (PlayerScript.instance.transform.position.x > transform.position.x)
         {
-            if(Mathf.Abs(PlayerScript.instance.transform.position.y-transform.position.y) > 1)
+            if(Mathf.Abs(PlayerScript.instance.transform.position.y-transform.position.y) > .7f)
             {
                 mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 2;
             }

@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 297123400486526678}
   - component: {fileID: 8352104313633353385}
   - component: {fileID: 5564671207611767717}
-  - component: {fileID: 5458823244085929958}
+  - component: {fileID: 5793023974052912426}
   - component: {fileID: 7683136961449159710}
   - component: {fileID: 2485449919195954316}
   - component: {fileID: 1307650375562731226}
@@ -213,7 +213,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5458823244085929958
+--- !u!114 &5793023974052912426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,9 +222,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9066666420941251432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc48f2b015de424a92dddcca5faf1f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 162b53f0bd6aa454d838abd8c9c5a143, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::BikerEnemyScript
   mover: {fileID: 0}
   bike: {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
   back: {fileID: 0}
