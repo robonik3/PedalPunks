@@ -57,7 +57,7 @@ public class AstroEnemyScript : EnemyScript
         }
 
         mover.linearVelocityY = 0;
-        if (Physics2D.Raycast(transform.position, Vector2.right, 6, LayerMask.GetMask("Pothole"))) 
+        if (Physics2D.BoxCast(transform.position, new Vector2(1, 1.3f), 0, Vector2.right, 6, LayerMask.GetMask("Pothole"))) 
         {
             mover.linearVelocityY = -2;
         }
@@ -87,6 +87,7 @@ public class AstroEnemyScript : EnemyScript
                 if (timer > .75f)
                 {
                     playsound = true;
+                    GetComponent<SpriteRenderer>().color = Color.red;
                     timer = 0;
                     state = 2;
                     return;
@@ -106,6 +107,7 @@ public class AstroEnemyScript : EnemyScript
     }
     void PrepareJet()
     {
+        
         timer += Time.deltaTime;
         mover.linearVelocityX = -.25f;
         mover.linearVelocityY = 0;
@@ -134,6 +136,7 @@ public class AstroEnemyScript : EnemyScript
         if (transform.position.x > 8)
         {
             playsound = true;
+            GetComponent<SpriteRenderer>().color = Color.white;
             state = 4;
             return;
         }

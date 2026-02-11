@@ -1042,8 +1042,8 @@ TextureImporter:
       name: FullEnemy
       rect:
         serializedVersion: 2
-        x: 0
-        y: 112
+        x: 208
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1064,8 +1064,8 @@ TextureImporter:
       name: FullAstronaut
       rect:
         serializedVersion: 2
-        x: 16
-        y: 112
+        x: 208
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -1086,8 +1086,8 @@ TextureImporter:
       name: FullVampire
       rect:
         serializedVersion: 2
-        x: 32
-        y: 112
+        x: 208
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1108,8 +1108,8 @@ TextureImporter:
       name: FullScooterMan
       rect:
         serializedVersion: 2
-        x: 48
-        y: 112
+        x: 208
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1130,8 +1130,8 @@ TextureImporter:
       name: FullAviator
       rect:
         serializedVersion: 2
-        x: 64
-        y: 112
+        x: 208
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1171,15 +1171,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clown
+      name: Clown_0
       rect:
         serializedVersion: 2
         x: 112
-        y: 112
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1285,7 +1285,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 112
         width: 32
         height: 16
       alignment: 9
@@ -1307,7 +1307,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -1328,8 +1328,8 @@ TextureImporter:
       name: Skull_Rider
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 208
+        y: 160
         width: 32
         height: 16
       alignment: 0
@@ -1350,8 +1350,8 @@ TextureImporter:
       name: Carb
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
+        x: 112
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -1372,8 +1372,8 @@ TextureImporter:
       name: Tony_Pineapple
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 112
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -1394,8 +1394,8 @@ TextureImporter:
       name: Tony_Classic_BikerFit
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
+        x: 112
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -1416,8 +1416,8 @@ TextureImporter:
       name: RockGarbage
       rect:
         serializedVersion: 2
-        x: 176
-        y: 96
+        x: 112
+        y: 144
         width: 16
         height: 16
       alignment: 0
@@ -1439,7 +1439,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1461,7 +1461,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1483,7 +1483,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1505,7 +1505,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1527,7 +1527,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1549,7 +1549,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1571,7 +1571,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1593,7 +1593,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1615,7 +1615,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1637,7 +1637,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1659,7 +1659,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1681,7 +1681,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1703,7 +1703,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1725,7 +1725,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1747,7 +1747,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1769,7 +1769,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1791,7 +1791,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1813,7 +1813,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1835,7 +1835,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1857,7 +1857,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1879,7 +1879,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1901,7 +1901,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1923,7 +1923,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1945,7 +1945,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -1967,7 +1967,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -1989,7 +1989,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2011,7 +2011,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2033,7 +2033,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2055,7 +2055,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2077,7 +2077,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2099,7 +2099,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2121,7 +2121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2143,7 +2143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2165,7 +2165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2187,7 +2187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2209,7 +2209,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -2231,7 +2231,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2253,7 +2253,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2275,7 +2275,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2297,7 +2297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2319,7 +2319,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2341,7 +2341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2363,7 +2363,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2385,7 +2385,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2407,7 +2407,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2429,7 +2429,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2451,7 +2451,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2473,7 +2473,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -2495,7 +2495,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2517,7 +2517,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2539,7 +2539,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2561,7 +2561,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2583,7 +2583,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2605,7 +2605,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2627,7 +2627,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2649,7 +2649,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2671,7 +2671,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2693,7 +2693,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2715,7 +2715,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2737,7 +2737,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -2908,6 +2908,666 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Clown_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53ad953572871245bf6418487d525f8
+      internalID: -666199193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clown_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bea7a41ec4b1843b029bdd1241870b
+      internalID: -1150085123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clown_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017ae9cb22e0028449e36ef7b09013a6
+      internalID: 1978287949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clown_Fall_Up
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a3bf6b980ca76478fde901aba32d6f
+      internalID: -1986225883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clown_Fall_Down
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e8bf324a106ea48bbd096b362557ef
+      internalID: -1706543554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAstronaut_Jet
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 32
+        height: 16
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13c3002ef25ba74cb68b929c1dc53ca
+      internalID: 293468232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stunned_ScooterMan_0
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2057dd65c048eed4899effe00d64a0c1
+      internalID: -1287944162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stunned_ScooterMan_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e1c35018dd01543966536b70a2c3a8
+      internalID: -328028214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stunned_ScooterMan_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e3342e91501cc4ba9d29ab05d75aff
+      internalID: 188854059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dazed_ScooterMan
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e158f3f28dd1f0c42a72eb3c6f7c54ad
+      internalID: -1367334686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa9ca180c9d71940b89d3c3f77221d0
+      internalID: -713423352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullEnemy_Turn_Up
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a0e0deb13924440a8c1f484f87fc27
+      internalID: 379778561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullEnemy_Turn_Down
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a191af99102aa4492d24817eb58eb2
+      internalID: 2139272161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullEnemy_Wheelie
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8847d9266bfe6744a101db446aa22a4
+      internalID: -338585697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullScooterMan_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f19f4c92d00c7144a8833361ba26784
+      internalID: -563149943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullScooterMan_Turn_Up
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7396802c79740bd4aa34b94578b69c91
+      internalID: -2072075447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullScooterMan_Turn_Down
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc33751cefe23554b9ffcce00c042acc
+      internalID: -1229287142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullScooterMan_Wheelie
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a0f0080ab17014b9373f289298a0a5
+      internalID: -1854237510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAstronaut_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e33ec0dfdd94cc4488196c25b1201d0
+      internalID: 24362085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAstronaut_Turn_Up
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7238998d8cdcb9d45b88c612cf4d3a77
+      internalID: 334851910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAstronaut_Turn_Down
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e685b124d666d604d91e80e037079eb2
+      internalID: -1417395383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAstronaut_Wheelie
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2cddd75146fa7478ac2dd150cc35fc
+      internalID: -76255062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullVampire_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cbd158e380c324a90b1696e3a94cb6
+      internalID: 1069308537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullVampire_Turn_Up
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f57ab272c73f146b0f5416fb962341
+      internalID: -1359116339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullVampire_Turn_Down
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7618b46797e9848ac80da783f5db73
+      internalID: 1387752658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullVampire_Wheelie
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c60b4db168cae740b847b32309d81e0
+      internalID: -394529819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAviator_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe925024ba0710478e2ecd657b30a9d
+      internalID: -1215854912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAviator_Turn_Up
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c2da634f993c94ba3d2b14696acc5c
+      internalID: -1541446445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAviator_Turn_Down
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29642afb3a744e347a8bc09e1bc022b9
+      internalID: -1619721893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullAviator_Wheelie
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e36a54ae2953344b24b90c2f2ec21e
+      internalID: -995105871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2924,7 +3584,6 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      25-26TSA_Character 1_0: -1640668243
       25-26TSA_Character 1_20: 1766497094910421472
       25-26TSA_Character 1_29: 1203983794696154055
       25-26TSA_Character 1_31: 7665162462975111083
@@ -2979,7 +3638,12 @@ TextureImporter:
       Bike_Turn_Up: 6147795136048602572
       Bike_Wheelie: -1846857038420601123
       Carb: -5156497839102137259
-      Clown: -377673984438532922
+      Clown_0: -377673984438532922
+      Clown_1: -1640668243
+      Clown_2: -1150085123
+      Clown_3: 1978287949
+      Clown_Fall_Down: -1706543554
+      Clown_Fall_Up: -1986225883
       Construction_Enemy: 1029868438462627028
       Construction_Fall_Down: 1592488124
       Construction_Fall_Up: 566634660
@@ -2988,6 +3652,7 @@ TextureImporter:
       Daze_1: -857927915
       Daze_2: 1968841147
       Daze_3: 597273151
+      Dazed_ScooterMan: -1367334686
       Enemy_Fall_Down: -569420502893754761
       Enemy_Fall_Up: -3101810881422575322
       Enemy_Idle: -9201079099385947889
@@ -2999,9 +3664,26 @@ TextureImporter:
       Excitebike_Small: 4573934426811905376
       Friendly_Purple_Man: 1213911109021764236
       FullAstronaut: 4545456212780008495
+      FullAstronaut_1: 24362085
+      FullAstronaut_Jet: 293468232
+      FullAstronaut_Turn_Down: -1417395383
+      FullAstronaut_Turn_Up: 334851910
+      FullAstronaut_Wheelie: -76255062
       FullAviator: -4937845534508955007
+      FullAviator_1: -1215854912
+      FullAviator_Turn_Down: -1619721893
+      FullAviator_Turn_Up: -1541446445
+      FullAviator_Wheelie: -995105871
       FullEnemy: 8871602701930097352
+      FullEnemy_1: -713423352
+      FullEnemy_Turn_Down: 2139272161
+      FullEnemy_Turn_Up: 379778561
+      FullEnemy_Wheelie: -338585697
       FullScooterMan: 2431947898800767027
+      FullScooterMan_1: -563149943
+      FullScooterMan_Turn_Down: -1229287142
+      FullScooterMan_Turn_Up: -2072075447
+      FullScooterMan_Wheelie: -1854237510
       FullTony_Idle_0: -6857502381429264579
       FullTony_Idle_1: 2812803397585075574
       FullTony_Shove_Down: 4331332368406644733
@@ -3010,6 +3692,10 @@ TextureImporter:
       FullTony_Turn_Up: 2283080654014696367
       FullTony_Wheelie: 3210086733803188710
       FullVampire: 9205138415469953057
+      FullVampire_1: 1069308537
+      FullVampire_Turn_Down: 1387752658
+      FullVampire_Turn_Up: -1359116339
+      FullVampire_Wheelie: -394529819
       Matteo: -3741580259706689088
       Mini_man: 1553600546531049077
       PINEAPPLE: 2866038845795993026
@@ -3023,6 +3709,9 @@ TextureImporter:
       ScooterMan_Turn_Up: -787880179344458946
       ScooterMan_Wheelie: 8741912810396860045
       Skull_Rider: 7309932096066727372
+      Stunned_ScooterMan_0: -1287944162
+      Stunned_ScooterMan_1: -328028214
+      Stunned_ScooterMan_2: 188854059
       Tony_Classic: 489988892878977257
       Tony_Classic_BikerFit: 8223002940290092442
       Tony_Fall_Down: -5265430432517013370

@@ -50,7 +50,7 @@ public class BikerEnemyScript : EnemyScript
         }
 
         mover.linearVelocityY = 0;
-        if (Physics2D.Raycast(transform.position, Vector2.right, 6, LayerMask.GetMask("Pothole"))) 
+        if (Physics2D.BoxCast(transform.position, new Vector2(1,1.3f), 0, Vector2.right, 6, LayerMask.GetMask("Pothole"))) 
         {
             mover.linearVelocityY = -3;
         }
@@ -84,6 +84,7 @@ public class BikerEnemyScript : EnemyScript
         {
             playsound = true;
             goBackwards = false;
+            GetComponent<Animator>().Play("Wheelie");
             timer = 0;
             state = 2;
             return;
@@ -103,7 +104,7 @@ public class BikerEnemyScript : EnemyScript
         {
             if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)
                 {
-                    mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * .75f;
+                    mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 1f;
 
                     mover.linearVelocityX = -.75f;
 
@@ -116,7 +117,7 @@ public class BikerEnemyScript : EnemyScript
         }
         else { mover.linearVelocityY = 0; }
 
-        if (Physics2D.OverlapCircle(transform.position - Vector3.left * .5f, .15f, LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(transform.position + Vector3.left * .35f, .15f, LayerMask.GetMask("Player")))
         {
             PlayerScript.instance.Die();
             state = 0;
@@ -129,6 +130,7 @@ public class BikerEnemyScript : EnemyScript
         if (timer > 1.5f)
         {
             GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<Animator>().Play("Drive");
 
             playsound = true;
             timer = 0;

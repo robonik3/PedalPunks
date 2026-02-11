@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
           timer += Time.deltaTime;
         if(activeEnemies < 1)
         {
-            if(5 < timer && timer < 120)
+            if(10 < timer && timer < 120)
             {
                 timer += 5;
             }

@@ -64,6 +64,21 @@ public class AudioPlayer : MonoBehaviour
         else { Debug.LogError("Could not find audioclip by name of: " + clipName); }
 
     }
+    public void StopSound(string clipName)
+    {
+        if (clips.TryGetValue(clipName, out AudioClip value))
+        {
+            for (int i = 0; i < pool.Count; i++)
+            {
+                if (pool[i].clip == value)
+                {
+                    pool[i].Stop();
+                }
+            }
+        }
+        else { Debug.LogError("Could not find audioclip by name of: " + clipName); }
+
+    }
     public void Click(string clipName)
     {
         AudioSource source;

@@ -6,10 +6,9 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public Rigidbody2D mover;
-    [SerializeField] private BikeType bike;
-    [SerializeField] private BoxCollider2D back;
-    [SerializeField] private GameObject explosionPrefab;
-    [SerializeField] private GameObject RagdollPrefab;
+    public BikeType bike;
+    public GameObject explosionPrefab;
+    public GameObject RagdollPrefab;
     private bool crash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -59,7 +58,9 @@ public class EnemyScript : MonoBehaviour
         if (transform.position.x < -10) { Destroy(gameObject); }
 
     }
-    public void Shoved()
+
+    //the keyword VIRTUAL allows for optional override of code in scripts that inhereit from this one
+    public virtual void Shoved()
     {
         Instantiate(bike.prefab, transform.position, new Quaternion());
         bool above = PlayerScript.instance.transform.position.y > transform.position.y;
@@ -67,9 +68,8 @@ public class EnemyScript : MonoBehaviour
         r.GetComponent<SpriteRenderer>().sprite = bike.enemyRagdoll[(above?0:1)];
         r.GetComponent<Rigidbody2D>().linearVelocity = mover.linearVelocity / 6 + new Vector2(0, (above?-1:1)*4);
         Dead();
-        //add visual of guy flying off bike using the velocity
     }
-    void Dead()
+    public void Dead()
     {
         EnemySpawner.instance.activeEnemies--;
         Destroy(gameObject);
