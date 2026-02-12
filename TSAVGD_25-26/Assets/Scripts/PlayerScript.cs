@@ -14,6 +14,8 @@ public class PlayerScript : MonoBehaviour
     private Vector2 movement;
     private float shoveDir;
 
+    private float timer = 0;
+    private bool cooldown = true;
     public float speed=1;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
@@ -85,7 +87,11 @@ public class PlayerScript : MonoBehaviour
     }
     private void Update()
     {
-
+        if (!cooldown)
+        {
+            Timer();
+        }
+        Debug.Log(timer);
         fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
     
@@ -164,7 +170,7 @@ public class PlayerScript : MonoBehaviour
             if (!smoke.isPlaying) { smoke.Play(); }
 
             if (transform.position.x < -15) { 
-                Debug.Log("You LOSE!!!"); 
+                //Debug.Log("You LOSE!!!"); 
                 Time.timeScale = 0f;
                 SceneManager.LoadScene("GameOver");
                 }
@@ -199,8 +205,9 @@ public class PlayerScript : MonoBehaviour
     }
     public void AttackInput(InputAction.CallbackContext context)
     {
-        if (context.performed) 
+        if (context.performed && cooldown) 
         {
+            Debug.Log("Attack");
             playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
             Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
             if(hit != null)
@@ -208,7 +215,22 @@ public class PlayerScript : MonoBehaviour
                 hitSoundEffect.Play();
                 hit.GetComponent<EnemyScript>().Shoved();
             }
+            cooldown = false;
         }
+    }
+    public void Timer()
+    {
+        Debug.Log("Timer");
+
+        if (timer<1.5) {
+        timer += Time.deltaTime;
+            //Debug.Log("counting down");      
+        } else {
+        //  Debug.Log("Done");
+            timer = 0;
+             cooldown = true;
+        }
+        
     }
     public void TrickInput(InputAction.CallbackContext context)
     {
