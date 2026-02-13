@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player Vampire
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   visual: {fileID: 22100000, guid: 52b89c50ee6d5904a8c39638ea30bb83, type: 2}
+  visualT: {fileID: 22100000, guid: e3947341d33afbd47ab71ff513e066e8, type: 2}
   DisplaySprite: {fileID: 4591411795230278903, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4

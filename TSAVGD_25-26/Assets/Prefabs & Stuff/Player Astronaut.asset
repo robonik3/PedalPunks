@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player Astronaut
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   visual: {fileID: 22100000, guid: 4243562d889d79242ac3c68168db3c04, type: 2}
+  visualT: {fileID: 22100000, guid: 7027cea1150cd8d4b915b1a6a03f2a21, type: 2}
   DisplaySprite: {fileID: 3351976550200448399, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4

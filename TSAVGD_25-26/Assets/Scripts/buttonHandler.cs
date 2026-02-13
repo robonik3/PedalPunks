@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 
 public class buttonHandler : MonoBehaviour
 {
@@ -18,14 +18,9 @@ public class buttonHandler : MonoBehaviour
     public void loadLevels() {
             SceneManager.LoadScene("LevelSelect");
         }
-    public void loadL1() {
-        bool tutorialCompleted = PlayerPrefs.GetInt("hasPlayedTheGame", 0) == 1; // makes sure tutorial has been played
-
-        if(!tutorialCompleted)
-        {
-            SceneManager.LoadScene("Tutorial");
-        }
-        else { SceneManager.LoadScene("Level 1"); }
+    public void loadL1() 
+    {
+         SceneManager.LoadScene("Level 1");
             
     }
     public void loadL2() {
@@ -39,5 +34,19 @@ public class buttonHandler : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
-    
+    public void loadScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    public void loadSceneDelay(string sceneName)
+    {
+        IEnumerator d = Delay(sceneName);
+        StartCoroutine(d);
+    }
+    IEnumerator Delay(string sceneName)
+    {
+        yield return new WaitForSecondsRealtime(1.6f);
+        SceneManager.LoadScene(sceneName);
+
+    }
 }

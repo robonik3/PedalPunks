@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Timeline;
+
 public class CharacterSelect : MonoBehaviour
 {
     public int selectedCharacter;
@@ -14,6 +16,8 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private Image BikePreview;
     [SerializeField] private TextMeshProUGUI CharacterName;
     [SerializeField] private TextMeshProUGUI BikeName;
+
+    [SerializeField] private bool dontLoad;
     // 0:Tony / 1:Enemy / 2:Astronaut / 3:ScooterMan / 4:Vampire / 5:Aviator
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,8 +27,12 @@ public class CharacterSelect : MonoBehaviour
         if (data != null)
         {
             data.unlockedCharacters.CopyTo(unlockedCharacters, 0);
+            if (!dontLoad)
+            {
             ChangePlayerCharacter(data.selectedCharacter);
             ChangeBike(data.selectedBike);
+            }
+
         }
 
     }
@@ -80,5 +88,24 @@ public class CharacterSelect : MonoBehaviour
         }
 
 
+    }
+    public bool UnlockNewCharacters(bool[] newUnlocks)
+    {
+        bool displayNewUnlocks=false;
+
+        for (int i=0; i < unlockedCharacters.Length; i++)
+        {
+            if ( !unlockedCharacters[i] && newUnlocks[i])
+            {
+                unlockedCharacters[i] = true;
+                displayNewUnlocks = true;
+            }
+        }
+
+        if (displayNewUnlocks)
+        {
+            SaveSystem.SavePlayer(this);
+        }
+        return displayNewUnlocks;
     }
 }

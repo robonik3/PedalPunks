@@ -58,6 +58,8 @@ public class BikerEnemyScript : EnemyScript
         if(transform.position.x>-9)timer += Time.deltaTime;
         if (timer > random)
         {
+            GetComponent<Animator>().Play("Wheelie");
+
             timer = 0;
             state = 1;
         }
@@ -84,7 +86,6 @@ public class BikerEnemyScript : EnemyScript
         {
             playsound = true;
             goBackwards = false;
-            GetComponent<Animator>().Play("Wheelie");
             timer = 0;
             state = 2;
             return;

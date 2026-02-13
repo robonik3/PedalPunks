@@ -21,7 +21,7 @@ public class BikeScript : MonoBehaviour
     void FixedUpdate()
     {
         mover.AddForce(Vector2.left);
-        if (transform.position.x < -10)
+        if (transform.position.x < -15)
         {
             Destroy(gameObject);
         }
@@ -32,7 +32,7 @@ public class BikeScript : MonoBehaviour
     }
     IEnumerator ExplodeSequence()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         yield return null;
         Destroy(gameObject);

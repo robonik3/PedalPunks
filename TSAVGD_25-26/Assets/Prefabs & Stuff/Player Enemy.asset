@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player Enemy
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   visual: {fileID: 22100000, guid: 1e71c74f5f1f7234b8e1231572b79775, type: 2}
+  visualT: {fileID: 22100000, guid: b5b6484afcdca4b4abc967b44503bd5c, type: 2}
   DisplaySprite: {fileID: -1243242081418837360, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4

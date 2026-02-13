@@ -113,7 +113,10 @@ public class ScooterEnemyScript : EnemyScript
             mover.linearVelocityY = 4;
 
         }
- 
+        if (Physics2D.OverlapCircle(transform.position, .2f, LayerMask.GetMask("Player")))
+        {
+            timer-=Time.deltaTime;
+        }
         if (timer > .75f)
         {
             playsound = true;
@@ -205,6 +208,8 @@ public class ScooterEnemyScript : EnemyScript
         timer += Time.deltaTime;
         if (timer > 1.1f&&state!=5)
         {
+            GetComponent<Animator>().Play("Drive");
+
             state = 0;
             stun = 0;
         }
@@ -219,6 +224,7 @@ public class ScooterEnemyScript : EnemyScript
     }
     public override void Shoved()
     {
+        PlayerScript.instance.cooldown = 0;
         if (stun==5)
         {
             if (timer < .5f)

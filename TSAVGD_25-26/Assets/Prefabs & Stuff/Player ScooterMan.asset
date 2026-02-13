@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player ScooterMan
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   visual: {fileID: 22100000, guid: 0d2faef1b39a5084b9eeb0eec6484daf, type: 2}
+  visualT: {fileID: 22100000, guid: 85f98be85b9316b4fa9ea6bdd6fcbbe8, type: 2}
   DisplaySprite: {fileID: 6235306588036337682, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4

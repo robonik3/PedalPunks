@@ -16,8 +16,6 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] private GameObject progressReminderText;
     [SerializeField] private GameObject goodLuckText;
 
-    private bool skipped = false;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +32,6 @@ public class TutorialHandler : MonoBehaviour
 
     void SkipTutorial()
     {
-        skipped = true;
 
         StopAllCoroutines();
 
@@ -45,11 +42,6 @@ public class TutorialHandler : MonoBehaviour
     {
         yield return StartCoroutine(Tutorial());
 
-        yield return new WaitForSeconds(10f);
-        PlayerPrefs.SetInt("hasPlayedTheGame", 1);
-        PlayerPrefs.Save();
-
-        SceneManager.LoadScene("Level 1");
     }
     IEnumerator Tutorial()
     {

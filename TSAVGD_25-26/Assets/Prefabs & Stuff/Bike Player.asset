@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BikeType
   prefab: {fileID: 6818917336632415414, guid: a5c67293ffb2bd6438680eda1c461446, type: 3}
   visual: {fileID: 22100000, guid: 18f95014806ca0043a428883bd56c7ca, type: 2}
+  visualT: {fileID: 22100000, guid: 96509bcf7d9feb340a7d897206c1f8a8, type: 2}
   DisplaySprite: {fileID: 6758261476955741388, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   bikeName: Purple Classic
   enemyRagdoll:

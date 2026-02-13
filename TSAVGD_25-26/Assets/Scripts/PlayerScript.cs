@@ -13,9 +13,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private BoxCollider2D back;
     private Vector2 movement;
     private float shoveDir;
+    public float cooldown;
 
-    private float timer = 0;
-    private bool cooldown = true;
     public float speed=1;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
@@ -87,11 +86,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void Update()
     {
-        if (!cooldown)
-        {
-            Timer();
-        }
-        Debug.Log(timer);
+        cooldown = Mathf.Clamp(cooldown -= Time.deltaTime, 0, .5f);
         fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
     
@@ -205,33 +200,26 @@ public class PlayerScript : MonoBehaviour
     }
     public void AttackInput(InputAction.CallbackContext context)
     {
-        if (context.performed && cooldown) 
-        {
+        if (context.performed && cooldown==0) 
+        {            
+
             Debug.Log("Attack");
             playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
             Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
             if(hit != null)
-            {
+            {   
+                cooldown = .5f;
                 hitSoundEffect.Play();
                 hit.GetComponent<EnemyScript>().Shoved();
+                if(TryGetComponent(out ScooterEnemyScript s))
+                {
+                    cooldown = .1f;
+                }
             }
-            cooldown = false;
-        }
-    }
-    public void Timer()
-    {
-        Debug.Log("Timer");
 
-        if (timer<1.5) {
-        timer += Time.deltaTime;
-            //Debug.Log("counting down");      
-        } else {
-        //  Debug.Log("Done");
-            timer = 0;
-             cooldown = true;
         }
-        
     }
+
     public void TrickInput(InputAction.CallbackContext context)
     {
         if (context.ReadValueAsButton() && height == 0) 

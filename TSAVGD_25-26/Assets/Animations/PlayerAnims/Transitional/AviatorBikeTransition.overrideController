@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AviatorBikeTransition
+  m_Controller: {fileID: 9100000, guid: fef7f181a9d11a243b4002eb02eadec1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4a0b98ab8f2b2a142ae3d1d923ff5c7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 703d3c5eda04d1f4c99f1ed9fd2f875d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 21489549ce28fe243acac2d43d4b7e9e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2a8725eeebc0fa743a0a9e570ec4e536, type: 2}
