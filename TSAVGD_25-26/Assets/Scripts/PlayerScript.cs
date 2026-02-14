@@ -98,6 +98,9 @@ public class PlayerScript : MonoBehaviour
 
         playerVisual.SetBool("Accelerating", accelerating);
         bikeVisual.SetBool("Accelerating", accelerating);
+
+        if(!PauseCode.isOn)
+        {
         if(accelerating) 
         {
             ultraBoost += Time.deltaTime;
@@ -144,7 +147,7 @@ public class PlayerScript : MonoBehaviour
                 targetPitch = accelerating ? accelPitch : idlePitch;
             }
         engineSource.pitch = Mathf.Lerp(engineSource.pitch, targetPitch, Time.deltaTime * pitchChangeSpeed);
-
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -184,6 +187,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void AccelerateInput(InputAction.CallbackContext context)
     {
+        if(!PauseCode.isOn){
         if (context.ReadValueAsButton())
         {
             if (name == "Jet Bike") {
@@ -206,6 +210,7 @@ public class PlayerScript : MonoBehaviour
             playerVisual.GetComponent<SpriteRenderer>().color = Color.white;
             bikeVisual.GetComponent<SpriteRenderer>().color = Color.white;
             Time.timeScale = 1;
+        }
         }
     }
     public void AttackInput(InputAction.CallbackContext context)
