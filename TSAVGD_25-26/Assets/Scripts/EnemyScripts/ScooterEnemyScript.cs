@@ -225,7 +225,7 @@ public class ScooterEnemyScript : EnemyScript
     public override void Shoved()
     {
         PlayerScript.instance.cooldown = 0;
-        if (stun==5)
+        if (stun==2)
         {
             if (timer < .5f)
             {
@@ -243,7 +243,7 @@ public class ScooterEnemyScript : EnemyScript
         else
         {
             stun++;
-            if (stun == 4)
+            if (stun == 1)
             {
                 AudioPlayer.instance.Play("CrunchPunch");
                 AudioPlayer.instance.Play("DazedWhistle");

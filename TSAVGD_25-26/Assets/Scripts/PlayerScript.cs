@@ -13,8 +13,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private BoxCollider2D back;
     private Vector2 movement;
     private float shoveDir;
-    public float cooldown;
 
+    public float cooldown;
+    private new string name; 
     public float speed=1;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
@@ -185,8 +186,17 @@ public class PlayerScript : MonoBehaviour
     {
         if (context.ReadValueAsButton())
         {
-            accelerating = true;
-            if(height == 0) { boostTrail.Play(); };
+            if (name == "Jet Bike") {
+                Debug.Log("Astronaut");
+            } else if (name == "Scooter Bike")
+            {
+                Debug.Log("Scooter");
+            } else
+            {
+                accelerating = true;
+                if(height == 0) { boostTrail.Play(); };
+                Debug.Log(name);
+            }
             
         }
         else
@@ -201,9 +211,7 @@ public class PlayerScript : MonoBehaviour
     public void AttackInput(InputAction.CallbackContext context)
     {
         if (context.performed && cooldown==0) 
-        {            
-
-            Debug.Log("Attack");
+        {
             playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
             Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
             if(hit != null)
@@ -216,9 +224,20 @@ public class PlayerScript : MonoBehaviour
                     cooldown = .1f;
                 }
             }
-
         }
     }
+    // public void Timer()
+    // {
+
+    //     if (timer<1.5) {
+    //     timer += Time.deltaTime;
+
+    //     } else {
+
+    //         timer = 0;
+    //          cooldown = true;
+    //     }
+    // }
 
     public void TrickInput(InputAction.CallbackContext context)
     {
@@ -273,6 +292,8 @@ public class PlayerScript : MonoBehaviour
         transform.position = hopTo.transform.position;
         fuel = hopTo.GetComponent<BikeScript>().fuel;
         currentBike = hopTo.GetComponent<BikeScript>().type;
+        name = hopTo.GetComponent<BikeScript>().type.bikeName;
+        //Debug.Log(name);
         bikeVisual.runtimeAnimatorController = currentBike.visual;
         Destroy(hopTo.gameObject);
         trickBoost += .4f;
