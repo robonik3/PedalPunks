@@ -746,22 +746,22 @@ MonoBehaviour:
 
 
 
-    Programming
+    Software Engineers
 
 
 
 
 
 
-    Sprite Design
+    Sprite
+    Design
 
 
 
 
 
 
-    Soundtracks
-    & SFX
+    Soundtracks & SFX
 
 
 
@@ -778,7 +778,8 @@ MonoBehaviour:
 
 
 
-    QA Testers & Engineers
+    QA
+    Testers & Engineers
 
 
 
@@ -787,8 +788,7 @@ MonoBehaviour:
 
 
 
-    Snark
-    Studios'
+    Snark Studios'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
