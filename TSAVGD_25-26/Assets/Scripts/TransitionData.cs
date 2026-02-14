@@ -10,6 +10,7 @@ public class TransitionData : MonoBehaviour
     [SerializeField] private string fromLevel; 
     [SerializeField] private string toLevel; 
     [SerializeField] private GameObject UnlockDisplay;
+    [SerializeField] private GameObject AlternateWinText;
     public float standardTime;
     public float yourTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,10 +55,26 @@ public class TransitionData : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(.1f);
         UnlockDisplay.transform.SetParent(FindAnyObjectByType<Canvas>().transform);
+        UnlockDisplay.transform.SetAsFirstSibling();
+        AlternateWinText.transform.SetParent(FindAnyObjectByType<Canvas>().transform);
+        AlternateWinText.transform.SetAsFirstSibling();
         buttonHandler bh = FindFirstObjectByType<buttonHandler>();
         GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadSceneDelay(toLevel));
+        GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => RemoveInstance());
         bool du = FindFirstObjectByType<CharacterSelect>().UnlockNewCharacters(newUnlocks);
         yield return new WaitForSecondsRealtime(2);
-        if(du)UnlockDisplay.SetActive(true);
+        if (du) { UnlockDisplay.SetActive(true); }
+        else
+        {
+            AlternateWinText.SetActive(true);
+        }
+
+    }
+    public void RemoveInstance()
+    {
+        SceneManager.sceneLoaded -= Reload;
+
+        instance = null;
+        Destroy(gameObject);
     }
 }

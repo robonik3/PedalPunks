@@ -69,7 +69,7 @@ public class ScooterEnemyScript : EnemyScript
         {
 
             timer = 0;
-            upOrDown = (Random.Range(0,1)==0);
+            upOrDown = Random.Range(0, 2) == 0;
             state = 1;
         }
     }
@@ -98,7 +98,7 @@ public class ScooterEnemyScript : EnemyScript
         }
         else
         {
-            if (transform.position.y > -4)
+            if (transform.position.y > -2)
             {
                 mover.linearVelocityY = -4;
             }

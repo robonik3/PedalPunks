@@ -36,7 +36,16 @@ public class CharacterSelect : MonoBehaviour
         }
 
     }
-
+    public void FactoryReset()
+    {
+        for(int i = 0; i < unlockedCharacters.Length; i++)
+        {
+            unlockedCharacters[i] = false;
+        }
+        unlockedCharacters[0] = true;
+        ChangePlayerCharacter(0);
+        ChangeBike(0);
+    }
     public void NextCharacter() { ChangePlayerCharacter(selectedCharacter + 1); }
     public void PreviousCharacter() { ChangePlayerCharacter(selectedCharacter - 1); } 
     public void NextBike() { ChangeBike(selectedBike + 1); }

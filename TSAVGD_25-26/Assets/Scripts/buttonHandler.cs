@@ -49,4 +49,8 @@ public class buttonHandler : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
     }
+    public void DeleteSaveData()
+    {
+        SaveSystem.DeleteSave();
+    }
 }
