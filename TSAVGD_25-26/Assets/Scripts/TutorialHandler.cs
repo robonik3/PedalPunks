@@ -38,6 +38,7 @@ public class TutorialHandler : MonoBehaviour
         StopAllCoroutines();
 
         SceneManager.LoadScene("Level 1");
+        buttonHandler.curr_level = "Level 1";
     }
 
     IEnumerator TutorialFlow() 

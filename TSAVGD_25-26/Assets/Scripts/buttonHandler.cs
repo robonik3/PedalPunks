@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class buttonHandler : MonoBehaviour
 {
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    
+    //stores current level name
+    public static string curr_level= "Level 1";
 
     // Update is called once per frame
     [SerializeField] GameObject pauseCanvas;
@@ -21,14 +24,17 @@ public class buttonHandler : MonoBehaviour
     public void loadL1() 
     {
          SceneManager.LoadScene("Level 1");
+         curr_level = "Level 1";
             
     }
     public void loadL2() {
          SceneManager.LoadScene("Level 2");
+         curr_level = "Level 2";
     }
     public void loadL3()
     {
         SceneManager.LoadScene("Level 3");
+        curr_level = "Level 3";
     }
     public void loadHome()
         {
@@ -37,6 +43,8 @@ public class buttonHandler : MonoBehaviour
     public void loadScene(string sceneName)
         {
             SceneManager.LoadScene(sceneName);
+            curr_level = sceneName;
+            Debug.Log(sceneName + " loaded");
         }
     public void loadSceneDelay(string sceneName)
     {
@@ -52,5 +60,10 @@ public class buttonHandler : MonoBehaviour
     public void DeleteSaveData()
     {
         SaveSystem.DeleteSave();
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(curr_level);
+        Debug.Log(curr_level + " Restarted");
     }
 }

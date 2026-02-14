@@ -7,7 +7,7 @@ public class PauseCode : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen;
      //public GameObject pauseButton;
-    bool isOn = false;
+    public static bool isOn = false;
 
     void Update()
     {
@@ -30,6 +30,7 @@ public class PauseCode : MonoBehaviour
         pauseScreen.SetActive(true);
         //pauseButton.SetActive(false);
         Time.timeScale = 0f; //Need to fix
+        Debug.Log("Time.deltaTime: " + Time.deltaTime);
         isOn=true;
     }
 
