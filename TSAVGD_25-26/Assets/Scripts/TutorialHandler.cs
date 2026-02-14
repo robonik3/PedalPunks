@@ -9,6 +9,8 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] private GameObject gasTank;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private GameObject progressBarManager;
+    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private GameObject enemyspawner;
 
     [SerializeField] private GameObject moveControlsText;
     [SerializeField] private GameObject attackControlsText;
@@ -53,7 +55,7 @@ public class TutorialHandler : MonoBehaviour
         while (timer<1)
         {
 
-            //PlayerScript.instance.fuel = 1; MADE COMMENT BECAUSE OF COMPILE ERROR
+            PlayerScript.instance.fuel = 1;
             if (Mathf.Abs(Input.GetAxis("Horizontal")) > .1f|| Mathf.Abs(Input.GetAxis("Vertical")) > .1f)
             {
                 press = true;
@@ -73,12 +75,13 @@ public class TutorialHandler : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
         timer = -1;
         press = false;
-
+        Instantiate(EnemyPrefab, new Vector3(-10, 0, 0), new Quaternion());
         attackControlsText.SetActive(true);
         //Wait until Player tries to take down Enemy
         while (timer < 1)
         {
-            //PlayerScript.instance.fuel = 1; MADE COMMENT BECAUSE OF COMPILE ERROR
+            PlayerScript.instance.fuel = 1;
+
             if (Input.GetKeyDown(KeyCode.C))
             {
                 press = true;
@@ -94,12 +97,18 @@ public class TutorialHandler : MonoBehaviour
         }
         attackControlsText.SetActive(false);
         yield return new WaitForSecondsRealtime(1.5f);
+        PlayerScript.instance.fuel = 1;
+
         timer = -1;
         press = false;
 
         gasReminderText.SetActive(true);
         gasTank.SetActive(true);
+        Instantiate(EnemyPrefab, new Vector3(-10, 0, 0), new Quaternion());
+
         yield return new WaitForSecondsRealtime(8);
+        Instantiate(EnemyPrefab, new Vector3(-10, 0, 0), new Quaternion());
+
         //Wait until Player tries to take down Enemy
         while (timer < 1)
         {
@@ -110,13 +119,14 @@ public class TutorialHandler : MonoBehaviour
             yield return null;
         }
         gasReminderText.SetActive(false);
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1f);
         timer = -1;
         press = false;
 
         progressReminderText.SetActive(true);
         progressBar.SetActive(true);
         progressBarManager.SetActive(true);
+        enemyspawner.SetActive(true);
         yield return new WaitForSecondsRealtime(8);
         //Wait until Player tries to take down Enemy
         while (timer < 1)

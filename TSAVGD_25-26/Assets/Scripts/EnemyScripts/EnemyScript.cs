@@ -71,7 +71,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void Dead()
     {
-        EnemySpawner.instance.activeEnemies--;
+        if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
         Destroy(gameObject);
     }
     public void Explode()
