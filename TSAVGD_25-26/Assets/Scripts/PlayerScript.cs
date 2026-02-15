@@ -10,7 +10,6 @@ using System;
 public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
-    public GameObject player;
     private Rigidbody2D mover;
 
     private Vector2 movement;
@@ -128,7 +127,7 @@ public class PlayerScript : MonoBehaviour
                 ultraBoost = Mathf.Clamp(ultraBoost - Time.deltaTime, 0, 5);
             }
             Time.timeScale += trickBoost;
-            trickBoost = Mathf.Clamp(trickBoost-Time.deltaTime,0,1);
+            trickBoost = Mathf.Clamp(trickBoost-Mathf.Clamp(Time.unscaledDeltaTime,0,Time.maximumDeltaTime),0,1);
 
             //slows the bike down if it touches grass
             if((transform.position.y >= 1.5f || transform.position.y <= -2.5f) && height == 0)
@@ -219,9 +218,10 @@ public class PlayerScript : MonoBehaviour
             mover.linearVelocityY = 0;
             yield return null;
         }
-
+        state = 5;
+        trickBoost = 1.5f;
         mover.linearVelocityX = 8;
-        player.layer = 9;
+        gameObject.layer = 9;
         timer = 0;
         AudioPlayer.instance.Play("BlastOff");
         while (timer < 1)
@@ -230,7 +230,7 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
         mover.linearVelocityX = 0;
-        player.layer = 3;
+        gameObject.layer = 3;
         state = 0;
     }
     public void MoveInput(InputAction.CallbackContext context)
@@ -259,7 +259,7 @@ public class PlayerScript : MonoBehaviour
                             abilityCooldown = 4;                            
                             //state = 5; is an arbitrary value I assigned so drive() won't run;
                             //also it runs one overlap circle to explode enemies rather than every enemy trying to use overlap circle
-                            state = 5;
+                            state = 6;
                             StartCoroutine("AstronautAbility");
                             break;
 

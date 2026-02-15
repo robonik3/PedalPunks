@@ -88,8 +88,8 @@ public class EnemyScript : MonoBehaviour
     IEnumerator ExplodeSequence()
     {
         AudioPlayer.instance.Play("explosion3");
-        EnemySpawner.instance.activeEnemies--;
-        this.gameObject.SetActive(false);
+        if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
+        gameObject.SetActive(false);
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         yield return null;
         Destroy(gameObject);
