@@ -3,24 +3,37 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System;
+using System.Numerics;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
+    public GameObject player;
     private Rigidbody2D mover;
+    private Collider2D enemy;
+    private string startBike;
+    private bool startAbility = false;
     [SerializeField] private BoxCollider2D back;
-    private Vector2 movement;
+    private UnityEngine.Vector2 movement;
     private float shoveDir;
-
+    public bool invulnerable = false;
+    private bool state = false;
+    private float timer1;
+    private float antitimer = 0;
+    private bool boosting = false;
+    private bool playsound;
     public float cooldown;
-    private new string name; 
+    private new string name = ""; 
     public float speed=1;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
 
     public float height;
+    public PlayerData data;
     private float fallingVelocity;
     private float gravity = -9.81f;
 
@@ -58,6 +71,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject visualRoot;
     public GameObject shadowSprite;
     public GameObject explosionPrefab;
+    public UnityEngine.Vector3 startTransform;
     FadeScript screenFade;
 
     private Collider2D hopTo;
@@ -76,6 +90,7 @@ public class PlayerScript : MonoBehaviour
         {
             PlayerType c = character.characterList[data.selectedCharacter];
             currentBike = character.bikeList[data.selectedBike];
+            startBike = character.bikeList[data.selectedBike].name;
 
             if(c.visual!=null)playerVisual.runtimeAnimatorController = c.visual;
             speedTurning = c.turningSpeed;
@@ -87,14 +102,15 @@ public class PlayerScript : MonoBehaviour
     }
     private void Update()
     {
+       Debug.Log(antitimer);
         cooldown = Mathf.Clamp(cooldown -= Time.deltaTime, 0, .5f);
         fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
-        fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
+        fuelIndicator.rectTransform.sizeDelta = new UnityEngine.Vector2(120, fuel*120);
     
-        playerVisual.transform.localPosition = new Vector3(0, height, 0);
-        bikeVisual.transform.localPosition = new Vector3(0, height, 0);
-        shadow.localPosition = new Vector3(0, -.5f, 0);
-        shadow.localScale = Vector3.Lerp(new Vector3(1, .2f, 1), Vector3.zero,height/5);
+        playerVisual.transform.localPosition = new UnityEngine.Vector3(0, height, 0);
+        bikeVisual.transform.localPosition = new UnityEngine.Vector3(0, height, 0);
+        shadow.localPosition = new UnityEngine.Vector3(0, -.5f, 0);
+        shadow.localScale = UnityEngine.Vector3.Lerp(new UnityEngine.Vector3(1, .2f, 1), UnityEngine.Vector3.zero,height/5);
 
         playerVisual.SetBool("Accelerating", accelerating);
         bikeVisual.SetBool("Accelerating", accelerating);
@@ -152,7 +168,54 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        mover.linearVelocity = speed * new Vector2(movement.x*speedForward,movement.y*speedTurning);
+        if (state)
+        {
+            if (antitimer<=5) {
+            antitimer += Time.deltaTime;
+            } else
+            {
+                antitimer = 0;
+                state = false;
+            }
+        }
+        if (startAbility)
+        {
+            Debug.Log(startTransform.x);
+            //Debug.Log(timer1);
+            if (timer1<1f) {
+                timer1 += Time.deltaTime;
+                mover.linearVelocityX = -.25f;
+                mover.linearVelocityY = 0;
+                if (playsound) { playsound= false; AudioPlayer.instance.Play("JetCharge"); }
+            }
+            else 
+                {
+                    if(mover.linearVelocityX != 4) {
+                        playsound = true;
+                    }
+                    mover.linearVelocityX = 4;
+
+                    player.layer = 9;
+                    
+
+                    if (playsound) { playsound = false; AudioPlayer.instance.Play("BlastOff"); }
+                    Debug.Log(transform.position);
+                    if (transform.position.x > startTransform.x + 4)
+                    {
+                        playsound = false;
+                        timer1 = 0;
+                        boosting = false;
+                       // Debug.Log("here");
+                        mover.linearVelocityX = 0;
+                        invulnerable = false;
+                        startAbility = false;
+                        player.layer = 3;
+                    }
+                }
+        }
+        if (!boosting) {
+            mover.linearVelocity = speed * new UnityEngine.Vector2(movement.x*speedForward,movement.y*speedTurning);
+        }
         playerVisual.SetFloat("SpeedY", mover.linearVelocityY);
         bikeVisual.SetFloat("SpeedY", mover.linearVelocityY);
 
@@ -165,7 +228,7 @@ public class PlayerScript : MonoBehaviour
         {
             speed = .2f;
             decay += Time.deltaTime;
-            mover.linearVelocity += Vector2.left * decay;
+            mover.linearVelocity += UnityEngine.Vector2.left * decay;
             if (!smoke.isPlaying) { smoke.Play(); }
 
             if (transform.position.x < -15) { 
@@ -176,13 +239,13 @@ public class PlayerScript : MonoBehaviour
         }
         else 
         {
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y,-5,5), transform.position.z);
+            transform.position = new UnityEngine.Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y,-5,5), transform.position.z);
             if (smoke.isPlaying) { smoke.Stop(); speed = 1; decay = 0; } 
         }
     }
     public void MoveInput(InputAction.CallbackContext context)
     {
-        movement = context.ReadValue<Vector2>().normalized;
+        movement = context.ReadValue<UnityEngine.Vector2>().normalized;
         if(movement.y != 0) { shoveDir = Mathf.Abs(movement.y) / movement.y; }
     }
     public void AccelerateInput(InputAction.CallbackContext context)
@@ -190,20 +253,32 @@ public class PlayerScript : MonoBehaviour
         if(!PauseCode.isOn){
         if (context.ReadValueAsButton())
         {
-            if (name == "Jet Bike") {
-                Debug.Log("Astronaut");
-            } else if (name == "Scooter Bike")
+            
+            if ((antitimer == 0 )&& ((name == "Jet Bike") || ((startBike == "Bike Astronaut") && String.IsNullOrWhiteSpace(name)))){
+                //Debug.Log(timer1);
+                startAbility = true;
+                boosting = true;
+                playsound = true;
+                state = true;
+                if (startTransform.x + 4 < 8) {
+                    startTransform = transform.position;
+                } else
+                        {
+                            startTransform.x = 4;
+                        }
+                }
+             else if ((name == "Scooter") || ((startBike == "Bike Scooter") && String.IsNullOrWhiteSpace(name)))
             {
                 Debug.Log("Scooter");
-            } else
+            } else if ((name == "Biker Bike") || ((startBike == "Bike Player") && String.IsNullOrWhiteSpace(name)))
             {
                 accelerating = true;
                 if(height == 0) { boostTrail.Play(); };
-                Debug.Log(name);
+                Debug.Log(startBike);
             }
-            
-        }
-        else
+        
+        
+        } else
         {
             accelerating = false;
             boostTrail.Stop();
@@ -218,7 +293,7 @@ public class PlayerScript : MonoBehaviour
         if (context.performed && cooldown==0) 
         {
             playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
-            Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
+            Collider2D hit = Physics2D.OverlapCircle(transform.position + UnityEngine.Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
             if(hit != null)
             {   
                 cooldown = .5f;
@@ -277,20 +352,20 @@ public class PlayerScript : MonoBehaviour
     IEnumerator HopToBike()
     {
         engineSource.Stop();
-        BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
+        BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new UnityEngine.Quaternion()).GetComponent<BikeScript>();
         leftBike.fuel = fuel-3f/15f;
 
         playerVisual.SetTrigger("Hop");
         bikeVisual.SetTrigger("Hop");
         fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
         float timer = 0;
-        Vector3 og = transform.position;
+        UnityEngine.Vector3 og = transform.position;
         height += 0.01f;
 
         while (height > 0)
         {
             timer += Time.deltaTime;
-            transform.position = Vector3.Lerp(og, hopTo.transform.position, timer);
+            transform.position = UnityEngine.Vector3.Lerp(og, hopTo.transform.position, timer);
             yield return null;
         }
 
@@ -309,7 +384,7 @@ public class PlayerScript : MonoBehaviour
 
         visualRoot.SetActive(false);
         shadowSprite.SetActive(false);
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(explosionPrefab, transform.position, UnityEngine.Quaternion.identity);
         //wait for explosion
         yield return new WaitForSeconds(0.4f);
         //Fade to black

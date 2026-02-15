@@ -17,6 +17,10 @@ public class AstroEnemyScript : EnemyScript
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Invulnerable")))
+            {
+                Explode();
+            }
         switch (state)
         {
             case 0:

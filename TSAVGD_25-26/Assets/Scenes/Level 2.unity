@@ -39205,10 +39205,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efdf8d5f835b014fb59c7273ffb87e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 1789864146}
   back: {fileID: 0}
+  invulnerable: 0
   cooldown: 0
   speed: 1
   height: 0
+  data:
+    unlockedCharacters: 
+    selectedCharacter: 0
+    selectedBike: 0
   ultraBoost: 0
   fuel: 1
   fuelIndicator: {fileID: 1605796030}

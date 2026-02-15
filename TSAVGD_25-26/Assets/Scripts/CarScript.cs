@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +11,7 @@ public class CarScript : MonoBehaviour
     public float minSpeed = 3f;
     public float maxSpeed = 7f;
     float speed;
+        public GameObject explosionPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,6 +77,10 @@ public class CarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Invulnerable")))
+            {
+                Explode();
+            }
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         if(transform.position.x < -12f)
@@ -82,7 +90,7 @@ public class CarScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && PlayerScript.instance.height == 0)
+        if (other.CompareTag("Player") && PlayerScript.instance.height == 0 && (other.gameObject.layer != 9))
             {
                 other.GetComponent<PlayerScript>().Die();
         }
@@ -95,5 +103,17 @@ public class CarScript : MonoBehaviour
             other.GetComponent<EnemyScript>().Explode();
         }
     }
-
+public void Explode()
+    {
+        StartCoroutine(ExplodeSequence());
+    }
+    IEnumerator ExplodeSequence()
+    {
+        AudioPlayer.instance.Play("explosion3");
+        EnemySpawner.instance.activeEnemies--;
+        this.gameObject.SetActive(false);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        yield return null;
+        Destroy(gameObject);
+    }
 }

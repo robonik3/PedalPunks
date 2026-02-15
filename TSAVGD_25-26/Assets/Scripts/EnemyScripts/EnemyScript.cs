@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -9,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     public BikeType bike;
     public GameObject explosionPrefab;
     public GameObject RagdollPrefab;
+    public PlayerScript playerScript;
     private bool crash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,8 +23,11 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //backoff = playerScript.invulnerable;
         if (!crash)
         {
+            
+
             mover.linearVelocityX = 3;
             if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1 
                 && Vector3.Distance(PlayerScript.instance.transform.position,transform.position)<3
@@ -80,6 +86,7 @@ public class EnemyScript : MonoBehaviour
     }
     IEnumerator ExplodeSequence()
     {
+        AudioPlayer.instance.Play("explosion3");
         EnemySpawner.instance.activeEnemies--;
         this.gameObject.SetActive(false);
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);

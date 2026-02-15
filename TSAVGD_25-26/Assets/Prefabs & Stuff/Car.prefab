@@ -161,6 +161,7 @@ MonoBehaviour:
   - {fileID: -248327258264204992, guid: 5cb874233d960ce4e83bbf26e87c181a, type: 3}
   minSpeed: 3
   maxSpeed: 5
+  explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
 --- !u!61 &4453111344912640329
 BoxCollider2D:
   m_ObjectHideFlags: 0
