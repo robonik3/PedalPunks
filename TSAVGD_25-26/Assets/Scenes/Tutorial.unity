@@ -15417,8 +15417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efdf8d5f835b014fb59c7273ffb87e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  back: {fileID: 0}
+  player: {fileID: 0}
+  state: 0
   cooldown: 0
+  abilityCooldown: 0
   speed: 1
   height: 0
   ultraBoost: 0
@@ -21216,8 +21218,8 @@ MonoBehaviour:
   m_text: 'Reach the end & Defeat Enemies to win!
 
 
-    Hold Z to accelerate. Be
-    careful, everything goes faster...'
+    Hold Z to use your bike''s
+    ability. Wheelies make everything faster...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

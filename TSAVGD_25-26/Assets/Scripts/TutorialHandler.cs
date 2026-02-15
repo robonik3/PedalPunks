@@ -57,7 +57,7 @@ public class TutorialHandler : MonoBehaviour
         {
 
             PlayerScript.instance.fuel = 1;
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > .1f|| Mathf.Abs(Input.GetAxis("Vertical")) > .1f)
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > .1f|| Mathf.Abs(Input.GetAxis("Vertical")) > .1f||Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.X))
             {
                 press = true;
             }

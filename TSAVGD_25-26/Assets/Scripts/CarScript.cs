@@ -77,10 +77,6 @@ public class CarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Invulnerable")))
-            {
-                Explode();
-            }
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         if(transform.position.x < -12f)
@@ -90,9 +86,17 @@ public class CarScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && PlayerScript.instance.height == 0 && (other.gameObject.layer != 9))
+        if (other.CompareTag("Player") && PlayerScript.instance.height == 0)
+        {
+            if(other.gameObject.layer == 9)
             {
-                other.GetComponent<PlayerScript>().Die();
+                Explode();
+            }
+            else
+            {
+            other.GetComponent<PlayerScript>().Die();
+            }
+
         }
         if (other.CompareTag("Bike"))
         {

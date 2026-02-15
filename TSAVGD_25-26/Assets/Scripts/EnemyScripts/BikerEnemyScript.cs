@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class BikerEnemyScript : EnemyScript
 {
-
-    private int state;
     private float timer;
     private float random;
     private bool playsound;
@@ -18,13 +16,6 @@ public class BikerEnemyScript : EnemyScript
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Invulnerable")))
-            {
-                Explode();
-            } else
-        {
-            Debug.Log("NO");
-        }
         switch (state)
         {
             case 0:

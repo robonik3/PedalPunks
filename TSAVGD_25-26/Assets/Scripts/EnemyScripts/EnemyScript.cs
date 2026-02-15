@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject RagdollPrefab;
     public PlayerScript playerScript;
+    public int state;
     private bool crash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

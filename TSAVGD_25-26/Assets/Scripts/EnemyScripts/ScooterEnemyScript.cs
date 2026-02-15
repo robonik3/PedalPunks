@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class ScooterEnemyScript : EnemyScript
 {
-
-    private int state;
     private float timer;
     private float random;
     private int stun;
@@ -20,10 +18,6 @@ public class ScooterEnemyScript : EnemyScript
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Invulnerable")))
-            {
-                Explode();
-            }
         switch (state)
         {
             case 0:
@@ -229,7 +223,7 @@ public class ScooterEnemyScript : EnemyScript
     public override void Shoved()
     {
         PlayerScript.instance.cooldown = 0;
-        if (stun==2)
+        if (stun==5)
         {
             if (timer < .5f)
             {
@@ -247,7 +241,7 @@ public class ScooterEnemyScript : EnemyScript
         else
         {
             stun++;
-            if (stun == 1)
+            if (stun == 4)
             {
                 AudioPlayer.instance.Play("CrunchPunch");
                 AudioPlayer.instance.Play("DazedWhistle");
