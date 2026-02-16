@@ -36,8 +36,8 @@ public class TransitionAnimation : MonoBehaviour
             yield return null;
         }
         
-        playeranim.Play("Wheelie");
-        bikeanim.Play("Wheelie");
+        //playeranim.Play("Wheelie");
+        //bikeanim.Play("Wheelie");
 
         yield return new WaitForSecondsRealtime(.5f);
         driver.Play("DriveOut");
