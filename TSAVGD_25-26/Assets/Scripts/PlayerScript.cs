@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
     private Rigidbody2D mover;
-
+    private bool oneTime;
     private Vector2 movement;
     private float shoveDir;
 
@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     public float abilityCooldown;
 
     public float speed=1;
+    public GameObject horn;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
 
@@ -166,6 +167,9 @@ public class PlayerScript : MonoBehaviour
             case 1:
 
                 break;
+            case 2:
+
+                break;
             case 5:
                 Collider2D hit = Physics2D.OverlapCircle(transform.position, .6f, LayerMask.GetMask("Enemy"));
                 if (hit != null)
@@ -233,6 +237,29 @@ public class PlayerScript : MonoBehaviour
         gameObject.layer = 3;
         state = 0;
     }
+    public IEnumerator ScooterAbility()
+    {
+        float timer = 0;
+        oneTime = true;
+        AudioPlayer.instance.Play("Scooter Horn");
+        while (timer < 0.25)
+        {
+        Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
+        if (stun != null)
+        {
+            if (oneTime)
+            {
+                AudioPlayer.instance.Play("DazedWhistle");  
+                oneTime = false;
+            }
+
+            stun.GetComponent<EnemyScript>().Stun();
+        }
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        timer = 0;
+    }
     public void MoveInput(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>().normalized;
@@ -264,6 +291,8 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Scooter":
+                            abilityCooldown = 2;
+                            StartCoroutine("ScooterAbility");
                             break;
 
                         case "Bike Glider":

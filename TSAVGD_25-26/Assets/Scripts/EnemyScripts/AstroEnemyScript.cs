@@ -4,6 +4,7 @@ public class AstroEnemyScript : EnemyScript
 {
     private float timer;
     private float antitimer;
+    private bool stunned = false;
     private bool playsound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +15,20 @@ public class AstroEnemyScript : EnemyScript
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {if (slide)
+        {
+
+                GetComponent<Animator>().Play("Drive");
+                GetComponent<SpriteRenderer>().color = Color.white;
+                state = 0;
+                stunned = true;
+                Debug.Log("Stunned, driving");
+
+        } else
+            {
+                Debug.Log("not stunned");
+                stunned = false;
+            }
         switch (state)
         {
             case 0:
@@ -61,7 +75,7 @@ public class AstroEnemyScript : EnemyScript
         }
 
         if(transform.position.x>-9)timer += Time.deltaTime;
-        if (timer > 1.5f)
+        if ((timer > 1.5f) && !stunned)
         {
             timer = 0;
             state = 1;
@@ -69,6 +83,10 @@ public class AstroEnemyScript : EnemyScript
     }
     void Target()
     {
+                if (stunned)
+        {
+            return;
+        }
         if (PlayerScript.instance.transform.position.x > transform.position.x)
         {
             if(Mathf.Abs(PlayerScript.instance.transform.position.y-transform.position.y) > .7f)
@@ -105,7 +123,10 @@ public class AstroEnemyScript : EnemyScript
     }
     void PrepareJet()
     {
-        
+         if (stunned)
+        {
+            return;
+        }       
         timer += Time.deltaTime;
         mover.linearVelocityX = -.25f;
         mover.linearVelocityY = 0;
@@ -121,6 +142,10 @@ public class AstroEnemyScript : EnemyScript
     }
     void BlastOff()
     {
+                if (stunned)
+        {
+            return;
+        }
         mover.linearVelocityX = 8;
         if (Physics2D.OverlapCircle(transform.position, .35f, LayerMask.GetMask("Player")))
         {
@@ -141,6 +166,10 @@ public class AstroEnemyScript : EnemyScript
     }
     void Avoidance()
     {
+                if (stunned)
+        {
+            return;
+        }
         if (PlayerScript.instance.transform.position.y > transform.position.y) 
         { 
             mover.linearVelocityY = -2; 

@@ -5,7 +5,9 @@ public class ScooterEnemyScript : EnemyScript
     private float timer;
     private float random;
     private int stun;
-    private bool slide;
+
+    private bool stunned = false;
+    private bool slide1;
     private bool playsound;
     private bool upOrDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +19,20 @@ public class ScooterEnemyScript : EnemyScript
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {if (slide)
+        {
+
+                GetComponent<Animator>().Play("Drive");
+                GetComponent<SpriteRenderer>().color = Color.white;
+                state = 0;
+                stunned = true;
+                Debug.Log("Stunned, driving");
+
+        } else
+            {
+                Debug.Log("not stunned");
+                stunned = false;
+            }
         switch (state)
         {
             case 0:
@@ -44,6 +59,7 @@ public class ScooterEnemyScript : EnemyScript
     }
     void Drive()
     {
+        
         if (PlayerScript.instance.transform.position.x < transform.position.x)
         {
             timer += Time.deltaTime;
@@ -63,7 +79,7 @@ public class ScooterEnemyScript : EnemyScript
         }
 
         if(transform.position.x>-9)timer += Time.deltaTime;
-        if (timer > random)
+        if ((timer > random) && !stunned)
         {
 
             timer = 0;
@@ -73,7 +89,10 @@ public class ScooterEnemyScript : EnemyScript
     }
     void Target()
     {
-
+        if (stunned)
+        {
+            return;
+        }
         if (Mathf.Abs(PlayerScript.instance.transform.position.x - transform.position.x) > 1)
         {
             mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 3;
@@ -126,6 +145,10 @@ public class ScooterEnemyScript : EnemyScript
     }
     void Wheelie()
     {
+                if (stunned)
+        {
+            return;
+        }
         GetComponent<SpriteRenderer>().color = Color.red;
         timer += Time.deltaTime;
         mover.linearVelocityX = .25f;
@@ -169,6 +192,10 @@ public class ScooterEnemyScript : EnemyScript
 
     void Avoidance()
     {
+                if (stunned)
+        {
+            return;
+        }
         mover.linearVelocityX = -3f;
 
         if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)
@@ -216,7 +243,7 @@ public class ScooterEnemyScript : EnemyScript
     {
         mover.AddForce(Vector2.left);
 
-        mover.linearVelocityY = timer*5*(slide?-1:1);
+        mover.linearVelocityY = timer*5*(slide1?-1:1);
         timer = Mathf.Clamp01(timer - Time.deltaTime*1.8f);
 
     }
@@ -246,7 +273,7 @@ public class ScooterEnemyScript : EnemyScript
                 AudioPlayer.instance.Play("CrunchPunch");
                 AudioPlayer.instance.Play("DazedWhistle");
                 
-                slide = (PlayerScript.instance.transform.position.y > transform.position.y);
+                slide1 = (PlayerScript.instance.transform.position.y > transform.position.y);
                 timer = 1;
                 state = 5;
                 transform.GetChild(1).gameObject.SetActive(true);

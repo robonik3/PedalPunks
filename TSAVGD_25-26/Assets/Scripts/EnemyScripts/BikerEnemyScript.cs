@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BikerEnemyScript : EnemyScript
@@ -6,18 +7,36 @@ public class BikerEnemyScript : EnemyScript
     private float random;
     private bool playsound;
     private bool goBackwards;
+    private bool stunned = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Rigidbody2D>();
         random = Random.Range(1.5f, 3.5f);
+        slide = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(stunned);
+        if (slide)
+        {
+
+                GetComponent<Animator>().Play("Drive");
+                GetComponent<SpriteRenderer>().color = Color.white;
+                state = 0;
+                stunned = true;
+                Debug.Log("Stunned, driving");
+
+        } else
+            {
+                Debug.Log("not stunned");
+                stunned = false;
+            }
         switch (state)
         {
+            
             case 0:
                 Drive();
                 break;
@@ -54,7 +73,7 @@ public class BikerEnemyScript : EnemyScript
         }
 
         if(transform.position.x>-9)timer += Time.deltaTime;
-        if (timer > random)
+        if ((timer > random) && !stunned)
         {
             GetComponent<Animator>().Play("Wheelie");
 
@@ -64,6 +83,11 @@ public class BikerEnemyScript : EnemyScript
     }
     void Target()
     {
+
+        if (stunned)
+        {
+            return;
+        }
         mover.linearVelocityX = -.75f;
         if (PlayerScript.instance.transform.position.x+2 < transform.position.x)
         {
@@ -91,6 +115,10 @@ public class BikerEnemyScript : EnemyScript
     }
     void Wheelie()
     {
+        if (stunned)
+        {
+            return;
+        }
         GetComponent<SpriteRenderer>().color = Color.red;
         timer += Time.deltaTime;
         mover.linearVelocityX = 5;
@@ -140,6 +168,10 @@ public class BikerEnemyScript : EnemyScript
 
     void Avoidance()
     {
+        if (stunned)
+        {
+            return;
+        }
         mover.linearVelocityX = -3f;
 
         if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)

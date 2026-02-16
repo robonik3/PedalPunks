@@ -9,6 +9,8 @@ public class EnemyScript : MonoBehaviour
 {
     public Rigidbody2D mover;
     public BikeType bike;
+    public bool slide = false;
+    private float mytimer;
     public GameObject explosionPrefab;
     public GameObject RagdollPrefab;
     public PlayerScript playerScript;
@@ -57,6 +59,10 @@ public class EnemyScript : MonoBehaviour
             AudioPlayer.instance.Play("explosion3");
             Crashed();
         }
+        // if (slide)
+        // {
+        //     mytimer+=Time.deltaTime;
+        // }
     }
     private void Crashed()
     {
@@ -93,5 +99,28 @@ public class EnemyScript : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         yield return null;
         Destroy(gameObject);
+    }
+    public void Stun()
+    {
+        StartCoroutine(StunSequence());
+    }
+    IEnumerator StunSequence()
+    {       
+        mytimer = 0;
+        while (mytimer<2f) {
+        transform.GetChild(1).gameObject.SetActive(true);
+
+        //Debug.Log(timer);
+        mover.linearVelocityX = .25f;
+        mover.linearVelocityY = 0;
+        mytimer += Time.deltaTime;
+        slide = true;
+        yield return null;
+        }
+
+                transform.GetChild(1).gameObject.SetActive(false);
+                                Debug.Log(transform.GetChild(1).gameObject.activeSelf);
+        slide = false;
+        mytimer = 0;
     }
 }
