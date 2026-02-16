@@ -104,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 8754008571241673854}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 422cd446a498bab4a96bdeadb3b18c47, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -159,6 +159,10 @@ MonoBehaviour:
   - {fileID: 1848675445, guid: 56f00360425787c42815c642a276c087, type: 3}
   - {fileID: -6153957836141548594, guid: 0832bd109bc803a429331d784c791c6d, type: 3}
   - {fileID: -248327258264204992, guid: 5cb874233d960ce4e83bbf26e87c181a, type: 3}
+  carAnims:
+  - {fileID: 9100000, guid: 422cd446a498bab4a96bdeadb3b18c47, type: 2}
+  - {fileID: 9100000, guid: ef851d69560b325428120f5182494fef, type: 2}
+  - {fileID: 9100000, guid: 6fe2264b2d636ed4fbe3730892d9b152, type: 2}
   minSpeed: 3
   maxSpeed: 5
   explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}

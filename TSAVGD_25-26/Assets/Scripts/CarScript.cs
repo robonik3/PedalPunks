@@ -8,32 +8,30 @@ using UnityEngine.SceneManagement;
 public class CarScript : MonoBehaviour
 {
     public Sprite[] carSprites;
+    public RuntimeAnimatorController[] carAnims;
     public float minSpeed = 3f;
     public float maxSpeed = 7f;
     float speed;
-        public GameObject explosionPrefab;
+    public GameObject explosionPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
      
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        Debug.Log("Found SpriteRenderer: " + (sr != null));
-        Debug.Log("Using SpriteRenderer: " + sr.name);
+        Animator am = GetComponent<Animator>();
 
-
-        if (sr != null && carSprites.Length > 0)
+        
+        if(sr != null && carSprites.Length > 0)
         {
-            sr.sprite = carSprites[Random.Range(0, carSprites.Length-1)];
+            int randNum = Random.Range(0, carSprites.Length);
+            sr.sprite = carSprites[randNum];
             Debug.Log("Chosen Sprite: " + sr.sprite.name);
-        }
-        else if (sr == null)
-        {
-            Debug.LogWarning("No SpriteRenderer found!");
-        }
-        else
-        {
-            Debug.LogWarning("No Car Sprites assigned!");
+
+            if(am != null)
+            {
+                am.runtimeAnimatorController = carAnims[randNum];
+            }
         }
 
         Debug.Log("Car Spawned");
