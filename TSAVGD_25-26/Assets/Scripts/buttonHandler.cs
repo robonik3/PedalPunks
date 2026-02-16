@@ -14,7 +14,12 @@ public class buttonHandler : MonoBehaviour
 
     // Update is called once per frame
     [SerializeField] GameObject pauseCanvas;
-
+/*
+    void Update()
+    {
+        curr_level = SceneManager.GetActiveScene().name;
+    }
+*/
     public void loadCredits() {
             SceneManager.LoadScene("Credits");
     }
@@ -25,16 +30,19 @@ public class buttonHandler : MonoBehaviour
     {
          SceneManager.LoadScene("Level 1");
          curr_level = "Level 1";
+         Debug.Log(curr_level);
             
     }
     public void loadL2() {
          SceneManager.LoadScene("Level 2");
          curr_level = "Level 2";
+         Debug.Log(curr_level);
     }
     public void loadL3()
     {
         SceneManager.LoadScene("Level 3");
         curr_level = "Level 3";
+        Debug.Log(curr_level);
     }
     public void loadHome()
         {

@@ -47,6 +47,7 @@ public class PauseCode : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
         pauseButton.SetActive(true);
+        isOn = false;
     }
 
     public void GoLevel()
@@ -54,6 +55,7 @@ public class PauseCode : MonoBehaviour
         SceneManager.LoadScene("LevelSelect");
         Time.timeScale = 1f;
         pauseButton.SetActive(true);
+        isOn = false;
     }
 
 }
