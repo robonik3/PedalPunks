@@ -3,20 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Enemy
-  - Bike
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Enemy
-  - Bike
-  - Pothole
-  - Invulnerable
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
