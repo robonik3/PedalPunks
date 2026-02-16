@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCode
   pauseScreen: {fileID: 61041225}
+  pauseButton: {fileID: 1037473908}
 --- !u!1 &107230316
 GameObject:
   m_ObjectHideFlags: 0
@@ -24773,8 +24774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efdf8d5f835b014fb59c7273ffb87e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  back: {fileID: 0}
+  state: 0
   cooldown: 0
+  abilityCooldown: 0
   speed: 1
   height: 0
   ultraBoost: 0
@@ -25627,6 +25629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCode
   pauseScreen: {fileID: 61041225}
+  pauseButton: {fileID: 1037473908}
 --- !u!1 &2134595856
 GameObject:
   m_ObjectHideFlags: 0

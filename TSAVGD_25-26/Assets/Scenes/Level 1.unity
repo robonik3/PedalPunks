@@ -13971,12 +13971,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037473908}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a7e1ce2950534988947d7e2faeca0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCode
   pauseScreen: {fileID: 1937840419}
+  pauseButton: {fileID: 1037473908}
 --- !u!1 &1050902596
 GameObject:
   m_ObjectHideFlags: 0
@@ -28731,6 +28732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCode
   pauseScreen: {fileID: 1937840419}
+  pauseButton: {fileID: 1037473908}
 --- !u!114 &1937840422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29466,6 +29468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCode
   pauseScreen: {fileID: 1937840419}
+  pauseButton: {fileID: 1037473908}
 --- !u!1 &2126340223
 GameObject:
   m_ObjectHideFlags: 0
