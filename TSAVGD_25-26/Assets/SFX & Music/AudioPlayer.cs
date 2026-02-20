@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class AudioPlayer : MonoBehaviour
 {
     public static AudioPlayer instance;
-    public AudioClip[] listOfClips;
+    public AllAudioClips listOfClips;
     public Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
     private List<AudioSource> pool = new List<AudioSource>();
 
@@ -17,14 +17,12 @@ public class AudioPlayer : MonoBehaviour
         ClearCache();
         if (instance != null && instance != this) { Destroy(transform.gameObject); return; } else { instance = this; }
         
-        if (clips.Count != listOfClips.Length)
+        if (clips.Count != listOfClips.listOfClips.Length)
         {
-            for (int i = 0; i < listOfClips.Length; i++)
+            for (int i = 0; i < listOfClips.listOfClips.Length; i++)
             {
-                clips.Add(listOfClips[i].name, listOfClips[i]);
-                Debug.Log(listOfClips[i].name + gameObject.name);
+                clips.Add(listOfClips.listOfClips[i].name, listOfClips.listOfClips[i]);
             }
-            Debug.Log(clips.Count.ToString() + "   " + listOfClips.Length.ToString());
         }
 
         DontDestroyOnLoad(transform.gameObject);

@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
         public GameObject enemy;
         public float delaySpawnTime;
         public float ypos;
+        public bool spawnOnRightSide;
     }
     public UnityEvent FinishLevel;
 
@@ -70,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
         }
         activeEnemies++;
         completedWaves++;
-        Instantiate(waves[i].enemy, new Vector3(-10, waves[i].ypos, 0), new Quaternion());
+        Instantiate(waves[i].enemy, new Vector3((waves[i].spawnOnRightSide ? 10 : -10), waves[i].ypos, 0), new Quaternion());
     }
 
 }

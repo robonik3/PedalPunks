@@ -8,12 +8,18 @@ public class BikerEnemyScript : EnemyScript
     private bool playsound;
     private bool goBackwards;
     private bool stunned = false;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         random = Random.Range(1.5f, 3.5f);
         slide = false;
+        if (transform.position.x > 10)
+        {
+            state = 6;
+        }
     }
 
     // Update is called once per frame
@@ -23,7 +29,7 @@ public class BikerEnemyScript : EnemyScript
         if (slide)
         {
 
-                GetComponent<Animator>().Play("Drive");
+                animator.Play("Drive");
                 GetComponent<SpriteRenderer>().color = Color.white;
                 state = 0;
                 stunned = true;
@@ -39,6 +45,7 @@ public class BikerEnemyScript : EnemyScript
             
             case 0:
                 Drive();
+                AnimateTurning();
                 break;
             case 1:
                 Target();
@@ -48,6 +55,10 @@ public class BikerEnemyScript : EnemyScript
                 break;
             case 3:
                 Avoidance();
+                AnimateTurning();
+                break;
+            case 6:
+                BackwardsEntrance();
                 break;
 
         }
@@ -75,7 +86,7 @@ public class BikerEnemyScript : EnemyScript
         if(transform.position.x>-9)timer += Time.deltaTime;
         if ((timer > random) && !stunned)
         {
-            GetComponent<Animator>().Play("Wheelie");
+            animator.Play("Wheelie");
 
             timer = 0;
             state = 1;
@@ -157,7 +168,7 @@ public class BikerEnemyScript : EnemyScript
         if (timer > 1.5f)
         {
             GetComponent<SpriteRenderer>().color = Color.white;
-            GetComponent<Animator>().Play("Drive");
+            animator.Play("Drive");
 
             playsound = true;
             timer = 0;
@@ -201,5 +212,28 @@ public class BikerEnemyScript : EnemyScript
             state = 0;
             return;
         }
+    }
+    void BackwardsEntrance()
+    {
+
+        mover.linearVelocityX = -4;
+        mover.linearVelocityY = 0;
+        if (Physics2D.BoxCast(transform.position, new Vector2(1, 1.3f), 0, Vector2.right, 6, LayerMask.GetMask("Pothole")))
+        {
+            mover.linearVelocityY = 3;
+        }
+
+        timer += Time.deltaTime;
+        if ((timer > random) && !stunned)
+        {
+            animator.Play("Wheelie");
+
+            timer = 0;
+            state = 1;
+        }
+    }
+    void AnimateTurning()
+    {
+        animator.SetFloat("SpeedY", mover.linearVelocityY);
     }
 }

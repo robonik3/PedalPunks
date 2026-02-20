@@ -53,7 +53,7 @@ public class AstroEnemyScript : EnemyScript
     {
         if (PlayerScript.instance.transform.position.x-3 < transform.position.x)
         {
-            mover.linearVelocityX = -1.5f;
+            mover.linearVelocityX = -2f;
 
             antitimer += Time.deltaTime;
             if (antitimer > 1)
@@ -178,7 +178,7 @@ public class AstroEnemyScript : EnemyScript
         {
             mover.linearVelocityY = 2;
         }
-        mover.linearVelocityX = -2f;
+        mover.linearVelocityX = -3f;
 
         timer += Time.deltaTime;
 

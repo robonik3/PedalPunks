@@ -10,10 +10,13 @@ public class ScooterEnemyScript : EnemyScript
     private bool slide1;
     private bool playsound;
     private bool upOrDown;
+
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         random = Random.Range(1.5f, 3.5f);
     }
 
@@ -22,7 +25,7 @@ public class ScooterEnemyScript : EnemyScript
     {if (slide)
         {
 
-                GetComponent<Animator>().Play("Drive");
+                animator.Play("Drive");
                 GetComponent<SpriteRenderer>().color = Color.white;
                 state = 0;
                 stunned = true;
@@ -37,6 +40,7 @@ public class ScooterEnemyScript : EnemyScript
         {
             case 0:
                 Drive();
+                if(state==0)AnimateTurning();
                 break;
             case 1:
                 Target();
@@ -46,6 +50,7 @@ public class ScooterEnemyScript : EnemyScript
                 break;
             case 3:
                 Avoidance();
+                AnimateTurning();
                 break;
             case 4:
                 Stunned();
@@ -84,6 +89,16 @@ public class ScooterEnemyScript : EnemyScript
 
             timer = 0;
             upOrDown = Random.Range(0, 2) == 0;
+            if (upOrDown)
+            {
+                animator.SetFloat("SpeedY", 4);
+                animator.Play("TurnUp");
+            }
+            else
+            {
+                animator.SetFloat("SpeedY", -4);
+                animator.Play("TurnDown");
+            }
             state = 1;
         }
     }
@@ -111,6 +126,9 @@ public class ScooterEnemyScript : EnemyScript
             {
                 mover.linearVelocityY = 0;
                 timer += Time.deltaTime;
+                animator.SetFloat("SpeedY", -4);
+                animator.Play("TurnDown");
+
             }
         }
         else
@@ -123,6 +141,10 @@ public class ScooterEnemyScript : EnemyScript
             {
                 mover.linearVelocityY = 0;
                 timer += Time.deltaTime;
+
+                animator.SetFloat("SpeedY", 4);
+                animator.Play("TurnUp");
+
             }
         }
         if (Physics2D.BoxCast(transform.position, Vector2.one, 0, Vector2.right, 6, LayerMask.GetMask("Pothole")))
@@ -186,6 +208,7 @@ public class ScooterEnemyScript : EnemyScript
             playsound = true;
             timer = 0;
             state = 3;
+            animator.Play("Drive");
             return;
         }
     }
@@ -233,7 +256,7 @@ public class ScooterEnemyScript : EnemyScript
         timer += Time.deltaTime;
         if (timer > 1.1f&&state!=5)
         {
-            GetComponent<Animator>().Play("Drive");
+            animator.Play("Drive");
 
             state = 0;
             stun = 0;
@@ -284,11 +307,15 @@ public class ScooterEnemyScript : EnemyScript
                 AudioPlayer.instance.Play("Hit1");
                 AudioPlayer.instance.Play("Duun", 1.3f + stun / 10f);
                 AudioPlayer.instance.Play("Hit2", 1 + stun / 10f);
-                GetComponent<Animator>().SetTrigger("Extra");
+                animator.SetTrigger("Extra");
                 timer = 0;
                 state = 4;
             }
         }
 
+    }
+    void AnimateTurning()
+    {
+        animator.SetFloat("SpeedY", mover.linearVelocityY);
     }
 }

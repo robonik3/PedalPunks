@@ -6293,7 +6293,7 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 18, y: 3}
+  m_Size: {x: 50, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &529710974
 GameObject:
@@ -9348,39 +9348,51 @@ MonoBehaviour:
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 8
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 10
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 12
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 16
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
     delaySpawnTime: 19
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: a46e408fc5a23a745b7b1174548c3dd5, type: 3}
     delaySpawnTime: 24
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 26
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 28
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 34
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 35
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 36
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 40
     ypos: 0
+    spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
   FinishLevel:
@@ -9856,6 +9868,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722851738}
   m_CullTransparentMesh: 1
+--- !u!1 &749205657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749205659}
+  - component: {fileID: 749205658}
+  m_Layer: 0
+  m_Name: Audio Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &749205658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749205657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efb822a3e1b92d4f9a7e80cce8c6210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  listOfClips: {fileID: 11400000, guid: 0927ba6955b9b4c4baac49fb17a0d183, type: 2}
+  SFXvolume: 0.6
+  MusicVolume: 1
+--- !u!4 &749205659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749205657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848930709
 GameObject:
   m_ObjectHideFlags: 0
@@ -22471,6 +22530,7 @@ MonoBehaviour:
   cooldown: 0
   abilityCooldown: 0
   speed: 1
+  horn: {fileID: 0}
   height: 0
   ultraBoost: 0
   fuel: 1
@@ -22735,63 +22795,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829112979}
   m_CullTransparentMesh: 1
---- !u!1 &1834127683
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1834127685}
-  - component: {fileID: 1834127684}
-  m_Layer: 0
-  m_Name: Audio Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1834127684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834127683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efb822a3e1b92d4f9a7e80cce8c6210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  listOfClips:
-  - {fileID: 8300000, guid: a0e9a627489263041bc8c3f6d59583dc, type: 3}
-  - {fileID: 8300000, guid: e9e68658616c5b042b4fde33c9f4d00e, type: 3}
-  - {fileID: 8300000, guid: 1cb9cdc52164fb848a6cdd7bed0af9e0, type: 3}
-  - {fileID: 8300000, guid: 7e3c342eb26a7a449a25df0f8b61f4b8, type: 3}
-  - {fileID: 8300000, guid: 50a8cbd50978f4e4da80d7c460b81a9d, type: 3}
-  - {fileID: 8300000, guid: 1174ede450ccd2848b1a0358c24bf483, type: 3}
-  - {fileID: 8300000, guid: 81660067abd2e6c4487eb798a7947784, type: 3}
-  - {fileID: 8300000, guid: ef670c220d30a764ca05e245f34d4ad3, type: 3}
-  - {fileID: 8300000, guid: 2b7c5f8eeb54d1e46a03b2bc8671d2a1, type: 3}
-  - {fileID: 8300000, guid: 3660f0a8bfdf2c446a3745c0cb0e2fbd, type: 3}
-  SFXvolume: 0.6
-  MusicVolume: 1
---- !u!4 &1834127685
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834127683}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919713150
 GameObject:
   m_ObjectHideFlags: 0
@@ -22979,7 +22982,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6037736, g: 0.55808514, b: 0.3503026, a: 1}
+  m_BackGroundColor: {r: 0.83137256, g: 0.6745098, b: 0.34901962, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -23286,5 +23289,5 @@ SceneRoots:
   - {fileID: 504798157}
   - {fileID: 11677343}
   - {fileID: 1023160723}
-  - {fileID: 1834127685}
   - {fileID: 1095235465}
+  - {fileID: 749205659}

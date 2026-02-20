@@ -29,15 +29,17 @@ public class TransitionAnimation : MonoBehaviour
     {
         driver.Play("DriveIn");
 
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2);
+        playeranim.Play("PeaceSign");
 
         while (!end)
         {
             yield return null;
         }
-        
-        //playeranim.Play("Wheelie");
-        //bikeanim.Play("Wheelie");
+
+        AudioPlayer.instance.Play("EngineRev");
+        playeranim.Play("Wheelie");
+        bikeanim.Play("Wheelie");
 
         yield return new WaitForSecondsRealtime(.5f);
         driver.Play("DriveOut");

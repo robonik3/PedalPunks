@@ -9742,63 +9742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948845966}
   m_CullTransparentMesh: 1
---- !u!1 &1078854214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1078854216}
-  - component: {fileID: 1078854215}
-  m_Layer: 0
-  m_Name: Audio Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1078854215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078854214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efb822a3e1b92d4f9a7e80cce8c6210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  listOfClips:
-  - {fileID: 8300000, guid: a0e9a627489263041bc8c3f6d59583dc, type: 3}
-  - {fileID: 8300000, guid: e9e68658616c5b042b4fde33c9f4d00e, type: 3}
-  - {fileID: 8300000, guid: 1cb9cdc52164fb848a6cdd7bed0af9e0, type: 3}
-  - {fileID: 8300000, guid: 7e3c342eb26a7a449a25df0f8b61f4b8, type: 3}
-  - {fileID: 8300000, guid: 50a8cbd50978f4e4da80d7c460b81a9d, type: 3}
-  - {fileID: 8300000, guid: 1174ede450ccd2848b1a0358c24bf483, type: 3}
-  - {fileID: 8300000, guid: 81660067abd2e6c4487eb798a7947784, type: 3}
-  - {fileID: 8300000, guid: ef670c220d30a764ca05e245f34d4ad3, type: 3}
-  - {fileID: 8300000, guid: 2b7c5f8eeb54d1e46a03b2bc8671d2a1, type: 3}
-  - {fileID: 8300000, guid: 3660f0a8bfdf2c446a3745c0cb0e2fbd, type: 3}
-  SFXvolume: 0.6
-  MusicVolume: 1
---- !u!4 &1078854216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078854214}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134967516
 GameObject:
   m_ObjectHideFlags: 0
@@ -15417,11 +15360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efdf8d5f835b014fb59c7273ffb87e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 0}
   state: 0
   cooldown: 0
   abilityCooldown: 0
   speed: 1
+  horn: {fileID: 0}
   height: 0
   ultraBoost: 0
   fuel: 1
@@ -21177,6 +21120,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1464258136}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1880241839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880241841}
+  - component: {fileID: 1880241840}
+  m_Layer: 0
+  m_Name: Audio Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1880241840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880241839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efb822a3e1b92d4f9a7e80cce8c6210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  listOfClips: {fileID: 11400000, guid: 0927ba6955b9b4c4baac49fb17a0d183, type: 2}
+  SFXvolume: 0.6
+  MusicVolume: 1
+--- !u!4 &1880241841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880241839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895276003
 GameObject:
   m_ObjectHideFlags: 0
@@ -22119,4 +22109,4 @@ SceneRoots:
   - {fileID: 236730161}
   - {fileID: 1901614043}
   - {fileID: 134764746}
-  - {fileID: 1078854216}
+  - {fileID: 1880241841}
