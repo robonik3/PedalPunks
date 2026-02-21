@@ -25,7 +25,7 @@ public class BikerEnemyScript : EnemyScript
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(stunned);
+        //Debug.Log(stunned);
         if (slide)
         {
 
@@ -33,11 +33,11 @@ public class BikerEnemyScript : EnemyScript
                 GetComponent<SpriteRenderer>().color = Color.white;
                 state = 0;
                 stunned = true;
-                Debug.Log("Stunned, driving");
+                //Debug.Log("Stunned, driving");
 
         } else
             {
-                Debug.Log("not stunned");
+                //Debug.Log("not stunned");
                 stunned = false;
             }
         switch (state)

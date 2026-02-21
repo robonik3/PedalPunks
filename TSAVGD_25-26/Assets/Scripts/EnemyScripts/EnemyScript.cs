@@ -119,7 +119,7 @@ public class EnemyScript : MonoBehaviour
         }
 
                 transform.GetChild(1).gameObject.SetActive(false);
-                                Debug.Log(transform.GetChild(1).gameObject.activeSelf);
+                              //  Debug.Log(transform.GetChild(1).gameObject.activeSelf);
         slide = false;
         mytimer = 0;
     }

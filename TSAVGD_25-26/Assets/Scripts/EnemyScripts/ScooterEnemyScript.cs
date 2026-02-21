@@ -29,11 +29,11 @@ public class ScooterEnemyScript : EnemyScript
                 GetComponent<SpriteRenderer>().color = Color.white;
                 state = 0;
                 stunned = true;
-                Debug.Log("Stunned, driving");
+                //Debug.Log("Stunned, driving");
 
         } else
             {
-                Debug.Log("not stunned");
+                //Debug.Log("not stunned");
                 stunned = false;
             }
         switch (state)
@@ -272,11 +272,17 @@ public class ScooterEnemyScript : EnemyScript
     }
     public override void Shoved()
     {
+        Debug.Log("Ouch");
         PlayerScript.instance.cooldown = 0;
         if (stun==5)
         {
+            if (stunned)
+            {
+                timer = 0;
+            }
             if (timer < .5f)
             {
+                            Debug.Log("AH");
                 Instantiate(bike.prefab, transform.position, new Quaternion());
                 bool above = PlayerScript.instance.transform.position.y > transform.position.y;
                 GameObject r = Instantiate(RagdollPrefab, transform.position, new Quaternion());
@@ -294,13 +300,21 @@ public class ScooterEnemyScript : EnemyScript
             if (stun == 4)
             {
                 AudioPlayer.instance.Play("CrunchPunch");
+                if (!stunned) {
                 AudioPlayer.instance.Play("DazedWhistle");
+                }
                 
                 slide1 = (PlayerScript.instance.transform.position.y > transform.position.y);
                 timer = 1;
                 state = 5;
-                transform.GetChild(1).gameObject.SetActive(true);
                 stun++;
+                if (stunned)
+                {
+                    Debug.Log("sdfd");
+                    FinalStunned();
+                }
+                transform.GetChild(1).gameObject.SetActive(true);
+
             }
             else
             {
@@ -310,6 +324,10 @@ public class ScooterEnemyScript : EnemyScript
                 animator.SetTrigger("Extra");
                 timer = 0;
                 state = 4;
+                if (stunned)
+                {
+                    Stunned();
+                }
             }
         }
 

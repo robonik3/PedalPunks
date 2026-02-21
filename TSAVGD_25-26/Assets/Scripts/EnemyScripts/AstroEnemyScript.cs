@@ -18,15 +18,15 @@ public class AstroEnemyScript : EnemyScript
     {if (slide)
         {
 
-                GetComponent<Animator>().Play("Drive");
+                //GetComponent<Animator>().Play("Drive");
                 GetComponent<SpriteRenderer>().color = Color.white;
                 state = 0;
                 stunned = true;
-                Debug.Log("Stunned, driving");
+                //Debug.Log("Stunned, driving");
 
         } else
             {
-                Debug.Log("not stunned");
+               // Debug.Log("not stunned");
                 stunned = false;
             }
         switch (state)
