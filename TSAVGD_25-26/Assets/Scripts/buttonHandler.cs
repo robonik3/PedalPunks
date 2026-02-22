@@ -50,9 +50,14 @@ public class buttonHandler : MonoBehaviour
         }
     public void loadScene(string sceneName)
         {
+            if (sceneName == "Tutorial")
+        {
+            SceneManager.LoadScene("Cutscene1");
+        } else {
             SceneManager.LoadScene(sceneName);
             curr_level = sceneName;
             Debug.Log(sceneName + " loaded");
+        }
         }
     public void loadSceneDelay(string sceneName)
     {
