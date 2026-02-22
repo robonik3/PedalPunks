@@ -11968,39 +11968,51 @@ MonoBehaviour:
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 8
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 10
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 12
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 16
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
     delaySpawnTime: 19
     ypos: -1
-  - enemy: {fileID: 9066666420941251432, guid: a46e408fc5a23a745b7b1174548c3dd5, type: 3}
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 24
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 26
     ypos: 0
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
     delaySpawnTime: 28
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 34
     ypos: -1
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
     delaySpawnTime: 35
     ypos: 0
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 36
     ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 40
     ypos: 0
+    spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
   FinishLevel:
