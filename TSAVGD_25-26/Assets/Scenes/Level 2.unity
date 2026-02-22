@@ -1874,7 +1874,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4528302, g: 0.20126595, b: 0, a: 1}
+      maxColor: {r: 0.5188679, g: 0.45757425, b: 0.40873086, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -25031,7 +25031,7 @@ MonoBehaviour:
     delaySpawnTime: 19
     ypos: -2
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: a46e408fc5a23a745b7b1174548c3dd5, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 24
     ypos: -1
     spawnOnRightSide: 0
@@ -26026,7 +26026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &941360435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26217,7 +26217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   carPrefab: {fileID: 8754008571241673854, guid: 6048779954f0dfa4b96add2011ea333c, type: 3}
-  spawnDelay: 3
+  spawnDelay: 5
 --- !u!4 &1023160723
 Transform:
   m_ObjectHideFlags: 0
