@@ -68,6 +68,8 @@ public class buttonHandler : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1.6f);
         SceneManager.LoadScene(sceneName);
+        curr_level = sceneName;
+        Debug.Log(curr_level);
 
     }
     public void DeleteSaveData()
