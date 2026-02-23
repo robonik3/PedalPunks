@@ -802,6 +802,11 @@ MonoBehaviour:
 
 
 
+    Special Thanks to
+
+
+
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -976,6 +981,7 @@ MonoBehaviour:
 
     Aizen Arze
 
+    Rushan Ghimire
 
 
 
@@ -983,28 +989,28 @@ MonoBehaviour:
 
     Rushan Ghimire
 
-    Nikhil Arun
+    Nikhil
+    Arun
 
 
 
 
-    Aizen
-    Arze
-
-    Rushan Ghimire
-
-
-
+    Aizen Arze
 
     Rushan Ghimire
 
 
 
 
-    Nikhil Arun
+    Rushan Ghimire
 
-    Sanjith
-    Katakam
+
+
+
+    Nikhil
+    Arun
+
+    Sanjith Katakam
 
 
 
@@ -1016,12 +1022,16 @@ MonoBehaviour:
 
 
 
-    Kevin Michael
+    Kevin
+    Michael
 
 
 
-    2026,
-    All Rights Reserved'
+    Sanjith Katakam
+
+
+
+    2026, All Rights Reserved'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1179,7 +1189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -2570}
+  m_AnchoredPosition: {x: -11, y: -2800}
   m_SizeDelta: {x: 984, y: 313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546482053
