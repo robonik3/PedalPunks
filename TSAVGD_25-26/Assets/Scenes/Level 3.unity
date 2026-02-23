@@ -18102,6 +18102,7 @@ MonoBehaviour:
   levelLengthTime: 60
   bar: {fileID: 1829112981}
   bestTime: {fileID: 722851740}
+  CanComplete: 1
 --- !u!4 &1141020411
 Transform:
   m_ObjectHideFlags: 0
@@ -24273,6 +24274,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651494671}
   m_CullTransparentMesh: 1
+--- !u!1001 &1676726401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 297123400486526678, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485449919195954316, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 1ed437f59b640694cbcab0a3456ceed6, type: 2}
+    - target: {fileID: 9066666420941251432, guid: 95431225783f5f74da292d5553c7092e, type: 3}
+      propertyPath: m_Name
+      value: Boss SkullRider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95431225783f5f74da292d5553c7092e, type: 3}
 --- !u!1 &1700073024
 GameObject:
   m_ObjectHideFlags: 0
@@ -30755,3 +30817,4 @@ SceneRoots:
   - {fileID: 11677343}
   - {fileID: 1803226540}
   - {fileID: 1905295897}
+  - {fileID: 1676726401}

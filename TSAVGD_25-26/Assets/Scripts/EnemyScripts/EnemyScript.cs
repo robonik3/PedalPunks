@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -13,7 +10,6 @@ public class EnemyScript : MonoBehaviour
     private float mytimer;
     public GameObject explosionPrefab;
     public GameObject RagdollPrefab;
-    public PlayerScript playerScript;
     public int state;
     private bool crash;
 

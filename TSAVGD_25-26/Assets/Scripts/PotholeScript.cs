@@ -26,13 +26,17 @@ public class PotholeScript : MonoBehaviour
             PlayerScript.instance.ultraBoost = 0;
             AudioPlayer.instance.Play("explosion2");
         }
-        if (other.CompareTag("Bike"))
+        if (!gameObject.CompareTag("Flame"))
         {
-            other.GetComponent<BikeScript>().Explode();
+            if (other.CompareTag("Bike"))
+            {
+                other.GetComponent<BikeScript>().Explode();
+            }
+            if (other.CompareTag("Enemy"))
+            {
+                other.GetComponent<EnemyScript>().Shoved();
+            }
         }
-        if (other.CompareTag("Enemy"))
-        {
-            other.GetComponent<EnemyScript>().Shoved();
-        }
+
     }
 }

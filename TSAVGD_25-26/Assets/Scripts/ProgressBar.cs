@@ -13,6 +13,8 @@ public class ProgressBar : MonoBehaviour
     private float progressTimer;
     private float completionTimer;
 
+    public bool CanComplete = true;
+
     FadeScript screenFade;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +32,7 @@ public class ProgressBar : MonoBehaviour
             completionTimer += Mathf.Clamp(Time.unscaledDeltaTime, 0, Time.maximumDeltaTime);
             bar.value = Mathf.Clamp01(progressTimer / levelLengthTime);
             //Debug.Log(progressTimer.ToString() + "   " + completionTimer.ToString());
-            if (bar.value == 1) { OnLevelFinish(); }
+            if (bar.value == 1&&CanComplete) { OnLevelFinish(); }
         }
 
     }
