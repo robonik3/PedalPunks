@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     public float height;
     private float fallingVelocity;
     private float gravity = -9.81f;
+    private Collider2D steal;
 
     private bool accelerating;
     public float ultraBoost;
@@ -55,6 +56,7 @@ public class PlayerScript : MonoBehaviour
     private float noFuelPitch = 0.5f;
     private float pitchChangeSpeed = 5f;
     private float targetPitch;
+    private float stole = 0f;
 
     //The limit or boundary y positions that player cant cross
     public float upperYLimit;
@@ -95,8 +97,13 @@ public class PlayerScript : MonoBehaviour
     {
         cooldown = Mathf.Clamp(cooldown -= Time.deltaTime, 0, 60);
         abilityCooldown = Mathf.Clamp(abilityCooldown -= Time.deltaTime, 0, 60);
-
-        fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
+            if (steal!=null)
+            {
+                fuel = Mathf.Clamp(fuel + Time.deltaTime/20, 0, 1);
+            } else
+            {
+                fuel = Mathf.Clamp(fuel - Time.deltaTime/15, 0, 1);
+            }
         fuelIndicator.rectTransform.sizeDelta = new Vector2(120, fuel*120);
     
         playerVisual.transform.localPosition = new Vector3(0, height, 0);
@@ -263,6 +270,26 @@ public class PlayerScript : MonoBehaviour
         }
         timer = 0;
     }
+    public IEnumerator CoffinAbility()
+    {
+        float timer = 0;
+        oneTime = true;
+        AudioPlayer.instance.Play("Laugh");
+        bikeVisual.SetBool("Coffin", true);
+        while (timer < 3)
+        {
+            steal = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
+
+            gameObject.layer = 9;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        bikeVisual.SetBool("Coffin", false);
+        gameObject.layer = 3;
+        timer = 0;
+        stole = 0;
+        steal = null;
+    }
     public void MoveInput(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>().normalized;
@@ -302,6 +329,8 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Coffin":
+                            abilityCooldown = 6;    
+                            StartCoroutine("CoffinAbility");
                             break;
 
                     }
