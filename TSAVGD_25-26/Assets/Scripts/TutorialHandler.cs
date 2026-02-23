@@ -26,10 +26,6 @@ public class TutorialHandler : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.P)) 
-        {
-            SkipTutorial();
-        }
     }
 
     void SkipTutorial()
