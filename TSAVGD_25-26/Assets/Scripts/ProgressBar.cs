@@ -30,7 +30,7 @@ public class ProgressBar : MonoBehaviour
             completionTimer += Mathf.Clamp(Time.unscaledDeltaTime, 0, Time.maximumDeltaTime);
             bar.value = Mathf.Clamp01(progressTimer / levelLengthTime);
             //Debug.Log(progressTimer.ToString() + "   " + completionTimer.ToString());
-            if (bar.value == 1) { EnemySpawner.instance.readyToEndLevel = true; }
+            if (bar.value == 1) { OnLevelFinish(); }
         }
 
     }

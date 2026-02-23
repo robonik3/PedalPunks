@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D mover;
     private bool oneTime;
     private Vector2 movement;
-    private float shoveDir;
+    private float shoveDir=-1;
 
     public int state = 0;
     public float cooldown;
@@ -263,7 +263,7 @@ public class PlayerScript : MonoBehaviour
     public void MoveInput(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>().normalized;
-        if(movement.y != 0) { shoveDir = Mathf.Abs(movement.y) / movement.y; }
+        if(movement.y != 0) { shoveDir = Mathf.Sign(movement.y); }
     }
     public void AccelerateInput(InputAction.CallbackContext context)
     {
@@ -320,13 +320,13 @@ public class PlayerScript : MonoBehaviour
         if (context.performed && cooldown==0) 
         {
             playerVisual.Play((shoveDir==1?"Player_Shove_Up":"Player_Shove_Down"));
-            Collider2D hit = Physics2D.OverlapCircle(transform.position + Vector3.up * shoveDir, .5f, LayerMask.GetMask("Enemy"));
-            if(hit != null)
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, .5f, Vector3.up * shoveDir, 1f, LayerMask.GetMask("Enemy"));
+            if(hit.transform != null)
             {   
                 cooldown = .5f;
                 hitSoundEffect.Play();
-                hit.GetComponent<EnemyScript>().Shoved();
-                if(TryGetComponent(out ScooterEnemyScript s))
+                hit.transform.GetComponent<EnemyScript>().Shoved();
+                if(hit.transform.TryGetComponent(out ScooterEnemyScript s))
                 {
                     cooldown = .1f;
                 }

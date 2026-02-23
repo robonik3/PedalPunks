@@ -5,6 +5,7 @@ public class BikerEnemyScript : EnemyScript
 {
     private float timer;
     private float random;
+    private float randomSpeed;
     private bool playsound;
     private bool goBackwards;
     private bool stunned = false;
@@ -14,9 +15,11 @@ public class BikerEnemyScript : EnemyScript
     {
         mover = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        random = Random.Range(1.5f, 3.5f);
+        random = Random.Range(1.75f, 4f);
+        randomSpeed = Random.Range(1.75f, 3);
+        if (EnemySpawner.instance == null) { randomSpeed = 1.75f; }
         slide = false;
-        if (transform.position.x > 10)
+        if (transform.position.x > 9)
         {
             state = 6;
         }
@@ -73,7 +76,7 @@ public class BikerEnemyScript : EnemyScript
         }
         else
         {
-            mover.linearVelocityX = 3;
+            mover.linearVelocityX = randomSpeed;
             if (transform.position.x > 9) { mover.linearVelocityX = -4; }
         }
 
@@ -105,7 +108,7 @@ public class BikerEnemyScript : EnemyScript
             mover.linearVelocityX = -3;
         }
 
-        if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)
+        if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1.3f)
         {
             mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * -2;
         }
@@ -120,6 +123,7 @@ public class BikerEnemyScript : EnemyScript
             playsound = true;
             goBackwards = false;
             timer = 0;
+            if (randomSpeed > 2.5f) { timer -= .2f; }
             state = 2;
             return;
         }
@@ -132,22 +136,25 @@ public class BikerEnemyScript : EnemyScript
         }
         GetComponent<SpriteRenderer>().color = Color.red;
         timer += Time.deltaTime;
-        mover.linearVelocityX = 5;
-        if(transform.position.x-1 > PlayerScript.instance.transform.position.x)
+        mover.linearVelocityX = 4+(randomSpeed/3);
+        
+        //checks if enemy is in front of player to start bakcwards movement
+        if(!goBackwards&&transform.position.x-1*randomSpeed > PlayerScript.instance.transform.position.x)
         {
             goBackwards = true;
-
+            timer -= .1f;
         }
         if (goBackwards)
         {
             if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)
-                {
-                    mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 1f;
+            {
+                mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 1f;
 
-                    mover.linearVelocityX = -.75f;
+                mover.linearVelocityX = -.75f;
 
-                }
-            else {
+            }
+            else 
+            {
                 mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 2;
 
                 mover.linearVelocityX = 1;
@@ -155,7 +162,7 @@ public class BikerEnemyScript : EnemyScript
         }
         else { mover.linearVelocityY = 0; }
 
-        if (Physics2D.OverlapCircle(transform.position + Vector3.left * .35f, .15f, LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(transform.position, .2f, LayerMask.GetMask("Player")))
         {
             PlayerScript.instance.Die();
             state = 0;
@@ -216,7 +223,7 @@ public class BikerEnemyScript : EnemyScript
     void BackwardsEntrance()
     {
 
-        mover.linearVelocityX = -4;
+        mover.linearVelocityX = -randomSpeed-randomSpeed/3;
         mover.linearVelocityY = 0;
         if (Physics2D.BoxCast(transform.position, new Vector2(1, 1.3f), 0, Vector2.right, 6, LayerMask.GetMask("Pothole")))
         {

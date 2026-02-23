@@ -105,7 +105,6 @@ public class TutorialHandler : MonoBehaviour
 
         gasReminderText.SetActive(true);
         gasTank.SetActive(true);
-        Instantiate(EnemyPrefab, new Vector3(-10, 0, 0), new Quaternion());
 
         yield return new WaitForSecondsRealtime(8);
         Instantiate(EnemyPrefab, new Vector3(-10, 0, 0), new Quaternion());
@@ -128,7 +127,7 @@ public class TutorialHandler : MonoBehaviour
         progressBar.SetActive(true);
         progressBarManager.SetActive(true);
         enemyspawner.SetActive(true);
-        yield return new WaitForSecondsRealtime(8);
+        yield return new WaitForSecondsRealtime(9);
         //Wait until Player tries to take down Enemy
         while (timer < 1)
         {
