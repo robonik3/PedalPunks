@@ -10836,8 +10836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
   newUnlocks: 010000000001
-  fromLevel: Level 3
-  toLevel: Level 4 Boss
+  fromLevel: Level 4
+  toLevel: EndOfGame
   UnlockDisplay: {fileID: 529710974}
   AlternateWinText: {fileID: 1636822999}
   standardTime: 0
