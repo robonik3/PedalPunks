@@ -39,6 +39,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ParticleSystem smoke;
     [SerializeField] private ParticleSystem dirt;
     [SerializeField] private ParticleSystem boostTrail;
+    [SerializeField] private ParticleSystem ripple;
     [SerializeField] private Animator playerVisual;
     [SerializeField] private Animator bikeVisual;
     [SerializeField] private Transform shadow;
@@ -242,6 +243,8 @@ public class PlayerScript : MonoBehaviour
         float timer = 0;
         oneTime = true;
         AudioPlayer.instance.Play("Scooter Horn");
+        ripple.Stop();
+        ripple.Play();
         while (timer < 0.25)
         {
         Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
