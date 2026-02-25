@@ -250,7 +250,12 @@ public class PlayerScript : MonoBehaviour
         oneTime = true;
         AudioPlayer.instance.Play("Scooter Horn");
         ripple.Stop();
+                        var color = ripple.colorOverLifetime;
+        color.enabled = true;
+        color.color = new ParticleSystem.MinMaxGradient(Color.white);
         ripple.Play();
+
+
         while (timer < 0.25)
         {
         Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
@@ -275,14 +280,19 @@ public class PlayerScript : MonoBehaviour
         oneTime = true;
         AudioPlayer.instance.Play("Laugh");
         bikeVisual.SetBool("Coffin", true);
+        var color = ripple.colorOverLifetime;
+        color.enabled = true;
+        color.color = new ParticleSystem.MinMaxGradient(Color.red);
+
         while (timer < 3)
         {
             steal = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
-
+            ripple.Play();
             gameObject.layer = 9;
             timer += Time.deltaTime;
             yield return null;
         }
+        ripple.Stop();       
         bikeVisual.SetBool("Coffin", false);
         gameObject.layer = 3;
         timer = 0;
