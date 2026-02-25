@@ -56,7 +56,6 @@ public class PlayerScript : MonoBehaviour
     private float noFuelPitch = 0.5f;
     private float pitchChangeSpeed = 5f;
     private float targetPitch;
-    private float stole = 0f;
 
     //The limit or boundary y positions that player cant cross
     public float upperYLimit;
@@ -287,7 +286,6 @@ public class PlayerScript : MonoBehaviour
         bikeVisual.SetBool("Coffin", false);
         gameObject.layer = 3;
         timer = 0;
-        stole = 0;
         steal = null;
     }
     public void MoveInput(InputAction.CallbackContext context)

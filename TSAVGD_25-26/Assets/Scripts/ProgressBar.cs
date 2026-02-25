@@ -5,12 +5,12 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private float levelLengthTime;
-    [SerializeField] private Slider bar;
+    public float levelLengthTime;
+    public Slider bar;
     [SerializeField] private TextMeshProUGUI bestTime;
 
     private bool finished;
-    private float progressTimer;
+    public float progressTimer;
     private float completionTimer;
 
     public bool CanComplete = true;
@@ -30,9 +30,13 @@ public class ProgressBar : MonoBehaviour
         {
             progressTimer += Time.deltaTime;
             completionTimer += Mathf.Clamp(Time.unscaledDeltaTime, 0, Time.maximumDeltaTime);
-            bar.value = Mathf.Clamp01(progressTimer / levelLengthTime);
-            //Debug.Log(progressTimer.ToString() + "   " + completionTimer.ToString());
-            if (bar.value == 1&&CanComplete) { OnLevelFinish(); }
+            if (CanComplete)
+            {
+                bar.value = Mathf.Clamp01(progressTimer / levelLengthTime);
+                //Debug.Log(progressTimer.ToString() + "   " + completionTimer.ToString());
+                if (bar.value == 1) { OnLevelFinish(); }
+            }
+
         }
 
     }
@@ -46,7 +50,9 @@ public class ProgressBar : MonoBehaviour
 
     IEnumerator NextLevel()
     {
+        if (levelLengthTime != 15 || levelLengthTime != 60) { levelLengthTime = 60; }
         TransitionData.instance.standardTime = levelLengthTime;
+
         TransitionData.instance.yourTime = completionTimer;
         yield return null;  //StartCoroutine(screenFade.FadeIn()); The screenfade variable isn't  set
         SceneManager.LoadScene("Transition");

@@ -11,6 +11,8 @@ public class PotholeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(Vector3.left * 8 * Time.deltaTime);
+
         if (transform.position.x < -12f)
         {
             Destroy(gameObject);

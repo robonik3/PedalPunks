@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bike
+  - Flame
   layers:
   - Default
   - TransparentFX

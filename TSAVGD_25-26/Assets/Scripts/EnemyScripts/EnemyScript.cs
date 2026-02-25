@@ -83,7 +83,7 @@ public class EnemyScript : MonoBehaviour
         if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
         Destroy(gameObject);
     }
-    public void Explode()
+    public virtual void Explode()
     {
         StartCoroutine(ExplodeSequence());
     }

@@ -6,11 +6,12 @@ public class AstroEnemyScript : EnemyScript
     private float antitimer;
     private bool stunned = false;
     private bool playsound;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,9 +34,12 @@ public class AstroEnemyScript : EnemyScript
         {
             case 0:
                 Drive();
+                AnimateTurning();
                 break;
             case 1:
                 Target();
+                AnimateTurning();
+
                 break;
             case 2:
                 PrepareJet();
@@ -45,6 +49,8 @@ public class AstroEnemyScript : EnemyScript
                 break;
             case 4:
                 Avoidance();
+                AnimateTurning();
+
                 break;
         }
 
@@ -105,6 +111,7 @@ public class AstroEnemyScript : EnemyScript
                     playsound = true;
                     GetComponent<SpriteRenderer>().color = Color.red;
                     timer = 0;
+                    animator.Play("Drive");
                     state = 2;
                     return;
                 }
@@ -137,6 +144,8 @@ public class AstroEnemyScript : EnemyScript
             playsound = true;
             timer = 0;
             state = 3;
+            animator.Play("Extra");
+
             return;
         }
     }
@@ -161,6 +170,8 @@ public class AstroEnemyScript : EnemyScript
             playsound = true;
             GetComponent<SpriteRenderer>().color = Color.white;
             state = 4;
+            animator.Play("Drive");
+
             return;
         }
     }
@@ -188,5 +199,9 @@ public class AstroEnemyScript : EnemyScript
             state = 0;
             return;
         }
+    }
+    void AnimateTurning()
+    {
+        animator.SetFloat("SpeedY", mover.linearVelocityY);
     }
 }

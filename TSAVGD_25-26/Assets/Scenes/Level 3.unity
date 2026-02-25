@@ -11965,9 +11965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   waves:
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
     delaySpawnTime: 8
-    ypos: -1
+    ypos: -2
     spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 10
@@ -11980,7 +11980,7 @@ MonoBehaviour:
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 16
     ypos: -1
-    spawnOnRightSide: 0
+    spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
     delaySpawnTime: 19
     ypos: -1
@@ -11992,7 +11992,7 @@ MonoBehaviour:
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 26
     ypos: 0
-    spawnOnRightSide: 0
+    spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
     delaySpawnTime: 28
     ypos: 0
@@ -12011,7 +12011,71 @@ MonoBehaviour:
     spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 40
+    ypos: -2
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 45
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 50
     ypos: 0
+    spawnOnRightSide: 1
+  - enemy: {fileID: 6818917336632415414, guid: ee4e592fa408181408def25dcb2fb4f9, type: 3}
+    delaySpawnTime: 55
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
+    delaySpawnTime: 60
+    ypos: -1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 6818917336632415414, guid: ee4e592fa408181408def25dcb2fb4f9, type: 3}
+    delaySpawnTime: 65
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
+    delaySpawnTime: 65
+    ypos: -1
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 0c938d430c7ccd549b34099f317bdb7e, type: 3}
+    delaySpawnTime: 65
+    ypos: -1
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
+    delaySpawnTime: 67
+    ypos: 0
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 70
+    ypos: 0
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+    delaySpawnTime: 70
+    ypos: 0
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+    delaySpawnTime: 70
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 6818917336632415414, guid: ee4e592fa408181408def25dcb2fb4f9, type: 3}
+    delaySpawnTime: 70
+    ypos: 1
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 72
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 72
+    ypos: -2
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
+    delaySpawnTime: 74
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+    delaySpawnTime: 74
+    ypos: -2
     spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
@@ -18102,7 +18166,8 @@ MonoBehaviour:
   levelLengthTime: 60
   bar: {fileID: 1829112981}
   bestTime: {fileID: 722851740}
-  CanComplete: 1
+  progressTimer: 0
+  CanComplete: 0
 --- !u!4 &1141020411
 Transform:
   m_ObjectHideFlags: 0
@@ -24385,14 +24450,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6857502381429264579, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  m_Sprite: {fileID: -7610961, guid: 90f4ecb4f9ed8f94ba5ec2b0e1eb3934, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

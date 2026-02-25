@@ -32,6 +32,6 @@ public class PotholeSpawner : MonoBehaviour
             Yposition = 1.1f;
         }
         GameObject pothole = Instantiate(potholePrefab, new Vector3(12f, Yposition, 0f), Quaternion.identity);
-        pothole.transform.SetParent(roadTransform);
+        //pothole.transform.SetParent(roadTransform);
     }
 }

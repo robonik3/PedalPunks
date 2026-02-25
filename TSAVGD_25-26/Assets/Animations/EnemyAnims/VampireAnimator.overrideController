@@ -6,16 +6,16 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SkullRiderAnimator
+  m_Name: VampireAnimator
   m_Controller: {fileID: 9100000, guid: 061734bcb29b01a46b754d98bcf6af5d, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: b30b83eb9f5703946bd6ff43587f8992, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 44feb1883bf414947b4d361778359cea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 33223dbc3147a6a49aec54be5ab5de9c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 507e2759b378ee145bcb323ae0bb2001, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 44feb1883bf414947b4d361778359cea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 33223dbc3147a6a49aec54be5ab5de9c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 10d4a5a7fc602f14381aa1c43c142408, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a44ac7c8ba2a28c4799e86b216804400, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6b83b292d3ae96444b3429b47ed9215e, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 2834d596a0daae641ac94119be081863, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a571d143920b9184db3e54ef50f7aa7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f68a5c72e3894bc4ca5e4fdd0f20c349, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 0b4619ba8fbb3f24fb0ed8523e97ed7b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 44feb1883bf414947b4d361778359cea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 33223dbc3147a6a49aec54be5ab5de9c, type: 2}
