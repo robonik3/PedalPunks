@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class AudioPlayer : MonoBehaviour
 {
     public static AudioPlayer instance;
     public AllAudioClips listOfClips;
+    public Slider sfx;
+    public Slider music;
     public Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
     private List<AudioSource> pool = new List<AudioSource>();
 
     public float SFXvolume=1;
     public float MusicVolume=1;
+    //public                 AudioSource adiosauce;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -32,6 +36,12 @@ public class AudioPlayer : MonoBehaviour
         pool = new List<AudioSource>();
     }
     // Update is called once per frame
+    void Update()
+    {
+        SFXvolume = sfx.value;
+        MusicVolume = music.value;
+        //adiosauce.volume = SFXvolume;
+    }
     public void Play(string clipName, float pitch = 1, Vector3 location = default(Vector3), float space = 0)
     {
         if(clips.TryGetValue(clipName,out AudioClip value))
@@ -45,8 +55,8 @@ public class AudioPlayer : MonoBehaviour
                     pool.Add(AddSource.AddComponent<AudioSource>());
                 }
             
-                AudioSource adiosauce = pool[i];
-                if (adiosauce==null) { ClearCache(); Play(clipName, pitch, location, space); Debug.Log("Hoorah"); return; }
+              AudioSource adiosauce = pool[i];
+                if (adiosauce==null) { ClearCache(); Play(clipName, pitch, location, space); ;Debug.Log("Hoorah"); return; }
                 if (!adiosauce.isPlaying)
                 {
                     adiosauce.transform.position = location;

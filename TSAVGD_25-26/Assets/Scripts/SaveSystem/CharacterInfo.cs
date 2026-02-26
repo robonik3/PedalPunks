@@ -3,23 +3,20 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Timeline;
 using Unity.VisualScripting;
-using UnityEngine.SceneManagement;
 
-
-public class CharacterSelect : MonoBehaviour
+public class CharacterInfo : MonoBehaviour
 {
     public int selectedCharacter;
     public int selectedBike;
     public bool[] unlockedCharacters;
-    public int info = 0;
 
     public PlayerType[] characterList;
     public BikeType[] bikeList;
+    public Text description;
 
     [SerializeField] private Image PlayerPreview;
     [SerializeField] private Image BikePreview;
     [SerializeField] private TextMeshProUGUI CharacterName;
-        [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI BikeName;
 
     [SerializeField] private bool dontLoad;
@@ -28,18 +25,6 @@ public class CharacterSelect : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SceneManager.GetActiveScene().name=="Bikes")
-        {
-            info = 1;
-        } 
-        else if (SceneManager.GetActiveScene().name == "Enemies")
-        {
-            info = 2;
-        } else
-        {
-          info = 0;   
-        }
-        Debug.Log(info);
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {
@@ -79,44 +64,38 @@ public class CharacterSelect : MonoBehaviour
         { 
             PlayerPreview.color = Color.white;
             CharacterName.text = characterList[selectedCharacter].characterName;
-            if (info == 2)
-            {
-               switch (characterList[selectedCharacter].characterName)
+
+            if (unlockedCharacters[selectedBike]);
+                switch (characterList[selectedCharacter].characterName)
                     {
 
                         case "Biker":
-            Description.text = "Basic enemy that drives up close to you. Once close enough, it wheelies and tries to hit the front of your bike to sabotage it.";
+            description.text = "Basic enemy that drives up close to you. Once close enough, it wheelies and tries to hit the front of your bike to sabotage it.";
                             break;
 
                         case "Astronaut":
-            Description.text = "This enemy uses its powerful jet engine to drive forward extremely fast, destroying everything in its path. However, it can only travel in one direction";
+            description.text = "This enemy uses its powerful jet engine to drive forward extremely fast, destroying everything in its path. However, it can only travel in one direction";
                             break;
 
                         case "ScooterMan":
-            Description.text = "Drives above or below you, eventually charging to your side to attack. Despite its easy to dodge attack, this enemy takes five hits to knock off. ";
+            description.text = "Drives above or below you, eventually charging to your side to attack. Despite its easy to dodge attack, this enemy takes five hits to knock off. ";
                             break;
 
                         case "Aviator":
-                            Description.text = "???";
+                            description.text = "???";
                             break;
 
-                        case "Vampire":
-            Description.text = "Dispenses potholes on the road, which steal your fuel.";
+                        case "Bike Coffin":
+            description.text = "Dispenses potholes on the road, which steal your fuel.";
                             break;
 
                     }
-            }
-            if (unlockedCharacters[selectedBike]) SaveSystem.SavePlayer(this);
-
         }
         else 
         { 
             PlayerPreview.color = Color.black;
             CharacterName.text = "???";
-            if (info==2)
-            {
-                Description.text = "???";
-            }
+            description.text = "???";
 
         }
 
@@ -135,46 +114,37 @@ public class CharacterSelect : MonoBehaviour
             BikePreview.color = Color.white;
             BikeName.text = bikeList[selectedBike].bikeName;
 
-            if (unlockedCharacters[selectedCharacter]) SaveSystem.SavePlayer(this);
-             if (info == 1)
-            {
-                Debug.Log("here");
-               switch (bikeList[selectedBike].bikeName)
+            if (unlockedCharacters[selectedCharacter]); //SaveSystem.SavePlayer(this);
+                            switch (characterList[selectedCharacter].characterName)
                     {
-                        case "Purple Classic":
-            Description.text = "Makes the bike wheelie, which makes everything quicker. This makes the bike faster, but also your enemies faster, additionally taking away fuel more quickly";
-                            break;
-                        case "Biker Bike":
-            Description.text = "Same as the Purple Classic, but more stylish.";
+
+                        case "Biker":
+            description.text = "Basic enemy that drives up close to you. Once close enough, it wheelies and tries to hit the front of your bike to sabotage it.";
                             break;
 
-                        case "Jet Bike":
-            Description.text = "Uses its powerful jet engine to drive forward extremely fast, destroying almost everything in its path (including cars, but not bosses).";
+                        case "Astronaut":
+            description.text = "This enemy uses its powerful jet engine to drive forward extremely fast, destroying everything in its path. However, it can only travel in one direction";
                             break;
 
-                        case "Scooter":
-            Description.text = "Honks the scooter's horn, stunning nearby enemies for a short time. ";
+                        case "ScooterMan":
+            description.text = "Drives above or below you, eventually charging to your side to attack. Despite its easy to dodge attack, this enemy takes five hits to knock off. ";
                             break;
 
-                        case "Glider":
-                            Description.text = "???";
+                        case "Aviator":
+                            description.text = "???";
                             break;
 
-                        case "Coffin Car":
-            Description.text = "Steals fuel from surrounding enemies with its mysterious powers, allowing the bike to last longer.";
+                        case "Bike Coffin":
+            description.text = "Dispenses potholes on the road, which steal your fuel.";
                             break;
 
                     }
-                    Debug.Log(Description.text);
-            }
         }
         else
         {
             BikePreview.color = Color.black;
             BikeName.text = "???";
-            if (info==1) {
-            Description.text="???";
-            }
+            description.text = "???";
         }
 
 
@@ -194,7 +164,7 @@ public class CharacterSelect : MonoBehaviour
 
         if (displayNewUnlocks)
         {
-            SaveSystem.SavePlayer(this);
+          
         }
         return displayNewUnlocks;
     }
