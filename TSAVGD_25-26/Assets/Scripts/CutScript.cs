@@ -15,7 +15,7 @@ public class CutScript : MonoBehaviour
     void Update()
     {
       timer+=Time.deltaTime;
-      if (timer>=39f)
+      if (timer>=28f)
         {
             SceneManager.LoadScene("Tutorial");
         }
