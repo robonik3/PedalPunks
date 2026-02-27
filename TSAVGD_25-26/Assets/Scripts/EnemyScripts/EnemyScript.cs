@@ -111,6 +111,7 @@ public class EnemyScript : MonoBehaviour
         mover.linearVelocityY = 0;
         mytimer += Time.deltaTime;
         slide = true;
+        Debug.Log(mytimer);
         yield return null;
         }
 

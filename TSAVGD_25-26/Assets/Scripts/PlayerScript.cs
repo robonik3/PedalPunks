@@ -179,7 +179,7 @@ public class PlayerScript : MonoBehaviour
                 break;
             case 5:
                 Collider2D hit = Physics2D.OverlapCircle(transform.position, .6f, LayerMask.GetMask("Enemy"));
-                if (hit != null)
+                if ((hit != null) && (hit.gameObject.name != "Boss SkullRider"))
                 {
                     hit.GetComponent<EnemyScript>().Explode();
                 }
@@ -259,15 +259,15 @@ public class PlayerScript : MonoBehaviour
         while (timer < 0.25)
         {
         Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
-        if (stun != null)
+        if ((stun != null) && (stun.gameObject.name != "Boss SkullRider"))
         {
             if (oneTime)
             {
                 AudioPlayer.instance.Play("DazedWhistle");  
                 oneTime = false;
-            }
-
+                
             stun.GetComponent<EnemyScript>().Stun();
+            }
         }
             timer += Time.deltaTime;
             yield return null;
@@ -329,7 +329,7 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Scooter":
-                            abilityCooldown = 2;
+                            abilityCooldown = 4;
                             StartCoroutine("ScooterAbility");
                             break;
 
