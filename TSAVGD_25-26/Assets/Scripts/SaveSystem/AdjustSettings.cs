@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AdjustSettings : MonoBehaviour
 {
-    public float SFXVolume=1;
-    public float MusicVolume=1;
+    public float SFXVolume=.6f;
+    public float MusicVolume=.6f;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
     private void Start()
