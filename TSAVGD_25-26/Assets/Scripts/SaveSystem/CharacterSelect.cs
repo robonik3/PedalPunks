@@ -39,7 +39,7 @@ public class CharacterSelect : MonoBehaviour
             }
             else
             {
-                ChangePlayerCharacter(0);
+                ChangePlayerCharacter(info?1:0);
                 ChangeBike(0);
             }
 

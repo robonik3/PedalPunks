@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Player Tony
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   visual: {fileID: 0}
+  visualT: {fileID: 0}
   DisplaySprite: {fileID: 8382819060826258158, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4
   gravity: -9.81
   characterName: Tony
+  Description: "\"This Pineapple fiend is wanted by bikers around the world for his
+    grand theft bromeliaceae. Unusually atheletic, capable of stealing bikes while
+    driving. Be on high alert for this individual.\" \n-GrandBiker, Head of Secret
+    Biker Club"

@@ -47,7 +47,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private BikeType currentBike;
     [SerializeField] private CharacterSelect character;
     public AudioSource engineSource;
-    public AudioSource hitSoundEffect;
 
     //Engine pitch changing stuff
     [Header("Engine Sound")]
@@ -91,6 +90,7 @@ public class PlayerScript : MonoBehaviour
 
             bikeVisual.runtimeAnimatorController = character.bikeList[data.selectedBike].visual;
         }
+        engineSource.volume *= AudioPlayer.instance.SFXvolume;
     }
     private void Update()
     {
@@ -364,7 +364,7 @@ public class PlayerScript : MonoBehaviour
             if(hit.transform != null)
             {   
                 cooldown = .5f;
-                hitSoundEffect.Play();
+                AudioPlayer.instance.Play("Hit2");
                 hit.transform.GetComponent<EnemyScript>().Shoved();
                 if(hit.transform.TryGetComponent(out ScooterEnemyScript s))
                 {

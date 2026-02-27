@@ -2223,6 +2223,7 @@ MonoBehaviour:
   unlockedCharacters: 010000000000
   info: 1
   characterList:
+  - {fileID: 11400000, guid: 92487245ef858894586b84d30ebd93a7, type: 2}
   - {fileID: 11400000, guid: b0e1d0412973513418a8d16bc806e53e, type: 2}
   - {fileID: 11400000, guid: e3f3d14bdbcbf5a4c84c83de769b093d, type: 2}
   - {fileID: 11400000, guid: 4c8aecde60dbff040828050288b054b2, type: 2}

@@ -5300,7 +5300,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958422180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39e8d5801044dff408380aa232efb157, type: 3}
   m_Name: 
@@ -5308,6 +5308,7 @@ MonoBehaviour:
   selectedCharacter: 0
   selectedBike: 0
   unlockedCharacters: 010000000000
+  info: 0
   characterList:
   - {fileID: 11400000, guid: 92487245ef858894586b84d30ebd93a7, type: 2}
   - {fileID: 11400000, guid: b0e1d0412973513418a8d16bc806e53e, type: 2}
@@ -5326,6 +5327,8 @@ MonoBehaviour:
   BikePreview: {fileID: 0}
   CharacterName: {fileID: 0}
   BikeName: {fileID: 0}
+  EnemyDescription: {fileID: 0}
+  BikeDescription: {fileID: 0}
   dontLoad: 1
 --- !u!1 &1962669478
 GameObject:

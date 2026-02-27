@@ -14,6 +14,7 @@ public class ExplosionAudioScript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.volume *= AudioPlayer.instance.SFXvolume;
         audioSource.Play();
 
         cam = Camera.main.transform;
