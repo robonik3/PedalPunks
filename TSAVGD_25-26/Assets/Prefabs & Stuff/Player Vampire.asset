@@ -19,3 +19,4 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: Vampire
+  Description: Dispenses potholes on the road, which steal your fuel.

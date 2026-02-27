@@ -19,3 +19,5 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: Biker
+  Description: Basic enemy that drives up close to you. Once close enough, it wheelies
+    and tries to hit the front of your bike to sabotage it.

@@ -10,4 +10,5 @@ public class PlayerType : ScriptableObject
     public float forwardSpeed;
     public float gravity;
     public string characterName;
+    [TextArea]public string Description;
 }

@@ -41,6 +41,7 @@ public class TransitionData : MonoBehaviour
             {
                 StartCoroutine("Buffer");
             }
+
         }
         else
         {

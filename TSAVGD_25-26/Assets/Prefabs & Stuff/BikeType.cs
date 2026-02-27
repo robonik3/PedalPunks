@@ -9,4 +9,5 @@ public class BikeType : ScriptableObject
     public Sprite DisplaySprite;
     public string bikeName;
     public Sprite[] enemyRagdoll;
+    [TextArea]public string Description;
 }

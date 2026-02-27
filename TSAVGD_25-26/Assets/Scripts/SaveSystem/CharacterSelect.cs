@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Timeline;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 
@@ -11,7 +9,7 @@ public class CharacterSelect : MonoBehaviour
     public int selectedCharacter;
     public int selectedBike;
     public bool[] unlockedCharacters;
-    public int info = 0;
+    public bool info = false;
 
     public PlayerType[] characterList;
     public BikeType[] bikeList;
@@ -19,8 +17,10 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private Image PlayerPreview;
     [SerializeField] private Image BikePreview;
     [SerializeField] private TextMeshProUGUI CharacterName;
-        [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI BikeName;
+
+    [SerializeField] private TextMeshProUGUI EnemyDescription;
+    [SerializeField] private TextMeshProUGUI BikeDescription;
 
     [SerializeField] private bool dontLoad;
     // 0:Tony / 1:Enemy / 2:Astronaut / 3:ScooterMan / 4:Vampire / 5:Aviator
@@ -28,26 +28,19 @@ public class CharacterSelect : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SceneManager.GetActiveScene().name=="Bikes")
-        {
-            info = 1;
-        } 
-        else if (SceneManager.GetActiveScene().name == "Enemies")
-        {
-            info = 2;
-        } else
-        {
-          info = 0;   
-        }
-        Debug.Log(info);
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {
             data.unlockedCharacters.CopyTo(unlockedCharacters, 0);
             if (!dontLoad)
             {
-            ChangePlayerCharacter(data.selectedCharacter);
-            ChangeBike(data.selectedBike);
+                ChangePlayerCharacter(data.selectedCharacter);
+                ChangeBike(data.selectedBike);
+            }
+            else
+            {
+                ChangePlayerCharacter(0);
+                ChangeBike(0);
             }
 
         }
@@ -70,8 +63,8 @@ public class CharacterSelect : MonoBehaviour
     public void ChangePlayerCharacter(int i)
     {
         selectedCharacter = i;
-        if(selectedCharacter > 5) {  selectedCharacter = 0; }
-        if(selectedCharacter < 0) {  selectedCharacter = 5; }
+        if(selectedCharacter > characterList.Length-1) {  selectedCharacter = 0; }
+        if(selectedCharacter < 0) {  selectedCharacter = characterList.Length-1; }
 
         PlayerPreview.sprite = characterList[selectedCharacter].DisplaySprite;
         
@@ -79,43 +72,24 @@ public class CharacterSelect : MonoBehaviour
         { 
             PlayerPreview.color = Color.white;
             CharacterName.text = characterList[selectedCharacter].characterName;
-            if (info == 2)
+            if (info)
             {
-               switch (characterList[selectedCharacter].characterName)
-                    {
-
-                        case "Biker":
-            Description.text = "Basic enemy that drives up close to you. Once close enough, it wheelies and tries to hit the front of your bike to sabotage it.";
-                            break;
-
-                        case "Astronaut":
-            Description.text = "This enemy uses its powerful jet engine to drive forward extremely fast, destroying everything in its path. However, it can only travel in one direction";
-                            break;
-
-                        case "ScooterMan":
-            Description.text = "Drives above or below you, eventually charging to your side to attack. Despite its easy to dodge attack, this enemy takes five hits to knock off. ";
-                            break;
-
-                        case "Aviator":
-                            Description.text = "???";
-                            break;
-
-                        case "Vampire":
-            Description.text = "Dispenses potholes on the road, which steal your fuel.";
-                            break;
-
-                    }
+                EnemyDescription.text = characterList[selectedCharacter].Description;
             }
-            if (unlockedCharacters[selectedBike]) SaveSystem.SavePlayer(this);
+            else
+            {
+                if (unlockedCharacters[selectedBike]) SaveSystem.SavePlayer(this);
+            }
+
 
         }
         else 
         { 
             PlayerPreview.color = Color.black;
             CharacterName.text = "???";
-            if (info==2)
+            if (info)
             {
-                Description.text = "???";
+                EnemyDescription.text = "???";
             }
 
         }
@@ -125,8 +99,8 @@ public class CharacterSelect : MonoBehaviour
     public void ChangeBike(int i)
     {
         selectedBike = i;
-        if(selectedBike > 5) {  selectedBike = 0; }
-        if(selectedBike < 0) {  selectedBike = 5; }
+        if(selectedBike > bikeList.Length-1) {  selectedBike = 0; }
+        if(selectedBike < 0) {  selectedBike = bikeList.Length-1; }
 
         BikePreview.sprite = bikeList[selectedBike].DisplaySprite;
 
@@ -135,45 +109,22 @@ public class CharacterSelect : MonoBehaviour
             BikePreview.color = Color.white;
             BikeName.text = bikeList[selectedBike].bikeName;
 
-            if (unlockedCharacters[selectedCharacter]) SaveSystem.SavePlayer(this);
-             if (info == 1)
+             if (info)
             {
-                Debug.Log("here");
-               switch (bikeList[selectedBike].bikeName)
-                    {
-                        case "Purple Classic":
-            Description.text = "Makes the bike wheelie, which makes everything quicker. This makes the bike faster, but also your enemies faster, additionally taking away fuel more quickly";
-                            break;
-                        case "Biker Bike":
-            Description.text = "Same as the Purple Classic, but more stylish.";
-                            break;
+                BikeDescription.text = bikeList[selectedBike].Description;
+            }
+            else
+            {
+                if (unlockedCharacters[selectedCharacter]) SaveSystem.SavePlayer(this);
 
-                        case "Jet Bike":
-            Description.text = "Uses its powerful jet engine to drive forward extremely fast, destroying almost everything in its path (including cars, but not bosses).";
-                            break;
-
-                        case "Scooter":
-            Description.text = "Honks the scooter's horn, stunning nearby enemies for a short time. ";
-                            break;
-
-                        case "Glider":
-                            Description.text = "???";
-                            break;
-
-                        case "Coffin Car":
-            Description.text = "Steals fuel from surrounding enemies with its mysterious powers, allowing the bike to last longer.";
-                            break;
-
-                    }
-                    Debug.Log(Description.text);
             }
         }
         else
         {
             BikePreview.color = Color.black;
             BikeName.text = "???";
-            if (info==1) {
-            Description.text="???";
+            if (info) {
+            BikeDescription.text="???";
             }
         }
 

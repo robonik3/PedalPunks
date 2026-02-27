@@ -19,3 +19,4 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: Aviator
+  Description: ???

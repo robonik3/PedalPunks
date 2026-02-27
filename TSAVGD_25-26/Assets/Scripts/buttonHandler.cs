@@ -76,6 +76,13 @@ public class buttonHandler : MonoBehaviour
     {
         SaveSystem.DeleteSave();
     }
+    public void SaveSettings()
+    {
+        AdjustSettings data = FindFirstObjectByType<AdjustSettings>();
+        SaveSystem.SaveSettings(data);
+        AudioPlayer.instance.SFXvolume = data.SFXVolume;
+        AudioPlayer.instance.MusicVolume = data.MusicVolume;
+    }
     public void Restart()
     {
         SceneManager.LoadScene(curr_level);

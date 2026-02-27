@@ -20,3 +20,5 @@ MonoBehaviour:
   enemyRagdoll:
   - {fileID: -569420502893754761, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   - {fileID: -3101810881422575322, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: Does Wheelies just like the Purple Classic, but with a more stylish
+    flair thanks to its signature red paint job.

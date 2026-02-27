@@ -20,3 +20,9 @@ MonoBehaviour:
   enemyRagdoll:
   - {fileID: -3001158560838945532, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   - {fileID: 1401184760482923002, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: 'Uses its powerful jet engine to drive forward extremely fast, destroying
+    almost everything in its path! (including cars, but not bosses).
+
+
+    Careful!
+    That engine''ll take a moment to heat-up and cool-down.'

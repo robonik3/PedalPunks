@@ -2,12 +2,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEditor.Experimental.GraphView;
+
 public class AudioPlayer : MonoBehaviour
 {
     public static AudioPlayer instance;
     public AllAudioClips listOfClips;
-    public Slider sfx;
-    public Slider music;
     public Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
     private List<AudioSource> pool = new List<AudioSource>();
 
@@ -28,6 +28,17 @@ public class AudioPlayer : MonoBehaviour
                 clips.Add(listOfClips.listOfClips[i].name, listOfClips.listOfClips[i]);
             }
         }
+        SettingsData data = SaveSystem.LoadSettings();
+        if (data == null)
+        {
+            GameObject d = new GameObject();
+            SaveSystem.SaveSettings(d.AddComponent<AdjustSettings>());
+        }
+        else
+        {
+            SFXvolume = data.SFXVolume;
+            MusicVolume = data.MusicVolume;
+        }
 
         DontDestroyOnLoad(transform.gameObject);
     }
@@ -38,8 +49,6 @@ public class AudioPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SFXvolume = sfx.value;
-        MusicVolume = music.value;
         //adiosauce.volume = SFXvolume;
     }
     public void Play(string clipName, float pitch = 1, Vector3 location = default(Vector3), float space = 0)

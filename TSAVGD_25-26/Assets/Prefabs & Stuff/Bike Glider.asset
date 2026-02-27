@@ -20,3 +20,4 @@ MonoBehaviour:
   enemyRagdoll:
   - {fileID: 1074175266, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   - {fileID: -1937093129, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: ???

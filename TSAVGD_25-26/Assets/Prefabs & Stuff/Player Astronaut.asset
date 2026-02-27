@@ -19,3 +19,5 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: Astronaut
+  Description: This enemy uses its powerful jet engine to drive forward extremely
+    fast, destroying everything in its path. However, it can only travel in one direction.

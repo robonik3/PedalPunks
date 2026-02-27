@@ -20,3 +20,9 @@ MonoBehaviour:
   enemyRagdoll:
   - {fileID: -5265430432517013370, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   - {fileID: -345212712661455229, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: 'Performs a wheelie, which speeds everything up, making the bike faster,
+    but also your enemies faster. Additionally, fuel drains more.
+
+
+    A Great way
+    to clear a level faster.'

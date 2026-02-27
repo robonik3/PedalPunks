@@ -19,3 +19,5 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: ScooterMan
+  Description: Drives above or below you, eventually charging to your side to attack.
+    Despite its easy to dodge attack, this enemy takes five hits to knock off.

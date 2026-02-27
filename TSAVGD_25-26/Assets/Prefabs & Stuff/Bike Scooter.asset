@@ -20,3 +20,5 @@ MonoBehaviour:
   enemyRagdoll:
   - {fileID: 1261849645665416885, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   - {fileID: 1227540624986179978, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: "HONK HONK! \nThe scooter's horn makes for a great way around traffic,
+    stunning nearby enemies for a short time."
