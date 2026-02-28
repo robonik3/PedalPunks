@@ -16776,6 +16776,22 @@ MonoBehaviour:
     delaySpawnTime: 50
     ypos: 2
     spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 55
+    ypos: 1
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 60
+    ypos: 0
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 60
+    ypos: 0
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
+    delaySpawnTime: 60
+    ypos: -1
+    spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
   FinishLevel:
@@ -32145,7 +32161,6 @@ MonoBehaviour:
   currentBike: {fileID: 11400000, guid: d850486f6725365469ec4b378f87d91f, type: 2}
   character: {fileID: 1086722895}
   engineSource: {fileID: 1768456848}
-  hitSoundEffect: {fileID: 1768456847}
   upperYLimit: 0
   lowerYLimit: 0
   visualRoot: {fileID: 524926004}

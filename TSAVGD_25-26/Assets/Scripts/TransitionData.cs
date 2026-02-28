@@ -55,16 +55,21 @@ public class TransitionData : MonoBehaviour
     IEnumerator Buffer()
     {
         yield return new WaitForSecondsRealtime(.1f);
-        UnlockDisplay.transform.SetParent(FindAnyObjectByType<Canvas>().transform);
+        UnlockDisplay.transform.SetParent(FindAnyObjectByType<Canvas>().transform,false);
         UnlockDisplay.transform.SetAsFirstSibling();
-        AlternateWinText.transform.SetParent(FindAnyObjectByType<Canvas>().transform);
+        AlternateWinText.transform.SetParent(FindAnyObjectByType<Canvas>().transform,false);
         AlternateWinText.transform.SetAsFirstSibling();
         buttonHandler bh = FindFirstObjectByType<buttonHandler>();
         GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadSceneDelay(toLevel));
         GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => RemoveInstance());
         bool du = FindFirstObjectByType<CharacterSelect>().UnlockNewCharacters(newUnlocks);
         yield return new WaitForSecondsRealtime(2);
-        if (du) { UnlockDisplay.SetActive(true); }
+        if (du) 
+        { 
+            UnlockDisplay.SetActive(true);
+            UnlockDisplay.GetComponent<RectTransform>().offsetMin = Vector3.zero;
+            UnlockDisplay.GetComponent<RectTransform>().offsetMax = Vector3.zero;
+        }
         else
         {
             AlternateWinText.SetActive(true);

@@ -334,7 +334,10 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Glider":
-                            break;
+                            abilityCooldown = 4;
+                            fallingVelocity = Mathf.Sqrt(3f * 9.81f * 2);
+                            StartCoroutine("WaitToLand");
+                        break;
 
                         case "Bike Coffin":
                             abilityCooldown = 6;    
@@ -369,6 +372,10 @@ public class PlayerScript : MonoBehaviour
                 if(hit.transform.TryGetComponent(out ScooterEnemyScript s))
                 {
                     cooldown = .1f;
+                }
+                if(hit.transform.TryGetComponent(out SkullRiderBossScript b))
+                {
+                    cooldown = 1f;
                 }
             }
         }

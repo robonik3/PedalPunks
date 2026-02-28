@@ -16,8 +16,12 @@ MonoBehaviour:
   visualT: {fileID: 22100000, guid: b5b6484afcdca4b4abc967b44503bd5c, type: 2}
   DisplaySprite: {fileID: -1243242081418837360, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
-  forwardSpeed: 4
+  forwardSpeed: 5
   gravity: -9.81
   characterName: Biker
-  Description: Basic enemy that drives up close to you. Once close enough, it wheelies
+  Description: 'Basic enemy that drives up close to you. Once close enough, it wheelies
     and tries to hit the front of your bike to sabotage it.
+
+
+    Player Bonus: Faster
+    Horizontal Movement'

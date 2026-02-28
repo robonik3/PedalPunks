@@ -19,4 +19,7 @@ MonoBehaviour:
   forwardSpeed: 4
   gravity: -9.81
   characterName: Vampire
-  Description: Dispenses potholes on the road, which steal your fuel.
+  Description: 'Dispenses potholes on the road, which steal your fuel.
+
+    While
+    garlic will deter this vampire, a good pineapple won''t.'

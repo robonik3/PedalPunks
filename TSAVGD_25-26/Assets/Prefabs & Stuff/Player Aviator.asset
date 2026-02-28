@@ -17,6 +17,6 @@ MonoBehaviour:
   DisplaySprite: {fileID: 687293275, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
   turningSpeed: 3
   forwardSpeed: 4
-  gravity: -9.81
+  gravity: -8.5
   characterName: Aviator
-  Description: ???
+  Description: 'Player Bonus: Lower Gravity'

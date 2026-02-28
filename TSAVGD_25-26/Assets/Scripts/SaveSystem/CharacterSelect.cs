@@ -132,6 +132,15 @@ public class CharacterSelect : MonoBehaviour
     }
     public bool UnlockNewCharacters(bool[] newUnlocks)
     {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            data.unlockedCharacters.CopyTo(unlockedCharacters, 0);
+
+            selectedCharacter = data.selectedCharacter;
+            selectedBike = data.selectedBike;
+
+        }
         bool displayNewUnlocks=false;
 
         for (int i=0; i < unlockedCharacters.Length; i++)
