@@ -88,4 +88,8 @@ public class buttonHandler : MonoBehaviour
         SceneManager.LoadScene(curr_level);
         Debug.Log(curr_level + " Restarted");
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
