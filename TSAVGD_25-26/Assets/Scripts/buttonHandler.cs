@@ -92,4 +92,10 @@ public class buttonHandler : MonoBehaviour
     {
         Application.Quit();
     }
+    public void CameraReset()
+    {
+        Camera.main.transform.position = Vector3.zero;
+        Camera.main.orthographicSize = 5;
+    }
+    
 }
