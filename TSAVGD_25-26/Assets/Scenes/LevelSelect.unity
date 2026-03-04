@@ -373,14 +373,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadL2
-        m_Mode: 1
+        m_MethodName: loadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &32732156
@@ -1003,14 +1003,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadL3
-        m_Mode: 1
+        m_MethodName: loadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &273054360
@@ -2851,7 +2851,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3509,7 +3509,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3780,14 +3780,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadL1
-        m_Mode: 1
+        m_MethodName: loadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1024900129
@@ -3872,7 +3872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7ecfe2240e72d4d8871e1d1d455bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::buttonHandler
-  pauseCanvas: {fileID: 0}
 --- !u!4 &1044427341
 Transform:
   m_ObjectHideFlags: 0
@@ -4611,7 +4610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4760,7 +4759,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5120,7 +5119,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5261,7 +5260,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Cutscene1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1437601384
@@ -5418,7 +5417,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6718,7 +6717,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6958,7 +6957,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7593,14 +7592,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadHome
-        m_Mode: 1
+        m_MethodName: loadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1942826464
@@ -8661,7 +8660,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044427340}
         m_TargetAssemblyTypeName: buttonHandler, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,8 +15,6 @@ public class ProgressBar : MonoBehaviour
 
     public bool CanComplete = true;
 
-    FadeScript screenFade;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,7 +52,7 @@ public class ProgressBar : MonoBehaviour
         TransitionData.instance.standardTime = levelLengthTime;
 
         TransitionData.instance.yourTime = completionTimer;
-        yield return null;  //StartCoroutine(screenFade.FadeIn()); The screenfade variable isn't  set
+        yield return StartCoroutine(FindFirstObjectByType<FadeScript>().FadeIn());
         SceneManager.LoadScene("Transition");
     }
 }

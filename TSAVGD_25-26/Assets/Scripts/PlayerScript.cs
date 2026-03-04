@@ -20,7 +20,6 @@ public class PlayerScript : MonoBehaviour
     public float abilityCooldown;
 
     public float speed=1;
-    public GameObject horn;
     private float speedForward=4; //This is left & Right movement
     private float speedTurning=3; //This is up & down movement
 
@@ -450,6 +449,6 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         //Fade to black
         if(screenFade != null) yield return StartCoroutine(screenFade.FadeIn());
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneLoader.LoadLevel(SceneManager.GetActiveScene().name);
     }
 }

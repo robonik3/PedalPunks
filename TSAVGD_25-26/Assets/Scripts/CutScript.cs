@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class CutScript : MonoBehaviour
 {
     float timer;
+    [SerializeField] private float length;
+    [SerializeField] private string levelName;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,10 +16,19 @@ public class CutScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      timer+=Time.deltaTime;
-      if (timer>=28f)
+        if (Input.GetKeyDown(KeyCode.P)) { timer = length; }
+        timer+=Time.deltaTime;
+
+        if (timer>=length)
         {
-            SceneManager.LoadScene("Tutorial");
+            if (levelName == "Tutorial")
+            {
+                SceneManager.LoadScene(levelName);
+            }
+            else
+            {
+                SceneLoader.LoadLevel(levelName);
+            }
         }
     }
 }

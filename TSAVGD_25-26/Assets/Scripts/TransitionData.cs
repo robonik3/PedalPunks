@@ -35,7 +35,7 @@ public class TransitionData : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        if (n.name==fromLevel || n.name == "Transition")
+        if (n.name==fromLevel || n.name == "Transition" || n.name=="Player")
         {
             if(n.name == "Transition")
             {
@@ -59,9 +59,11 @@ public class TransitionData : MonoBehaviour
         UnlockDisplay.transform.SetAsFirstSibling();
         AlternateWinText.transform.SetParent(FindAnyObjectByType<Canvas>().transform,false);
         AlternateWinText.transform.SetAsFirstSibling();
+
         buttonHandler bh = FindFirstObjectByType<buttonHandler>();
-        GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadSceneDelay(toLevel));
+        GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadLevelDelay(toLevel));
         GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => RemoveInstance());
+
         bool du = FindFirstObjectByType<CharacterSelect>().UnlockNewCharacters(newUnlocks);
         yield return new WaitForSecondsRealtime(2);
         if (du) 
