@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Road : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Road : MonoBehaviour
     void Start()
     {
         if (roadLength <= 0) { roadLength = 1; }
+
+            GetComponent<Tilemap>().CompressBounds();
+        roadLength = GetComponent<Tilemap>().size.x-20;
     }
 
     // Update is called once per frame

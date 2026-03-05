@@ -11,7 +11,6 @@ public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
     private Rigidbody2D mover;
-    private bool oneTime;
     private Vector2 movement;
     private float shoveDir=-1;
 
@@ -26,7 +25,6 @@ public class PlayerScript : MonoBehaviour
     public float height;
     private float fallingVelocity;
     private float gravity = -9.81f;
-    private Collider2D steal;
 
     private bool accelerating;
     public float ultraBoost;
@@ -40,8 +38,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ParticleSystem dirt;
     [SerializeField] private ParticleSystem boostTrail;
     [SerializeField] private ParticleSystem ripple;
-    [SerializeField] private Animator playerVisual;
-    [SerializeField] private Animator bikeVisual;
+    public Animator playerVisual;
+    public Animator bikeVisual;
     [SerializeField] private Transform shadow;
     [SerializeField] private BikeType currentBike;
     [SerializeField] private CharacterSelect character;
@@ -59,13 +57,10 @@ public class PlayerScript : MonoBehaviour
     public float upperYLimit;
     public float lowerYLimit;
 
-    //player sprite (sprite renderer so I can use it in this script)
-    public GameObject visualRoot;
-    public GameObject shadowSprite;
     public GameObject explosionPrefab;
-    FadeScript screenFade;
 
     private Collider2D hopTo;
+    private Collider2D steal; //This is for vampire
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,7 +68,6 @@ public class PlayerScript : MonoBehaviour
         Application.targetFrameRate = 60;
         instance = this;
         mover = GetComponent<Rigidbody2D>();
-        screenFade = FindFirstObjectByType<FadeScript>();
 
         PlayerData data = SaveSystem.LoadPlayer();
 
@@ -246,7 +240,7 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator ScooterAbility()
     {
         float timer = 0;
-        oneTime = true;
+        bool oneTime = true;
         AudioPlayer.instance.Play("Scooter Horn");
         ripple.Stop();
                         var color = ripple.colorOverLifetime;
@@ -276,7 +270,6 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator CoffinAbility()
     {
         float timer = 0;
-        oneTime = true;
         AudioPlayer.instance.Play("Laugh");
         bikeVisual.SetBool("Coffin", true);
         var color = ripple.colorOverLifetime;
@@ -442,12 +435,12 @@ public class PlayerScript : MonoBehaviour
     IEnumerator DeathSequence()
     {
 
-        visualRoot.SetActive(false);
-        shadowSprite.SetActive(false);
+        playerVisual.gameObject.SetActive(false);
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         //wait for explosion
         yield return new WaitForSeconds(0.4f);
         //Fade to black
+        FadeScript screenFade = FindFirstObjectByType<FadeScript>();
         if(screenFade != null) yield return StartCoroutine(screenFade.FadeIn());
         SceneLoader.LoadLevel(SceneManager.GetActiveScene().name);
     }

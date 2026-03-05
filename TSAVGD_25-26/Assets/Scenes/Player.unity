@@ -16633,8 +16633,6 @@ MonoBehaviour:
   engineSource: {fileID: 1825417102}
   upperYLimit: 0
   lowerYLimit: 0
-  visualRoot: {fileID: 1163375255}
-  shadowSprite: {fileID: 670283192}
   explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
 --- !u!114 &1825417106
 MonoBehaviour:
