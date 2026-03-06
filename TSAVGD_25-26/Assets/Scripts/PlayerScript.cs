@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using System;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public static PlayerScript instance;
     private Rigidbody2D mover;
     private Vector2 movement;
+    public Vector2 slide;
     private float shoveDir=-1;
 
     public int state = 0;
@@ -165,7 +165,7 @@ public class PlayerScript : MonoBehaviour
                 Drive();
                 break;
             case 1:
-
+                Sliding();
                 break;
             case 2:
 
@@ -205,11 +205,21 @@ public class PlayerScript : MonoBehaviour
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y,-5,5), transform.position.z);
             if (smoke.isPlaying) { smoke.Stop(); speed = 1; decay = 0; } 
         }
+        slide *= Mathf.Clamp01(1 - 5 * Time.deltaTime);
     }
     public void Drive()
     {
         mover.linearVelocity = speed * new Vector2(movement.x * speedForward, movement.y * speedTurning);
 
+    }    
+    public void Sliding()
+    {
+        mover.linearVelocity = slide;
+        if (slide.magnitude < .5f)
+        {
+            slide = Vector2.zero;
+            state = 0;
+        }
     }
     public IEnumerator AstronautAbility()
     {

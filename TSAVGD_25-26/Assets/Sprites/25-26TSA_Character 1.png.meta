@@ -375,6 +375,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -4061,7 +4074,7 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4070,6 +4083,72 @@ TextureImporter:
       bones: []
       spriteID: 0d193c42aa6fba2488842bd8391883dd
       internalID: -247797087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1556e19d25f18e74da03c3d5b5184f94
+      internalID: 82277005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloatieGuy_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0576527c546b0ec4f94733b7ccf67f4f
+      internalID: -1563991238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloatieGuy_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2485b6afc9bb3f438d83d982b0835ef
+      internalID: -924701962
       vertices: []
       indices: 
       edges: []
@@ -4177,6 +4256,8 @@ TextureImporter:
       Enemy_Wheelie: 7948027449014978336
       Excitebike: 8767347689416911798
       Excitebike_Small: 4573934426811905376
+      FloatieGuy_0: -1563991238
+      FloatieGuy_1: -924701962
       Friendly_Purple_Man: 1213911109021764236
       FullAstronaut: 4545456212780008495
       FullAstronaut_1: 24362085
@@ -4226,6 +4307,7 @@ TextureImporter:
       ScooterMan_Turn_Down: 6959082898108209936
       ScooterMan_Turn_Up: -787880179344458946
       ScooterMan_Wheelie: 8741912810396860045
+      Shield: 82277005
       SkullRider_0: 7309932096066727372
       SkullRider_1: 1292806110
       SkullRider_NoFire: 1071078543

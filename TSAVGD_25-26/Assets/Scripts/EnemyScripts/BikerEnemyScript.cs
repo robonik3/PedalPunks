@@ -10,6 +10,7 @@ public class BikerEnemyScript : EnemyScript
     private bool goBackwards;
     private bool stunned = false;
     private Animator animator;
+    public bool shield;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -243,5 +244,20 @@ public class BikerEnemyScript : EnemyScript
     void AnimateTurning()
     {
         animator.SetFloat("SpeedY", mover.linearVelocityY);
+    }
+    public override void Shoved()
+    {
+        if (shield)
+        {
+            PlayerScript.instance.slide = Vector2.up * (PlayerScript.instance.transform.position.y > transform.position.y ? 3 : -3);
+            PlayerScript.instance.state = 1;
+            shield = false;
+            AudioPlayer.instance.Play("CrunchPunch");
+        }
+        else
+        {
+            base.Shoved();
+
+        }
     }
 }
