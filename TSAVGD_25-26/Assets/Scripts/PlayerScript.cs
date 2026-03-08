@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -52,6 +53,7 @@ public class PlayerScript : MonoBehaviour
     private float noFuelPitch = 0.5f;
     private float pitchChangeSpeed = 5f;
     private float targetPitch;
+    private List<Collider2D> detected = new List<Collider2D>();
 
     //The limit or boundary y positions that player cant cross
     public float upperYLimit;
@@ -89,6 +91,7 @@ public class PlayerScript : MonoBehaviour
     {
         cooldown = Mathf.Clamp(cooldown -= Time.deltaTime, 0, 60);
         abilityCooldown = Mathf.Clamp(abilityCooldown -= Time.deltaTime, 0, 60);
+       // Debug.Log(abilityCooldown);
             if (steal!=null)
             {
                 fuel = Mathf.Clamp(fuel + Time.deltaTime/20, 0, 1);
@@ -259,22 +262,24 @@ public class PlayerScript : MonoBehaviour
         ripple.Play();
 
 
-        while (timer < 0.25)
+        while (timer < 0.05)
         {
         Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
-        if ((stun != null) && (stun.gameObject.name != "Boss SkullRider"))
+
+        if ((stun != null) && (stun.gameObject.name != "Boss SkullRider") && !detected.Contains(stun))
         {
+            detected.Add(stun);
             if (oneTime)
             {
                 AudioPlayer.instance.Play("DazedWhistle");  
                 oneTime = false;
-                
+            }            
             stun.GetComponent<EnemyScript>().Stun();
-            }
         }
             timer += Time.deltaTime;
             yield return null;
         }
+        detected.Clear();
         timer = 0;
     }
     public IEnumerator CoffinAbility()
@@ -331,7 +336,7 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Scooter":
-                            abilityCooldown = 4;
+                            abilityCooldown = 4f;
                             StartCoroutine("ScooterAbility");
                             break;
 

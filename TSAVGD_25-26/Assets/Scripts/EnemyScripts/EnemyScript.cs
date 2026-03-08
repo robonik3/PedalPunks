@@ -98,6 +98,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void Stun()
     {
+        Debug.Log("Stunning");
         StartCoroutine(StunSequence());
     }
     IEnumerator StunSequence()
@@ -111,7 +112,7 @@ public class EnemyScript : MonoBehaviour
         mover.linearVelocityY = 0;
         mytimer += Time.deltaTime;
         slide = true;
-        Debug.Log(mytimer);
+        //Debug.Log(mytimer);
         yield return null;
         }
 
