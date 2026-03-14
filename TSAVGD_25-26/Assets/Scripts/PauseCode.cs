@@ -29,7 +29,7 @@ public class PauseCode : MonoBehaviour
     {
         pauseScreen.SetActive(true);
         pauseButton.SetActive(false);
-        Time.timeScale = 0f; //Need to fix
+        Time.timeScale = 0f;
         Debug.Log("Time.deltaTime: " + Time.deltaTime);
         isOn=true;
     }
@@ -46,7 +46,7 @@ public class PauseCode : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
-        pauseButton.SetActive(true);
+        //pauseButton.SetActive(true);
         isOn = false;
     }
 
@@ -54,7 +54,7 @@ public class PauseCode : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelect");
         Time.timeScale = 1f;
-        pauseButton.SetActive(true);
+        //pauseButton.SetActive(true);
         isOn = false;
     }
 

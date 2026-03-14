@@ -13,12 +13,28 @@ public class buttonHandler : MonoBehaviour
     public static string curr_level= "Level 1";
 
 
-/*
+
     void Update()
     {
-        curr_level = SceneManager.GetActiveScene().name;
+        if(SceneManager.GetActiveScene().name == "GameOver")
+        {
+            if(Input.GetKeyUp(KeyCode.L))
+            {
+                loadScene("LevelSelect");
+                Debug.Log("H pressed");
+            }
+            else if(Input.GetKeyUp(KeyCode.M))
+            {
+                loadScene("Menu");
+                Debug.Log("M pressed");
+            }
+            else if(Input.GetKeyUp(KeyCode.R))
+            {
+                loadLevel(curr_level);
+                Debug.Log("R pressed");
+            }
+        }
     }
-*/
 
     public void loadScene(string sceneName)
     {
