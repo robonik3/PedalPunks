@@ -61,7 +61,16 @@ public class TransitionData : MonoBehaviour
         AlternateWinText.transform.SetAsFirstSibling();
 
         buttonHandler bh = FindFirstObjectByType<buttonHandler>();
-        GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadLevelDelay(toLevel));
+        if (toLevel == "EndOfGame" || toLevel.Contains("Cutscene"))
+        {
+            GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadScene(toLevel));
+
+        }
+        else
+        {
+            GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => bh.loadLevelDelay(toLevel));
+
+        }
         GameObject.Find("Next Button").GetComponent<Button>().onClick.AddListener(() => RemoveInstance());
 
         bool du = FindFirstObjectByType<CharacterSelect>().UnlockNewCharacters(newUnlocks);
