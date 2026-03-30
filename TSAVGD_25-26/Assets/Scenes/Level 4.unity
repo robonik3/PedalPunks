@@ -17790,7 +17790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
   newUnlocks: 010000000001
   fromLevel: Level 4
-  toLevel: EndOfGame
+  toLevel: Level 5
   UnlockDisplay: {fileID: 529710974}
   AlternateWinText: {fileID: 1636822999}
   standardTime: 0
