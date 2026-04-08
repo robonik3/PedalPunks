@@ -1206,60 +1206,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Truck_Back
+      name: Truck
       rect:
         serializedVersion: 2
         x: 128
         y: 112
-        width: 16
+        width: 48
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79eaa18e818b359c0800000000000000
-      internalID: -3939602831906263401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Truck_Mid
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e57e4ac95797cfc0800000000000000
-      internalID: -3474642175591025175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Truck_Front
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 16, y: 0, z: 16, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -4096,7 +4052,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4118,7 +4074,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4140,7 +4096,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4332,8 +4288,8 @@ TextureImporter:
       Tony_Turn_Down: 7134049551561881870
       Tony_Turn_Up: 4132347297909285259
       Tony_Wheelie: -6936613558943057481
+      Truck: 4631675953405888076
       Truck_Back: -3939602831906263401
-      Truck_Front: 4631675953405888076
       Truck_Mid: -3474642175591025175
       Vampire_Fall_Down: -1681223397
       Vampire_Fall_Up: 2079114254

@@ -91,7 +91,7 @@ public class BikerEnemyScript : EnemyScript
         if ((timer > random) && !stunned)
         {
             animator.Play("Wheelie");
-
+            playsound = true;
             timer = 0;
             state = 1;
         }
@@ -117,7 +117,7 @@ public class BikerEnemyScript : EnemyScript
         {
             mover.linearVelocityY = 0;
         }
-
+       // if (playsound && timer > .3f) {AudioPlayer.instance.Play("motorcycle2",Random.Range(.8f,1.2f),transform.position,.5f); playsound = false; }
         timer += Time.deltaTime;
         if (timer > .75f)
         {

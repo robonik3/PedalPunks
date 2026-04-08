@@ -30,17 +30,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2.unity
     guid: a09108989ae41dc49b398ef1b8e88b1a
   - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 03c2beb66192056429e66c6dba6cda43
+  - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: 0f8b66bc51f31564199d2099d9a53f25
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
-    guid: 03c2beb66192056429e66c6dba6cda43
+    path: Assets/Scenes/Level 5.unity
+    guid: bd3e694a5ec47e34284294ecc80d3a6b
   - enabled: 1
     path: Assets/Scenes/Level 6.unity
     guid: 3660d8855e1913e4599a50a9d195cd7a
   - enabled: 1
+    path: Assets/Scenes/Level 7.unity
+    guid: 1c1ae60fe9d130248bb39443b9a42d8d
+  - enabled: 1
+    path: Assets/Scenes/Level 8.unity
+    guid: cb97b2d9cf334734e8d6dc68294bffd1
+  - enabled: 1
+    path: Assets/Scenes/Level 9.unity
+    guid: 86bd7c9e39de8af409fefade23a1bfc9
+  - enabled: 1
     path: Assets/Scenes/Level 10.unity
     guid: c5ad23ceefcdbd340be8d9030f399a30
+  - enabled: 1
+    path: Assets/Scenes/Level 11.unity
+    guid: ba868db0b3c46694c89763c863c5442a
+  - enabled: 1
+    path: Assets/Scenes/Level 12.unity
+    guid: 6a41e3d1ea3fba9449d8b9c3cd0391af
   - enabled: 1
     path: Assets/Scenes/EndOfGame.unity
     guid: fa9acd74577992946b1b050d80f8cb32
