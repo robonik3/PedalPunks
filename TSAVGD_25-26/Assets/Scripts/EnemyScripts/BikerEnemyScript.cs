@@ -24,6 +24,10 @@ public class BikerEnemyScript : EnemyScript
         {
             state = 6;
         }
+        if (transform.parent)
+        {
+            state = 7;
+        }
     }
 
     // Update is called once per frame
@@ -63,6 +67,9 @@ public class BikerEnemyScript : EnemyScript
                 break;
             case 6:
                 BackwardsEntrance();
+                break;
+            case 8:
+                JumpOffTruck();
                 break;
 
         }
@@ -117,8 +124,9 @@ public class BikerEnemyScript : EnemyScript
         {
             mover.linearVelocityY = 0;
         }
-       // if (playsound && timer > .3f) {AudioPlayer.instance.Play("motorcycle2",Random.Range(.8f,1.2f),transform.position,.5f); playsound = false; }
         timer += Time.deltaTime;
+        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie4", Random.Range(.8f, 1.2f), transform.position, .5f); playsound = false; }
+
         if (timer > .75f)
         {
             playsound = true;
@@ -163,7 +171,7 @@ public class BikerEnemyScript : EnemyScript
         }
         else { mover.linearVelocityY = 0; }
 
-        if (Physics2D.OverlapCircle(transform.position, .2f, LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(transform.position, .2f, LayerMask.GetMask("Player")) && PlayerScript.instance.height == 0)
         {
             PlayerScript.instance.Die();
             state = 0;
@@ -241,6 +249,19 @@ public class BikerEnemyScript : EnemyScript
             state = 1;
         }
     }
+    void JumpOffTruck()
+    {
+        fallingVelocity += -9.81f * Time.deltaTime;
+        height += fallingVelocity * Time.deltaTime;
+        transform.position += new Vector3(0,fallingVelocity * Time.deltaTime);
+        if(height < 0)
+        {
+            height = 0;
+            timer= 0;
+            playsound = true;
+            state = 1;
+        }
+    }
     void AnimateTurning()
     {
         animator.SetFloat("SpeedY", mover.linearVelocityY);
@@ -259,5 +280,20 @@ public class BikerEnemyScript : EnemyScript
             base.Shoved();
 
         }
+    }
+    public override void DepartTruck()
+    {
+        mover.simulated = true;
+
+        animator.Play("Wheelie");
+
+        mover.linearVelocityX = 2*(transform.position.x-(EnemySpawner.instance.truck.transform.position.x-.5f));
+        mover.linearVelocityY = Mathf.Sign(-transform.position.y);
+
+        fallingVelocity = Mathf.Sqrt(9.81f * 2);
+        height = .1f;
+
+        state = 8;
+        transform.parent = null;
     }
 }

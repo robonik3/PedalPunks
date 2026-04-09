@@ -11,6 +11,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject RagdollPrefab;
     public int state;
+    public float height;
+    public float fallingVelocity;
     private bool crash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -83,6 +85,10 @@ public class EnemyScript : MonoBehaviour
         if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
         Destroy(gameObject);
     }
+    public virtual void DepartTruck()
+    {
+        transform.parent = null;
+    }
     public virtual void Explode()
     {
         StartCoroutine(ExplodeSequence());
@@ -96,7 +102,7 @@ public class EnemyScript : MonoBehaviour
         yield return null;
         Destroy(gameObject);
     }
-    public void Stun()
+    public virtual void Stun()
     {
         Debug.Log("Stunning");
         StartCoroutine(StunSequence());
@@ -105,15 +111,15 @@ public class EnemyScript : MonoBehaviour
     {       
         mytimer = 0;
         while (mytimer<2f) {
-        transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
 
-        //Debug.Log(timer);
-        mover.linearVelocityX = .25f;
-        mover.linearVelocityY = 0;
-        mytimer += Time.deltaTime;
-        slide = true;
-        //Debug.Log(mytimer);
-        yield return null;
+            //Debug.Log(timer);
+            mover.linearVelocityX = Mathf.Clamp(mover.linearVelocityX,-.25f,.25f);
+            mover.linearVelocityY = 0;
+            mytimer += Time.deltaTime;
+            slide = true;
+            //Debug.Log(mytimer);
+            yield return null;
         }
 
                 transform.GetChild(1).gameObject.SetActive(false);

@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private int completedWaves;
     private float timer;
     public bool readyToEndLevel;
+    [HideInInspector] public GameObject truck;
 
     [System.Serializable]
     public class WaveInfo
@@ -71,7 +72,9 @@ public class EnemySpawner : MonoBehaviour
         }
         activeEnemies++;
         completedWaves++;
-        Instantiate(waves[i].enemy, new Vector3((waves[i].spawnOnRightSide ? 10 : -10), waves[i].ypos, 0), new Quaternion());
+        GameObject nemy = Instantiate(waves[i].enemy, new Vector3((waves[i].spawnOnRightSide ? 10 : -10), waves[i].ypos, 0), new Quaternion());
+        if (truck&&truck.transform.childCount<4) { nemy.GetComponent<Rigidbody2D>().simulated=false; nemy.transform.parent = truck.transform; nemy.transform.localPosition = new Vector3(-.5f * (truck.transform.childCount-2), .5f, 0); }
+        if (waves[i].enemy.name =="Enemy Truck") { truck = nemy; }
     }
 
 }

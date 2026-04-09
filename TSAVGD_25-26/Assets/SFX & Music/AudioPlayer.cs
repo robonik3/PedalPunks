@@ -67,6 +67,8 @@ public class AudioPlayer : MonoBehaviour
                 if (adiosauce==null) { ClearCache(); Play(clipName, pitch, location, space); ;Debug.Log("Hoorah"); return; }
                 if (!adiosauce.isPlaying)
                 {
+                    adiosauce.dopplerLevel = 0;
+
                     adiosauce.transform.position = location;
                     adiosauce.clip = value;
                     adiosauce.spatialBlend = space;
