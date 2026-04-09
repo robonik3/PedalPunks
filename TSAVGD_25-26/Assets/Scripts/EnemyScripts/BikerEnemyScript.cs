@@ -274,6 +274,7 @@ public class BikerEnemyScript : EnemyScript
             PlayerScript.instance.state = 1;
             shield = false;
             AudioPlayer.instance.Play("CrunchPunch");
+            transform.GetChild(2).gameObject.SetActive(false);
         }
         else
         {

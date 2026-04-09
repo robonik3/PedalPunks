@@ -25460,6 +25460,7 @@ MonoBehaviour:
     spawnOnRightSide: 1
   activeEnemies: 0
   readyToEndLevel: 0
+  truck: {fileID: 0}
   FinishLevel:
     m_PersistentCalls:
       m_Calls:
@@ -27009,7 +27010,7 @@ SpriteRenderer:
   m_SortingOrder: 15
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1712657954, guid: 8f5cdc3ca135cac45942efa90f45fe00, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -29010,7 +29011,7 @@ SpriteRenderer:
   m_SortingOrder: 15
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1712657954, guid: 8f5cdc3ca135cac45942efa90f45fe00, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
