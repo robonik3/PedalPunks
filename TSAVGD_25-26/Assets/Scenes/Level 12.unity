@@ -628,22 +628,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb374e6936da71f40b6cf14201772c55, type: 3}
   - {fileID: 8300000, guid: 90a8067a2edb20847a0c994870b5bb5e, type: 3}
   - {fileID: 8300000, guid: 7e675b7634cf2aa4aae01489845bdbfc, type: 3}
-  - {fileID: 8300000, guid: 7e675b7634cf2aa4aae01489845bdbfc, type: 3}
+  - {fileID: 8300000, guid: 22d9492fc7bd93347865e9ebc7a8f93a, type: 3}
   - {fileID: 8300000, guid: 8cd2d9dcf5e5cff429bb6c8eb74ec3cc, type: 3}
   - {fileID: 8300000, guid: a1084a29083cd1748b805ea55d63432d, type: 3}
   - {fileID: 8300000, guid: a1084a29083cd1748b805ea55d63432d, type: 3}
   BGColors:
-  - {r: 0.65104645, g: 0.8773585, b: 0.3517711, a: 1}
-  - {r: 0.5471698, g: 0.5186736, b: 0.49296904, a: 1}
-  - {r: 0.4991134, g: 0.24377, b: 0.6226415, a: 1}
-  - {r: 1, g: 0.8606458, b: 0.3820755, a: 1}
-  - {r: 0.6677643, g: 0.6938573, b: 0.7735849, a: 1}
+  - {r: 0.49019608, g: 0.6117647, b: 0.29803923, a: 1}
+  - {r: 0.41568628, g: 0.3647059, b: 0.3254902, a: 1}
+  - {r: 0.34117648, g: 0.2784314, b: 0.33333334, a: 1}
+  - {r: 0.83137256, g: 0.6745098, b: 0.34901962, a: 1}
+  - {r: 0.30588236, g: 0.35686275, b: 0.3764706, a: 1}
   - {r: 0.41037738, g: 0.47199255, b: 1, a: 1}
-  - {r: 0.17501779, g: 0.5377358, b: 0.21654841, a: 1}
-  - {r: 0.66909933, g: 0.7805349, b: 0.7924528, a: 1}
-  - {r: 0.47726062, g: 0.5486912, b: 0.6132076, a: 1}
-  - {r: 0.33962262, g: 0.10412958, b: 0.12915191, a: 1}
-  - {r: 0.3207547, g: 0.21030615, b: 0.26977062, a: 1}
+  - {r: 0.34509805, g: 0.48235294, b: 0.29411766, a: 1}
+  - {r: 0.6431373, g: 0.67058825, b: 0.6666667, a: 1}
+  - {r: 0.101960786, g: 0.14509805, b: 0.18039216, a: 1}
+  - {r: 0.21568628, g: 0.1254902, b: 0.14117648, a: 1}
+  - {r: 0.3764706, g: 0.14117648, b: 0.13333334, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   roads: {fileID: 0}
   songplayer: {fileID: 11677342}
@@ -10150,7 +10150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817c2e27135dcdc498eccbffdc0e824d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelLengthTime: 60
+  levelLengthTime: 120
   bar: {fileID: 1829112981}
   bestTime: {fileID: 722851742}
   progressTimer: 0
@@ -13714,7 +13714,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7240363, g: 1, b: 0.4198113, a: 1}
+  m_BackGroundColor: {r: 0.49019608, g: 0.6117647, b: 0.29803923, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

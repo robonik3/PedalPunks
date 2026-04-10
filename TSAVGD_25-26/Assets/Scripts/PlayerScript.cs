@@ -34,16 +34,21 @@ public class PlayerScript : MonoBehaviour
     public float fuel=1;
     private float decay;
 
+    [SerializeField] private Transform shadow;
+    [SerializeField] private Image displayAbilityCooldown;
     [SerializeField] private Image fuelIndicator;
+
     [SerializeField] private ParticleSystem smoke;
     [SerializeField] private ParticleSystem dirt;
     [SerializeField] private ParticleSystem boostTrail;
     [SerializeField] private ParticleSystem ripple;
+
     public Animator playerVisual;
     public Animator bikeVisual;
-    [SerializeField] private Transform shadow;
+
     [SerializeField] private BikeType currentBike;
     [SerializeField] private CharacterSelect character;
+
     public AudioSource engineSource;
 
     //Engine pitch changing stuff
@@ -328,7 +333,9 @@ public class PlayerScript : MonoBehaviour
                             break;
 
                         case "Bike Astronaut":
-                            abilityCooldown = 4;                            
+                            abilityCooldown = 5;       
+                            StartCoroutine(ShowAbilityCooldown(5));
+
                             //state = 5; is an arbitrary value I assigned so drive() won't run;
                             //also it runs one overlap circle to explode enemies rather than every enemy trying to use overlap circle
                             state = 6;
@@ -337,17 +344,26 @@ public class PlayerScript : MonoBehaviour
 
                         case "Bike Scooter":
                             abilityCooldown = 4f;
+                            StopCoroutine("ShowAbilityCooldown");
+                            StartCoroutine(ShowAbilityCooldown(4));
+
                             StartCoroutine("ScooterAbility");
                             break;
 
                         case "Bike Glider":
                             abilityCooldown = 4;
+                            StopCoroutine("ShowAbilityCooldown");
+                            StartCoroutine(ShowAbilityCooldown(4));
+
                             fallingVelocity = Mathf.Sqrt(3f * 9.81f * 2);
                             StartCoroutine("WaitToLand");
                         break;
 
                         case "Bike Coffin":
-                            abilityCooldown = 6;    
+                            abilityCooldown = 6;
+                            StopCoroutine("ShowAbilityCooldown");
+                            StartCoroutine(ShowAbilityCooldown(6));
+
                             StartCoroutine("CoffinAbility");
                             break;
 
@@ -458,5 +474,36 @@ public class PlayerScript : MonoBehaviour
         FadeScript screenFade = FindFirstObjectByType<FadeScript>();
         if(screenFade != null) yield return StartCoroutine(screenFade.FadeIn());
         SceneLoader.LoadLevel(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator ShowAbilityCooldown(float max)
+    {
+        Image outer = displayAbilityCooldown.transform.parent.GetComponent<Image>();
+        CanvasGroup g = outer.GetComponent<CanvasGroup>();
+        g.alpha = 1;
+        outer.color = Color.black;
+        outer.gameObject.SetActive(true);
+
+        float timer = 0;
+        while (abilityCooldown > 0)
+        {
+            if (timer < 1)
+            {
+                timer += Time.deltaTime*10;
+                outer.fillAmount = timer;
+            }
+            displayAbilityCooldown.fillAmount = 1 - abilityCooldown / max;
+            yield return null;
+        }
+        timer = 0;
+
+        outer.color = Color.white;
+        while (timer<1)
+        {
+            timer += Time.deltaTime*2;
+            g.alpha = 1-timer;
+            yield return null;
+        }
+
+        outer.gameObject.SetActive(false);
     }
 }

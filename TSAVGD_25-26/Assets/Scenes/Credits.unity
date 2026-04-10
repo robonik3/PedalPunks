@@ -745,7 +745,8 @@ MonoBehaviour:
 
 
 
-    Lead Game Designer, Programmer, Artist, Animator, & Musician
+    <uppercase><gradient="AizenGradient">Lead Game Designer,
+    Programmer, Artist, Animator, & Musician</gradient></uppercase>
 
 
 
@@ -817,9 +818,9 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287738347
-  m_fontColor: {r: 0.9215687, g: 0.69411767, b: 0.5686275, a: 1}
-  m_enableVertexGradient: 0
+    rgba: 4294949120
+  m_fontColor: {r: 0, g: 0.7271333, b: 1, a: 1}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -831,7 +832,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -957,61 +958,60 @@ MonoBehaviour:
 
 
 
+    <size=200%><color=red><b><uppercase>Aizen Arze</uppercase></b></color></size>
+
+
+
+    Nikhil
+    Arun
+
     Aizen Arze
 
+    Rushan Ghimire
+
+    Kevin Michael
+
+    Sanjith Katakam
 
 
 
-    Nikhil Arun
+
+    Nikhil
+    Arun
+
+    Kevin Michael
+
+    Aizen Arze
+
+    Rushan Ghimire
+
+
 
     Aizen Arze
 
     Rushan
     Ghimire
 
-    Kevin Michael
+    Nikhil Arun
 
-    Sanjith Katakam
+
+
+
+    Aizen Arze
+
+    Rushan Ghimire
+
+
+
+
+    Rushan
+    Ghimire
 
 
 
 
     Nikhil Arun
 
-    Kevin
-    Michael
-
-    Aizen Arze
-
-    Rushan Ghimire
-
-
-
-    Aizen Arze
-
-    Rushan Ghimire
-
-    Nikhil
-    Arun
-
-
-
-
-    Aizen Arze
-
-    Rushan Ghimire
-
-
-
-
-    Rushan Ghimire
-
-
-
-
-    Nikhil
-    Arun
-
     Sanjith Katakam
 
 
@@ -1019,21 +1019,22 @@ MonoBehaviour:
 
     Kevin Michael
 
+    Sanjith
+    Katakam
+
+
+
+
+    Kevin Michael
+
+
+
     Sanjith Katakam
 
 
 
-
-    Kevin
-    Michael
-
-
-
-    Sanjith Katakam
-
-
-
-    2026, All Rights Reserved'
+    2026, All Rights
+    Reserved'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
