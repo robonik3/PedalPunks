@@ -3,10 +3,8 @@ using UnityEngine;
 public class Level12Handler : MonoBehaviour
 {
     public int CurrentLevel;
-    [SerializeField] AudioClip[] songs;
     [SerializeField] Color[] BGColors;
     [SerializeField] Transform roads;
-    [SerializeField] AudioSource songplayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,13 +19,12 @@ public class Level12Handler : MonoBehaviour
     public void ChangeLevel()
     {
         CurrentLevel++;
-        songplayer.clip = songs[CurrentLevel];
-        songplayer.Play();
         Camera.main.backgroundColor = BGColors[CurrentLevel];
-/*        foreach (Transform t in roads.GetComponentsInChildren<Transform>())
+        for (int i=0;i<roads.childCount;i++)
         {
-            if (t.GetSiblingIndex() == CurrentLevel) { t.gameObject.SetActive(true); }
+            Transform t = roads.GetChild(i);
+            if (i == CurrentLevel) { t.gameObject.SetActive(true); }
             else { t.gameObject.SetActive(false); }
-        }*/
+        }
     }
 }
