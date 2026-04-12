@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
 
     private bool accelerating;
     public float ultraBoost;
-    private float trickBoost;
+    public float trickBoost;
 
     public float fuel=1;
     private float decay;

@@ -1,30 +1,44 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 public class SpecialZone : MonoBehaviour
 {
     public bool happened;
     public UnityEvent OnEnter;
+    [SerializeField] private float manualTime;
+
+    private void Start()
+    {
+        if (manualTime != 0) { StartCoroutine(Wait()); }
+    }
     void Update()
     {
-        if (!happened)
+        if (manualTime==0)
         {
-            if (transform.position.x < 0)
+            if (!happened)
             {
-                happened = true;
-                OnEnter.Invoke();
+                if (transform.position.x < 0)
+                {
+                    happened = true;
+                    OnEnter.Invoke();
+                }
             }
-        }
-        else
-        {
-            if (transform.position.x > 0)
+            else
             {
-                happened = false;
-            }
+                if (transform.position.x > 0)
+                {
+                    happened = false;
+                }
+            }        
         }
+
 
 
     }
-        
+        IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(manualTime);
+        OnEnter.Invoke();
+    }
    
 }

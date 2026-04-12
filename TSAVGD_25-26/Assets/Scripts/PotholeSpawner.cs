@@ -17,19 +17,19 @@ public class PotholeSpawner : MonoBehaviour
         float Yposition = 0f;
         if (randomNum == 0)
         {
-            Yposition = -2.4f;
+            Yposition = -2.5f;
         }
         if (randomNum == 1)
         {
-            Yposition = -1.4f;
+            Yposition = -1.5f;
         }
         if (randomNum == 2)
         {
-            Yposition = -0.3f;
+            Yposition = -0.5f;
         }
         if (randomNum == 3)
         {
-            Yposition = 1.1f;
+            Yposition = .5f;
         }
         GameObject pothole = Instantiate(potholePrefab, new Vector3(12f, Yposition, 0f), Quaternion.identity);
         //pothole.transform.SetParent(roadTransform);
