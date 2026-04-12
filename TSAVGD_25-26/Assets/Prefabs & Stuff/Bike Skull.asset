@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ac587b67ad6fe4187b7bc7477a0e2d, type: 3}
+  m_Name: Bike Skull
+  m_EditorClassIdentifier: Assembly-CSharp::BikeType
+  prefab: {fileID: 6818917336632415414, guid: a250cc5adce54ed4aa4e25c9564d2f3d, type: 3}
+  visual: {fileID: 22100000, guid: bb2202cc207ae5344b435741c7b555bd, type: 2}
+  visualT: {fileID: 22100000, guid: 96509bcf7d9feb340a7d897206c1f8a8, type: 2}
+  DisplaySprite: {fileID: -454054855, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  bikeName: SkullBurner
+  enemyRagdoll:
+  - {fileID: -1472441934, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: 1678229641, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: 'Performs a wheelie, which speeds everything up, making the bike faster,
+    but also your enemies faster. Additionally, fuel drains more.
+
+
+    A Great way
+    to clear a level faster.'
