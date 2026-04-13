@@ -28,6 +28,11 @@ public class BikerEnemyScript : EnemyScript
         {
             state = 7;
         }
+        if (shield)
+        {
+            random -= .25f;
+            randomSpeed += .25f;
+        }
     }
 
     // Update is called once per frame
@@ -296,5 +301,9 @@ public class BikerEnemyScript : EnemyScript
 
         state = 8;
         transform.parent = null;
+    }
+    public override void Stun()
+    {
+        if(!shield)base.Stun();
     }
 }

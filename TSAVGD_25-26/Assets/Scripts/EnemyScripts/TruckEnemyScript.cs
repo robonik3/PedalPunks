@@ -75,4 +75,9 @@ public class TruckEnemyScript : EnemyScript
     {
         
     }
+    public override void Explode()
+    {
+        
+    }
+
 }

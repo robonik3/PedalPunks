@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6439307374858042081}
   - component: {fileID: 4453111344912640329}
   - component: {fileID: 3846000847093464005}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Booster
-  m_TagString: Flame
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

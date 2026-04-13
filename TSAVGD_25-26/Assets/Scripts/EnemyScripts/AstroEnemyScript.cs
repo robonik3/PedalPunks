@@ -7,11 +7,17 @@ public class AstroEnemyScript : EnemyScript
     private bool stunned = false;
     private bool playsound;
     private Animator animator;
+    [SerializeField] private bool super;
+    [SerializeField] private GameObject fire;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        if (transform.parent)
+        {
+            state = 7;
+        }
     }
 
     // Update is called once per frame
@@ -50,8 +56,12 @@ public class AstroEnemyScript : EnemyScript
             case 4:
                 Avoidance();
                 AnimateTurning();
-
                 break;
+            case 8:
+                JumpOffTruck();
+                break;
+
+                
         }
 
     }
@@ -151,11 +161,25 @@ public class AstroEnemyScript : EnemyScript
     }
     void BlastOff()
     {
-                if (stunned)
+        if (stunned)
         {
+            timer = 0;
+            state = 0;
             return;
         }
         mover.linearVelocityX = 8;
+        if (super)
+        {
+            mover.linearVelocityX = 12;
+            timer += Time.deltaTime;
+            if (timer > .1f)
+            {
+                timer -= .1f;
+                Instantiate(fire, transform.position, new Quaternion());
+
+            }
+        }
+
         if (Physics2D.OverlapCircle(transform.position, .35f, LayerMask.GetMask("Player")))
         {
             PlayerScript.instance.Die();
@@ -167,6 +191,7 @@ public class AstroEnemyScript : EnemyScript
 
         if (transform.position.x > 8)
         {
+            timer = 0;
             playsound = true;
             GetComponent<SpriteRenderer>().color = Color.white;
             state = 4;
@@ -190,6 +215,7 @@ public class AstroEnemyScript : EnemyScript
             mover.linearVelocityY = 2;
         }
         mover.linearVelocityX = -3f;
+        if (super) mover.linearVelocityX = -6f;
 
         timer += Time.deltaTime;
 
@@ -203,5 +229,33 @@ public class AstroEnemyScript : EnemyScript
     void AnimateTurning()
     {
         animator.SetFloat("SpeedY", mover.linearVelocityY);
+    }
+    public override void DepartTruck()
+    {
+        mover.simulated = true;
+
+        animator.Play("Wheelie");
+
+        mover.linearVelocityX = 2 * (transform.position.x - (EnemySpawner.instance.truck.transform.position.x - .5f));
+        mover.linearVelocityY = Mathf.Sign(-transform.position.y);
+
+        fallingVelocity = Mathf.Sqrt(9.81f * 2);
+        height = .1f;
+
+        state = 8;
+        transform.parent = null;
+    }
+    void JumpOffTruck()
+    {
+        fallingVelocity += -9.81f * Time.deltaTime;
+        height += fallingVelocity * Time.deltaTime;
+        transform.position += new Vector3(0, fallingVelocity * Time.deltaTime);
+        if (height < 0)
+        {
+            height = 0;
+            timer = 0;
+            playsound = true;
+            state = 2;
+        }
     }
 }

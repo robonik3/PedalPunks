@@ -5,6 +5,7 @@ public class ScooterEnemyScript : EnemyScript
     private float timer;
     private float random;
     private int stun;
+    [SerializeField] private bool super;
 
     private bool stunned = false;
     private bool slide1;
@@ -22,6 +23,7 @@ public class ScooterEnemyScript : EnemyScript
         {
             state = 7;
         }
+        if (super) { stun = -5; }
     }
 
     // Update is called once per frame
@@ -128,6 +130,7 @@ public class ScooterEnemyScript : EnemyScript
         {
             if (transform.position.y < 2)
             {
+                timer += Time.deltaTime/3;
                 mover.linearVelocityY = 4;
             }
             else
@@ -166,7 +169,7 @@ public class ScooterEnemyScript : EnemyScript
         }
         if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie5", Random.Range(.8f, 1.2f), transform.position, .5f); playsound = false; }
 
-        if (timer > .75f)
+        if (timer > .8f)
         {
             playsound = true;
             upOrDown = (PlayerScript.instance.transform.position.y > transform.position.y);
@@ -270,6 +273,7 @@ public class ScooterEnemyScript : EnemyScript
 
             state = 0;
             stun = 0;
+            if (super) { stun = -5; }
         }
     }
     void FinalStunned()
