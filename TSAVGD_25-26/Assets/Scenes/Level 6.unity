@@ -2367,13 +2367,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   waves:
-  - enemy: {fileID: 9066666420941251432, guid: a46e408fc5a23a745b7b1174548c3dd5, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
     delaySpawnTime: 2
-    ypos: 1
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    ypos: -3.5
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
     delaySpawnTime: 4
-    ypos: -1
+    ypos: 2
     spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 6
@@ -2387,81 +2387,101 @@ MonoBehaviour:
     delaySpawnTime: 8
     ypos: -2
     spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: dcfb4f45854a7f44281b107db62b4ac4, type: 3}
+    delaySpawnTime: 12
+    ypos: -1
+    spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 12
     ypos: -1
     spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 12
+    ypos: 1
+    spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
-    delaySpawnTime: 16
+    delaySpawnTime: 12
     ypos: -2
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: a46e408fc5a23a745b7b1174548c3dd5, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 14
+    ypos: -3.5
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 15
+    ypos: 2
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 20
+    ypos: 0
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
+    delaySpawnTime: 22
+    ypos: -1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 24
-    ypos: -1
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 18
-    ypos: 1
-    spawnOnRightSide: 1
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 22
-    ypos: 0
-    spawnOnRightSide: 1
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
-    delaySpawnTime: 22
-    ypos: 1
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 28
-    ypos: 0
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 32
-    ypos: -1
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 36
     ypos: -2
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+    delaySpawnTime: 26
+    ypos: -1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+    delaySpawnTime: 28
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 33
+    ypos: -3.5
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 34
+    ypos: 2
     spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 38
-    ypos: -1
+    ypos: 0
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 40
-    ypos: 1
+    ypos: -2
     spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 42
-    ypos: 0
+    ypos: -1
     spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
     delaySpawnTime: 44
+    ypos: 1
+    spawnOnRightSide: 0
+  - enemy: {fileID: 9066666420941251432, guid: f9b8f123be3457048b4ced6993d68812, type: 3}
+    delaySpawnTime: 45
     ypos: -1
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
     delaySpawnTime: 48
     ypos: 0
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 52
-    ypos: -2
+    ypos: 1
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
+  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 54
     ypos: -1
     spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
-    delaySpawnTime: 56
-    ypos: 0
-    spawnOnRightSide: 0
-  - enemy: {fileID: 9066666420941251432, guid: 304cdcd0aa77fa84b914bbb82095c014, type: 3}
-    delaySpawnTime: 60
-    ypos: -2
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 58
+    ypos: -3.5
+    spawnOnRightSide: 1
+  - enemy: {fileID: 9066666420941251432, guid: 3f5bc09802c4e6140bd75e25d379db8c, type: 3}
+    delaySpawnTime: 59
+    ypos: 2
     spawnOnRightSide: 1
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 65
-    ypos: 0
+    ypos: -1
     spawnOnRightSide: 0
   - enemy: {fileID: 9066666420941251432, guid: 6428c9b2fc77b524798144eb3382550a, type: 3}
     delaySpawnTime: 70

@@ -216,10 +216,10 @@ GameObject:
   - component: {fileID: 297123400486526678}
   - component: {fileID: 8352104313633353385}
   - component: {fileID: 5564671207611767717}
-  - component: {fileID: 5793023974052912426}
   - component: {fileID: 7683136961449159710}
   - component: {fileID: 2485449919195954316}
   - component: {fileID: 1307650375562731226}
+  - component: {fileID: -9156932772739924597}
   m_Layer: 6
   m_Name: Enemy FloatieGuy
   m_TagString: Enemy
@@ -330,25 +330,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5793023974052912426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066666420941251432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162b53f0bd6aa454d838abd8c9c5a143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BikerEnemyScript
-  mover: {fileID: 0}
-  bike: {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
-  slide: 0
-  explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
-  RagdollPrefab: {fileID: 9066666420941251432, guid: ff0ebe202ed053842a17b54d7b4f567b, type: 3}
-  state: 0
-  shield: 0
 --- !u!61 &7683136961449159710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -514,3 +495,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-9156932772739924597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066666420941251432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550346e8139588b4183629a3dab8184a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatieEnemyScript
+  mover: {fileID: 0}
+  bike: {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
+  slide: 0
+  explosionPrefab: {fileID: 2372129088355219725, guid: 6f7da051f1ae0c048a46f6679e14b87d, type: 3}
+  RagdollPrefab: {fileID: 9066666420941251432, guid: ff0ebe202ed053842a17b54d7b4f567b, type: 3}
+  state: 0
+  height: 0
+  fallingVelocity: 0
+  urchin: {fileID: 8914248391710032406, guid: c71000a882a6b194c993293a0b6991d6, type: 3}
