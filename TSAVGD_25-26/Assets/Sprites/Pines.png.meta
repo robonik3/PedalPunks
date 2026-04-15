@@ -120,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -128,8 +128,17 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -12}
+        - {x: 10, y: -7}
+        - {x: 3, y: 0}
+        - {x: 0, y: 16}
+        - {x: -4, y: 0}
+        - {x: -10, y: -7}
+        - {x: -3, y: -12}
+        - {x: -3, y: -16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
       bones: []
       spriteID: 9399a35603ef017c0800000000000000
       internalID: -4102499776724297415
@@ -142,7 +151,58 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: -3, y: -24}
+        - {x: 2, y: -24}
+        - {x: 2, y: -5}
+        - {x: 8, y: -5}
+        - {x: -1, y: 23}
+        - {x: -9, y: -5}
+        - {x: -3, y: -5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0316cd4cc09d8920800000000000000
+      internalID: 2994208534423802635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pines_2
+      rect:
+        serializedVersion: 2
+        x: 64
         y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f919620f9bc66a4b8b7e6dee4164a05
+      internalID: 1912536171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pines_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
         width: 32
         height: 48
       alignment: 0
@@ -151,10 +211,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b0316cd4cc09d8920800000000000000
-      internalID: 2994208534423802635
+      spriteID: ba67656915d7baa4abfa85aee434466c
+      internalID: -1079597982
       vertices: []
       indices: 
       edges: []
@@ -175,6 +235,8 @@ TextureImporter:
     nameFileIdTable:
       Pines_0: -4102499776724297415
       Pines_1: 2994208534423802635
+      Pines_2: 1912536171
+      Pines_3: -1079597982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

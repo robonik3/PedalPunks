@@ -7,6 +7,7 @@ public class CutScript : MonoBehaviour
     float timer;
     [SerializeField] private float length;
     [SerializeField] private string levelName;
+    [SerializeField] private GameObject skiptext;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +30,10 @@ public class CutScript : MonoBehaviour
             {
                 SceneLoader.LoadLevel(levelName);
             }
+        }
+        if (Input.anyKeyDown)
+        {
+            skiptext.SetActive(true);
         }
     }
 }
