@@ -6,6 +6,7 @@ public class Level12Handler : MonoBehaviour
     [SerializeField] Color[] BGColors;
     [SerializeField] Transform roads;
     [SerializeField] Transform props;
+    [SerializeField] ParticleSystem noise;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +21,7 @@ public class Level12Handler : MonoBehaviour
     public void ChangeLevel()
     {
         CurrentLevel++;
-
+        noise.Play();
         for (int i=0;i<roads.childCount;i++)
         {
             Transform t = roads.GetChild(i);

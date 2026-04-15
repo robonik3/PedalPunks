@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ac587b67ad6fe4187b7bc7477a0e2d, type: 3}
+  m_Name: Bike Matteo
+  m_EditorClassIdentifier: Assembly-CSharp::BikeType
+  prefab: {fileID: 6818917336632415414, guid: 3330dc49d1dac3f4eb8bf6f003edf363, type: 3}
+  visual: {fileID: 22100000, guid: f800a9407bf57f34b9274aad1c7948f5, type: 2}
+  visualT: {fileID: 22100000, guid: 724d110c7c9a810418c2304604f161e0, type: 2}
+  DisplaySprite: {fileID: 1664412242, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  bikeName: The Shell
+  enemyRagdoll:
+  - {fileID: -5265430432517013370, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  - {fileID: -345212712661455229, guid: 460191edc41b8bf429f3db617ea40205, type: 3}
+  Description: Has a slow start, but when it wheelies, it builds to be the fastest
+    bike around.

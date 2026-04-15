@@ -9,7 +9,7 @@ public class PlayerData
     public int selectedBike;
     public PlayerData(CharacterSelect player)
     {
-        unlockedCharacters = new bool[6];
+        unlockedCharacters = new bool[7];
         player.unlockedCharacters.CopyTo(unlockedCharacters,0);
         selectedCharacter = player.selectedCharacter;
         selectedBike = player.selectedBike;

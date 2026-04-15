@@ -69,6 +69,8 @@ public class PlayerScript : MonoBehaviour
     private Collider2D hopTo;
     private Collider2D steal; //This is for vampire
 
+    private bool isMatt;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -89,6 +91,8 @@ public class PlayerScript : MonoBehaviour
             gravity = c.gravity;
 
             bikeVisual.runtimeAnimatorController = character.bikeList[data.selectedBike].visual;
+
+            isMatt = c.name == "Player Matteo";
         }
         engineSource.volume *= AudioPlayer.instance.SFXvolume;
     }
@@ -118,7 +122,7 @@ public class PlayerScript : MonoBehaviour
         {
             if(accelerating) 
             {
-                ultraBoost += Time.deltaTime;
+                ultraBoost += Time.deltaTime; if(currentBike.name=="Bike Matteo") { ultraBoost += Time.deltaTime; }
                 if (ultraBoost > 5)
                 {
                     Time.timeScale = 1.5f + ultraBoost / 40;
@@ -171,12 +175,14 @@ public class PlayerScript : MonoBehaviour
         {
             case 0:
                 Drive();
+                CheckFuel();
                 break;
             case 1:
                 Sliding();
+                CheckFuel();
                 break;
             case 2:
-
+                MattRun();
                 break;
             case 5:
                 Collider2D hit = Physics2D.OverlapCircle(transform.position, .6f, LayerMask.GetMask("Enemy"));
@@ -195,6 +201,27 @@ public class PlayerScript : MonoBehaviour
         playerVisual.SetFloat("Height", height);
         bikeVisual.SetFloat("Height", height);
 
+
+    }
+    public void Drive()
+    {
+        mover.linearVelocity = speed * new Vector2(movement.x * speedForward, movement.y * speedTurning);
+
+    }
+    public void MattRun()
+    {
+        mover.linearVelocity = speed * new Vector2(movement.x * speedForward, movement.y * speedTurning);
+        decay += Time.deltaTime*2;
+        mover.linearVelocity += Vector2.left * decay;
+        if (transform.position.x < -15)
+        {
+            //Debug.Log("You LOSE!!!"); 
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+    public void CheckFuel()
+    {
         if (fuel == 0)
         {
             speed = .2f;
@@ -202,24 +229,20 @@ public class PlayerScript : MonoBehaviour
             mover.linearVelocity += Vector2.left * decay;
             if (!smoke.isPlaying) { smoke.Play(); }
 
-            if (transform.position.x < -15) { 
+            if (transform.position.x < -15)
+            {
                 //Debug.Log("You LOSE!!!"); 
                 Time.timeScale = 0f;
                 SceneManager.LoadScene("GameOver");
-                }
+            }
         }
-        else 
+        else
         {
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y,-5,5), transform.position.z);
-            if (smoke.isPlaying) { smoke.Stop(); speed = 1; decay = 0; } 
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y, -5, 5), transform.position.z);
+            if (smoke.isPlaying) { smoke.Stop(); speed = 1; decay = 0; }
         }
         slide *= Mathf.Clamp01(1 - 5 * Time.deltaTime);
     }
-    public void Drive()
-    {
-        mover.linearVelocity = speed * new Vector2(movement.x * speedForward, movement.y * speedTurning);
-
-    }    
     public void Sliding()
     {
         mover.linearVelocity = slide;
@@ -246,6 +269,8 @@ public class PlayerScript : MonoBehaviour
         gameObject.layer = 9;
         timer = 0;
         AudioPlayer.instance.Play("BlastOff");
+        bikeVisual.Play("Extra");
+
         while (timer < 1)
         {
             timer += Time.deltaTime;
@@ -254,6 +279,8 @@ public class PlayerScript : MonoBehaviour
         mover.linearVelocityX = 0;
         gameObject.layer = 3;
         state = 0;
+        bikeVisual.Play("Drive");
+
     }
     public IEnumerator ScooterAbility()
     {
@@ -291,7 +318,7 @@ public class PlayerScript : MonoBehaviour
     {
         float timer = 0;
         AudioPlayer.instance.Play("Laugh");
-        bikeVisual.SetBool("Coffin", true);
+        bikeVisual.Play("Extra");
         var color = ripple.colorOverLifetime;
         color.enabled = true;
         color.color = new ParticleSystem.MinMaxGradient(Color.red);
@@ -305,10 +332,11 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
         ripple.Stop();       
-        bikeVisual.SetBool("Coffin", false);
         gameObject.layer = 3;
         timer = 0;
         steal = null;
+        bikeVisual.Play("Drive");
+
     }
     public void MoveInput(InputAction.CallbackContext context)
     {
@@ -317,7 +345,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void AccelerateInput(InputAction.CallbackContext context)
     {
-        if(!PauseCode.isOn){
+        if(!PauseCode.isOn&&state!=2){
             if (context.ReadValueAsButton() && abilityCooldown==0)
             {
                     switch (currentBike.name)
@@ -367,6 +395,11 @@ public class PlayerScript : MonoBehaviour
                             StartCoroutine("CoffinAbility");
                             break;
 
+                    case "Bike Matteo":
+                        accelerating = true;
+                        if (height == 0) { boostTrail.Play(); };
+                        break;
+
                     }
         
         
@@ -377,6 +410,7 @@ public class PlayerScript : MonoBehaviour
                 boostTrail.Stop();
                 playerVisual.GetComponent<SpriteRenderer>().color = Color.white;
                 bikeVisual.GetComponent<SpriteRenderer>().color = Color.white;
+
                 Time.timeScale = 1;
             }
         }
@@ -407,15 +441,37 @@ public class PlayerScript : MonoBehaviour
     {
         if (context.ReadValueAsButton() && height == 0) 
         {
-            hopTo = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Bike"));
-            if(hopTo == null)
+            if(isMatt && state!=2)
             {
-                fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
-                StartCoroutine("WaitToLand");
+                accelerating = false;
+                state = 2;
+                playerVisual.Play("Extra");
+                BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
+                leftBike.fuel = fuel - 3f / 15f;
+                bikeVisual.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                fallingVelocity = Mathf.Sqrt(.3f * 9.81f * 2);
+
+                height = 0.1f;
+                decay = -.5f;
+                return;
             }
             else
             {
-                StartCoroutine("HopToBike");
+                hopTo = Physics2D.OverlapCircle(transform.position, isMatt?.6f:2, LayerMask.GetMask("Bike"));
+                if(hopTo == null)
+                {
+                    fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
+                    if (isMatt)
+                    {
+
+                        playerVisual.SetTrigger("Hop");
+                    }
+                    StartCoroutine("WaitToLand");
+                }
+                else
+                {
+                    StartCoroutine("HopToBike");
+                }
             }
 
         }
@@ -432,15 +488,25 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
         trickBoost += .2f;
+        if(isMatt) { playerVisual.Play("Extra"); }
     }
     IEnumerator HopToBike()
     {
+        state = 0;
         engineSource.Stop();
-        BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
-        leftBike.fuel = fuel-3f/15f;
+        if (!isMatt)
+        {
+            BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
+            leftBike.fuel = fuel - 3f / 15f;
+        }
+        else
+        {
+            bikeVisual.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
+        }
 
         playerVisual.SetTrigger("Hop");
-        bikeVisual.SetTrigger("Hop");
+        bikeVisual.Play("Hop");
         fallingVelocity = Mathf.Sqrt(1 * 9.81f * 2);
         float timer = 0;
         Vector3 og = transform.position;

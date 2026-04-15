@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class PotholeSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform roadTransform;
     [SerializeField] private GameObject potholePrefab;
     public float spawnDelay = 5f;
 
     void Start()
     {
-        InvokeRepeating(nameof(SpawnPothole), 1f, spawnDelay);
+        InvokeRepeating(nameof(SpawnPothole), spawnDelay/2, spawnDelay);
     }
 
     void SpawnPothole()

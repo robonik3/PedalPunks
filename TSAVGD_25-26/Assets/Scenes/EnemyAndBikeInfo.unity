@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelect
   selectedCharacter: 0
   selectedBike: 0
-  unlockedCharacters: 010000000000
+  unlockedCharacters: 01000000000000
   info: 1
   characterList:
   - {fileID: 11400000, guid: 92487245ef858894586b84d30ebd93a7, type: 2}
@@ -2243,6 +2243,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c8aecde60dbff040828050288b054b2, type: 2}
   - {fileID: 11400000, guid: ce62487da1a858546912ed9a42228d0f, type: 2}
   - {fileID: 11400000, guid: 476f40fbdaaf4a046a65fe1ded65e7c2, type: 2}
+  - {fileID: 11400000, guid: 6ab2a43107952194a84363f19052b328, type: 2}
   bikeList:
   - {fileID: 11400000, guid: d850486f6725365469ec4b378f87d91f, type: 2}
   - {fileID: 11400000, guid: c16c75038a793b947973469736097422, type: 2}
@@ -2250,6 +2251,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca23675db048e3e42a1af45ed18fe714, type: 2}
   - {fileID: 11400000, guid: 8fb1191015d25b640bc0478ac48a1588, type: 2}
   - {fileID: 11400000, guid: 1b3a8cc9315e6544083a28b6822b7210, type: 2}
+  - {fileID: 11400000, guid: b4b39a75d2d0ee74cb4efc99311be6ba, type: 2}
   PlayerPreview: {fileID: 373434710}
   BikePreview: {fileID: 1568454012}
   CharacterName: {fileID: 1801601791}

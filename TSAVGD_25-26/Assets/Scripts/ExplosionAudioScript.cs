@@ -38,6 +38,7 @@ public class ExplosionAudioScript : MonoBehaviour
             yield return null;
         }
 
-        cam.localPosition = camOriginalPosition;
+        //cam.localPosition = camOriginalPosition;
+        cam.position = new Vector3(0, 0, -10);
     }
 }

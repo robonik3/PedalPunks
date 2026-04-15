@@ -397,6 +397,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  manualTime: 0
 --- !u!1 &280510625
 GameObject:
   m_ObjectHideFlags: 0
@@ -16877,6 +16878,7 @@ MonoBehaviour:
     spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
+  truck: {fileID: 0}
   FinishLevel:
     m_PersistentCalls:
       m_Calls:
@@ -17788,7 +17790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d2fd64ccf7e714292da365100953d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
-  newUnlocks: 010000000001
+  newUnlocks: 01000000000100
   fromLevel: Level 4
   toLevel: Level 5
   UnlockDisplay: {fileID: 529710974}
@@ -19415,6 +19417,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  manualTime: 0
 --- !u!1 &2080783730
 GameObject:
   m_ObjectHideFlags: 0

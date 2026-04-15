@@ -13614,7 +13614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d2fd64ccf7e714292da365100953d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
-  newUnlocks: 010000000000
+  newUnlocks: 01000000000000
   fromLevel: Level 9
   toLevel: Level 10
   UnlockDisplay: {fileID: 529710974}
@@ -13672,8 +13672,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.94, y: -256.405}
-  m_SizeDelta: {x: 629.88, y: 110.61}
+  m_AnchoredPosition: {x: 297.76, y: -256.96002}
+  m_SizeDelta: {x: 595.52, y: 111.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101357195
 MonoBehaviour:
@@ -13695,7 +13695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COMPLETE!
+  m_text: WRECKED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -13704,8 +13704,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278235903
-  m_fontColor: {r: 1, g: 0.697198, b: 0, a: 1}
+    rgba: 4278236159
+  m_fontColor: {r: 1, g: 0.7024066, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13722,8 +13722,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 99
-  m_fontSizeBase: 99
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14088,8 +14088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.94, y: -100.55}
-  m_SizeDelta: {x: 629.88, y: 201.1}
+  m_AnchoredPosition: {x: 297.76, y: -100.55}
+  m_SizeDelta: {x: 595.52, y: 201.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1625317187
 MonoBehaviour:
@@ -14111,7 +14111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL
+  m_text: TRAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -14120,8 +14120,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278235903
-  m_fontColor: {r: 1, g: 0.697198, b: 0, a: 1}
+    rgba: 4280243646
+  m_fontColor: {r: 0.745283, g: 0.33286744, b: 0.12304199, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14304,7 +14304,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 629.88, y: 311.71002}
+  m_SizeDelta: {x: 595.52, y: 312.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1682721446
 GameObject:

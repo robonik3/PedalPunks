@@ -6733,6 +6733,7 @@ MonoBehaviour:
     spawnOnRightSide: 0
   activeEnemies: 0
   readyToEndLevel: 0
+  truck: {fileID: 0}
   FinishLevel:
     m_PersistentCalls:
       m_Calls:
@@ -8585,7 +8586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d2fd64ccf7e714292da365100953d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
-  newUnlocks: 010000000100
+  newUnlocks: 01000000010000
   fromLevel: Level 3
   toLevel: Level 4
   UnlockDisplay: {fileID: 842109880}

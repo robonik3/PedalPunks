@@ -6688,7 +6688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d2fd64ccf7e714292da365100953d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionData
-  newUnlocks: 010101000000
+  newUnlocks: 01010100000000
   fromLevel: Level 1
   toLevel: Level 2
   UnlockDisplay: {fileID: 2023139710}
