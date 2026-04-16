@@ -11,6 +11,7 @@ public class BikerEnemyScript : EnemyScript
     private bool stunned = false;
     private Animator animator;
     public bool shield;
+    private float shieldExplodePreventer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,7 +79,7 @@ public class BikerEnemyScript : EnemyScript
                 break;
 
         }
-
+        if (shield) { shieldExplodePreventer = Mathf.Clamp01(shieldExplodePreventer - Time.deltaTime); }
     }
     void Drive()
     {
@@ -278,7 +279,7 @@ public class BikerEnemyScript : EnemyScript
             PlayerScript.instance.slide = Vector2.up * (PlayerScript.instance.transform.position.y > transform.position.y ? 3 : -3);
             PlayerScript.instance.state = 1;
             shield = false;
-            AudioPlayer.instance.Play("CrunchPunch");
+            AudioPlayer.instance.Play("CrunchPunch", Random.Range(1,1.3f));
             transform.GetChild(2).gameObject.SetActive(false);
         }
         else
@@ -305,5 +306,20 @@ public class BikerEnemyScript : EnemyScript
     public override void Stun()
     {
         if(!shield)base.Stun();
+    }
+    public override void Explode()
+    {
+        if (shield)
+        {
+            shield = false;
+            AudioPlayer.instance.Play("CrunchPunch", Random.Range(1, 1.3f));
+            transform.GetChild(2).gameObject.SetActive(false);
+            shieldExplodePreventer += .3f;
+        }
+        else
+        {
+            base.Explode();
+
+        }
     }
 }

@@ -488,7 +488,7 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
         trickBoost += .2f;
-        if(isMatt) { playerVisual.Play("Extra"); }
+        if(isMatt&&state==2) { playerVisual.Play("Extra"); }
     }
     IEnumerator HopToBike()
     {
@@ -499,11 +499,7 @@ public class PlayerScript : MonoBehaviour
             BikeScript leftBike = Instantiate(currentBike.prefab, transform.position, new Quaternion()).GetComponent<BikeScript>();
             leftBike.fuel = fuel - 3f / 15f;
         }
-        else
-        {
-            bikeVisual.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 
-        }
 
         playerVisual.SetTrigger("Hop");
         bikeVisual.Play("Hop");
@@ -528,6 +524,11 @@ public class PlayerScript : MonoBehaviour
         Destroy(hopTo.gameObject);
         trickBoost += .4f;
         engineSource.Play();
+        if (isMatt)
+        {       
+            bikeVisual.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+
+        }
     }
     IEnumerator DeathSequence()
     {

@@ -19,6 +19,10 @@ public class ScooterEnemyScript : EnemyScript
         mover = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         random = Random.Range(1.5f, 3.5f);
+        if (transform.position.x > 9)
+        {
+            state = 6;
+        }
         if (transform.parent)
         {
             state = 7;
@@ -63,6 +67,9 @@ public class ScooterEnemyScript : EnemyScript
                 break;
             case 5:
                 FinalStunned();
+                break;
+            case 6:
+                BackwardsEntrance();
                 break;
             case 8:
                 JumpOffTruck();
@@ -378,5 +385,23 @@ public class ScooterEnemyScript : EnemyScript
 
         state = 8;
         transform.parent = null;
+    }
+    void BackwardsEntrance()
+    {
+
+        mover.linearVelocityX = -4;
+        mover.linearVelocityY = 0;
+        if (Physics2D.BoxCast(transform.position, new Vector2(1, 1.3f), 0, Vector2.right, 6, LayerMask.GetMask("Pothole")))
+        {
+            mover.linearVelocityY = -3;
+        }
+
+        timer += Time.deltaTime;
+        if (timer > 1 && !stunned)
+        {
+
+            timer = 0;
+            state = 1;
+        }
     }
 }

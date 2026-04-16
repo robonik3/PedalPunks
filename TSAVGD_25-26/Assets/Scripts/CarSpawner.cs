@@ -7,11 +7,16 @@ public class CarSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(SpawnCar), 1f, spawnDelay);
+        InvokeRepeating(nameof(SpawnCar), 2f, spawnDelay);
     }
 
     void SpawnCar()
     {
         Instantiate(carPrefab,new Vector3(13,0,0),new Quaternion());
+    }
+    private void OnDisable()
+    {
+        CancelInvoke();
+        Destroy(gameObject);
     }
 }

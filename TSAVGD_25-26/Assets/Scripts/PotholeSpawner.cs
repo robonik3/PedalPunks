@@ -36,5 +36,6 @@ public class PotholeSpawner : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
+        Destroy(gameObject);
     }
 }
