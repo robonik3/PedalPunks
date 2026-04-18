@@ -316,7 +316,7 @@ public class BikerEnemyScript : EnemyScript
             transform.GetChild(2).gameObject.SetActive(false);
             shieldExplodePreventer += .3f;
         }
-        else
+        else if(shieldExplodePreventer==0)
         {
             base.Explode();
 
