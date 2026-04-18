@@ -3,11 +3,22 @@ using System.Collections;
 public class EnterLevel : MonoBehaviour
 {
     [SerializeField] private Animator titleText;
+    [SerializeField] private bool isMusic =true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
-       GetComponent<AudioSource>().volume = AudioPlayer.instance.MusicVolume;
+        if (isMusic)
+        {
+            GetComponent<AudioSource>().volume = AudioPlayer.instance.MusicVolume;
+
+        }
+        else
+        {
+            GetComponent<AudioSource>().volume = AudioPlayer.instance.SFXvolume;
+
+        }
+
         if (titleText != null)
         {
             StartCoroutine(textFadeIn());

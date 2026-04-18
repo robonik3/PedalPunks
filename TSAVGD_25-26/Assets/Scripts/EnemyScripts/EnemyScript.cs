@@ -80,7 +80,7 @@ public class EnemyScript : MonoBehaviour
         r.GetComponent<Rigidbody2D>().linearVelocity = mover.linearVelocity / 6 + new Vector2(0, (above?-1:1)*4);
         Dead();
     }
-    public void Dead()
+    public virtual void Dead()
     {
         if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
         Destroy(gameObject);
@@ -91,17 +91,14 @@ public class EnemyScript : MonoBehaviour
     }
     public virtual void Explode()
     {
-        StartCoroutine(ExplodeSequence());
-    }
-    IEnumerator ExplodeSequence()
-    {
         AudioPlayer.instance.Play("explosion3");
-        if(EnemySpawner.instance!=null)EnemySpawner.instance.activeEnemies--;
-        gameObject.SetActive(false);
+
+
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        yield return null;
-        Destroy(gameObject);
+
+        Dead();
     }
+
     public virtual void Stun()
     {
         Debug.Log("Stunning");

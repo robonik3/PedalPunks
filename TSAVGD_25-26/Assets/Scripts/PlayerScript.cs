@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     private float speedTurning=3; //This is up & down movement
 
     public float height;
-    private float fallingVelocity;
+    public float fallingVelocity;
     private float gravity = -9.81f;
 
     private bool accelerating;

@@ -71,7 +71,7 @@ public class AstroEnemyScript : EnemyScript
         {
             mover.linearVelocityX = -2f;
 
-            antitimer += Time.deltaTime;
+            if(!super)antitimer += Time.deltaTime;
             if (antitimer > 1)
             {
                 antitimer = 0;

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BikerEnemyScript : EnemyScript
@@ -131,7 +132,7 @@ public class BikerEnemyScript : EnemyScript
             mover.linearVelocityY = 0;
         }
         timer += Time.deltaTime;
-        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie4", Random.Range(.8f, 1.2f), transform.position, .5f); playsound = false; }
+        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie4", Random.Range(.8f, 1.2f), transform.position + new Vector3(0,0,-9), .5f); playsound = false; }
 
         if (timer > .75f)
         {
@@ -151,10 +152,10 @@ public class BikerEnemyScript : EnemyScript
         }
         GetComponent<SpriteRenderer>().color = Color.red;
         timer += Time.deltaTime;
-        mover.linearVelocityX = 4+(randomSpeed/3);
+        mover.linearVelocityX = 4+(randomSpeed/(shield?2:3));
         
         //checks if enemy is in front of player to start bakcwards movement
-        if(!goBackwards&&transform.position.x-1*randomSpeed > PlayerScript.instance.transform.position.x)
+        if(!goBackwards&&transform.position.x-1*randomSpeed*(shield?.5f:1) > PlayerScript.instance.transform.position.x)
         {
             goBackwards = true;
             timer -= .1f;
@@ -165,7 +166,7 @@ public class BikerEnemyScript : EnemyScript
             {
                 mover.linearVelocityY = Mathf.Sign(PlayerScript.instance.transform.position.y - transform.position.y) * 1f;
 
-                mover.linearVelocityX = -.75f;
+                mover.linearVelocityX = shield?-1.25f:-.75f;
 
             }
             else 
@@ -206,7 +207,7 @@ public class BikerEnemyScript : EnemyScript
         {
             return;
         }
-        mover.linearVelocityX = -3f;
+        mover.linearVelocityX = -3f-randomSpeed/(shield?3:4);
 
         if (Mathf.Abs(PlayerScript.instance.transform.position.y - transform.position.y) < 1)
         {

@@ -5,7 +5,7 @@ public class FloatieEnemyScript : EnemyScript
 {
     private float timer;
     private float random;
-    private bool playsound;
+    [SerializeField]private bool notcounted;
     private bool stunned = false;
     private Animator animator;
     [SerializeField] private GameObject urchin;
@@ -83,5 +83,10 @@ public class FloatieEnemyScript : EnemyScript
         mover.linearVelocityX = -6;
         mover.linearVelocityY = 0;
 
+    }
+    public override void Dead()
+    {
+        if (EnemySpawner.instance != null&&!notcounted) EnemySpawner.instance.activeEnemies--;
+        Destroy(gameObject);
     }
 }

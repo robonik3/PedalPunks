@@ -16559,6 +16559,7 @@ MonoBehaviour:
   abilityCooldown: 0
   speed: 1
   height: 0
+  fallingVelocity: 0
   ultraBoost: 0
   trickBoost: 0
   fuel: 1
