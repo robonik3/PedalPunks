@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 79cdefddd5f602b40953a6bb53c7553f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3600188847297716009
+    second: PedalPunksTitle_0
+  - first:
+      213: -1597543721599665755
+    second: PedalPunksTitle_1
+  - first:
+      213: 2094789034868309522
+    second: PedalPunksTitle_2
+  - first:
+      213: -4959194244084658480
+    second: PedalPunksTitle_3
+  - first:
+      213: -8145570354933398162
+    second: PedalPunksTitle_4
+  - first:
+      213: -6051335463638218439
+    second: PedalPunksTitle_5
+  - first:
+      213: 7948030551275322207
+    second: PedalPunksTitle_6
+  - first:
+      213: 6549387384392068508
+    second: PedalPunksTitle_7
+  - first:
+      213: -7771509499562050917
+    second: PedalPunksTitle_8
+  - first:
+      213: 8988422331292975221
+    second: PedalPunksTitle_9
+  - first:
+      213: 7219845875581348360
+    second: PedalPunksTitle_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PedalPunksTitle_0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 305
+        width: 515
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fd0879ea076f130800000000000000
+      internalID: 3600188847297716009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_1
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 330
+        width: 425
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a975e8037264d9e0800000000000000
+      internalID: -1597543721599665755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_2
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 348
+        width: 438
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e75be478f221d10800000000000000
+      internalID: 2094789034868309522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_3
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 410
+        width: 318
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de0c252c176d2bb0800000000000000
+      internalID: -4959194244084658480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_4
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 69
+        width: 265
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e650e355bee15fe80800000000000000
+      internalID: -8145570354933398162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_5
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 431
+        width: 407
+        height: 539
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939ce190576550ca0800000000000000
+      internalID: -6051335463638218439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_6
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 101
+        width: 349
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bb7b80da31d4e60800000000000000
+      internalID: 7948030551275322207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_7
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 6
+        width: 534
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d2d1f302914ea50800000000000000
+      internalID: 6549387384392068508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_8
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 11
+        width: 403
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ab70e094d062490800000000000000
+      internalID: -7771509499562050917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_9
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 15
+        width: 250
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57008e3dc7a4dbc70800000000000000
+      internalID: 8988422331292975221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedalPunksTitle_10
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 50
+        width: 219
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a681b429b023460800000000000000
+      internalID: 7219845875581348360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PedalPunksTitle_0: 3600188847297716009
+      PedalPunksTitle_1: -1597543721599665755
+      PedalPunksTitle_10: 7219845875581348360
+      PedalPunksTitle_2: 2094789034868309522
+      PedalPunksTitle_3: -4959194244084658480
+      PedalPunksTitle_4: -8145570354933398162
+      PedalPunksTitle_5: -6051335463638218439
+      PedalPunksTitle_6: 7948030551275322207
+      PedalPunksTitle_7: 6549387384392068508
+      PedalPunksTitle_8: -7771509499562050917
+      PedalPunksTitle_9: 8988422331292975221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
