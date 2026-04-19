@@ -8,6 +8,8 @@ public class CutScript : MonoBehaviour
     [SerializeField] private float length;
     [SerializeField] private string levelName;
     [SerializeField] private GameObject skiptext;
+    [SerializeField] private bool loadAsScene;
+    [SerializeField] private bool credits;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,16 +24,18 @@ public class CutScript : MonoBehaviour
 
         if (timer>=length)
         {
-            if (levelName == "Tutorial")
+            if (loadAsScene)
             {
-                SceneManager.LoadScene(levelName);
+                SceneManager.LoadScene(levelName,credits?LoadSceneMode.Additive:LoadSceneMode.Single);
             }
             else
             {
                 SceneLoader.LoadLevel(levelName);
             }
+            timer = 0;
+            Destroy(gameObject);
         }
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown&&skiptext)
         {
             skiptext.SetActive(true);
         }

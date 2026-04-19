@@ -132,7 +132,7 @@ public class BikerEnemyScript : EnemyScript
             mover.linearVelocityY = 0;
         }
         timer += Time.deltaTime;
-        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie4", Random.Range(.8f, 1.2f), transform.position + new Vector3(0,0,-9), .5f); playsound = false; }
+        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie4", Random.Range(.8f, 1.2f), transform.position + new Vector3(0,0,-9), .2f); playsound = false; }
 
         if (timer > .75f)
         {

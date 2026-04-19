@@ -180,7 +180,7 @@ public class AstroEnemyScript : EnemyScript
             }
         }
 
-        if (Physics2D.OverlapCircle(transform.position, .35f, LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(transform.position, .35f, LayerMask.GetMask("Player"))&&PlayerScript.instance.height==0)
         {
             PlayerScript.instance.Die();
             state = 0;

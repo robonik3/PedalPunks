@@ -57,6 +57,7 @@ public class ScooterEnemyScript : EnemyScript
                 break;
             case 2:
                 Wheelie();
+                AnimateTurning();
                 break;
             case 3:
                 Avoidance();
@@ -174,7 +175,7 @@ public class ScooterEnemyScript : EnemyScript
         {
             timer-=Time.deltaTime;
         }
-        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie5", Random.Range(.8f, 1.2f), transform.position + new Vector3(0, 0, -9), .5f); playsound = false; }
+        if (playsound && timer > .4f) { AudioPlayer.instance.Play("BikerWheelie5", Random.Range(.8f, 1.2f), transform.position + new Vector3(0, 0, -9), .2f); playsound = false; }
 
         if (timer > .8f)
         {
