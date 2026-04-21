@@ -10,7 +10,8 @@ public class ExplosionAudioScript : MonoBehaviour
     Vector3 camOriginalPosition;
     AudioSource audioSource;
 
-    void Awake()
+
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.pitch = Random.Range(0.9f, 1.1f);
@@ -21,10 +22,6 @@ public class ExplosionAudioScript : MonoBehaviour
         camOriginalPosition = cam.localPosition;
 
         StartCoroutine(ShakeCamera());
-    }
-
-    void Start()
-    {
         Destroy(gameObject, audioSource.clip.length);
     }
     IEnumerator ShakeCamera()
