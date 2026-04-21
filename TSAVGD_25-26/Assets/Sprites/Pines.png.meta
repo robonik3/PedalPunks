@@ -404,7 +404,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,6 +413,28 @@ TextureImporter:
       bones: []
       spriteID: 2d68bc94e9be6be47b771050a57afbdd
       internalID: 238425901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oak
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e33797b8167ad4992c6a3e319223ff
+      internalID: -2045182546
       vertices: []
       indices: 
       edges: []
@@ -433,6 +455,7 @@ TextureImporter:
     nameFileIdTable:
       BigSnowyRock: -632751717
       BrownRock: 238425901
+      Oak: -2045182546
       Pines_0: -4102499776724297415
       Pines_1: 2994208534423802635
       Pines_2: 1912536171
