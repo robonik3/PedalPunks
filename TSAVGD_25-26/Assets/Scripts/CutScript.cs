@@ -19,7 +19,7 @@ public class CutScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) { timer = length; }
+        if (Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.KeypadEnter)) { timer = length; }
         timer+=Time.deltaTime;
 
         if (timer>=length)
