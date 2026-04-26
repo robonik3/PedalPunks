@@ -282,9 +282,8 @@ public class PlayerScript : MonoBehaviour
         bikeVisual.Play("Drive");
 
     }
-    public IEnumerator ScooterAbility()
+    public void ScooterAbility()
     {
-        float timer = 0;
         bool oneTime = true;
         AudioPlayer.instance.Play("Scooter Horn");
         ripple.Stop();
@@ -294,25 +293,19 @@ public class PlayerScript : MonoBehaviour
         ripple.Play();
 
 
-        while (timer < 0.05)
-        {
-        Collider2D stun = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Enemy"));
-
-        if ((stun != null) && (stun.gameObject.name != "Boss SkullRider") && !detected.Contains(stun))
-        {
-            detected.Add(stun);
-            if (oneTime)
+            foreach (Collider2D stun in Physics2D.OverlapCircleAll(transform.position, 2f, LayerMask.GetMask("Enemy")))
             {
-                AudioPlayer.instance.Play("DazedWhistle");  
-                oneTime = false;
-            }            
-            stun.GetComponent<EnemyScript>().Stun();
-        }
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        detected.Clear();
-        timer = 0;
+                if (stun.TryGetComponent(out EnemyScript enemy))
+                {
+                    if (oneTime)
+                    {
+                        AudioPlayer.instance.Play("DazedWhistle");
+                        oneTime = false;
+                    }
+                    enemy.Stun();
+                }
+            }
+
     }
     public IEnumerator CoffinAbility()
     {
@@ -374,8 +367,7 @@ public class PlayerScript : MonoBehaviour
                             abilityCooldown = 4f;
                             StopCoroutine("ShowAbilityCooldown");
                             StartCoroutine(ShowAbilityCooldown(4));
-
-                            StartCoroutine("ScooterAbility");
+                            ScooterAbility();
                             break;
 
                         case "Bike Glider":
