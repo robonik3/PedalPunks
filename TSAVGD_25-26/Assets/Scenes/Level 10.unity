@@ -910,7 +910,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 0}
+  m_SpriteShape: {fileID: 11400000, guid: 989c83b7ff77e414586715aae9fca8ce, type: 2}
   m_FillPixelPerUnit: 100
   m_StretchTiling: 1
   m_SplineDetail: 4
@@ -984,8 +984,16 @@ SpriteShapeRenderer:
   m_SortingOrder: -20
   m_MaskInteraction: 0
   m_Color: {r: 0.9960785, g: 0.2784314, b: 0, a: 1}
-  m_ShapeTexture: {fileID: 0}
-  m_Sprites: []
+  m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
+  m_Sprites:
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
+  - {fileID: 21300000, guid: 127279d577f25ac4ea17dae3782e5074, type: 3}
   m_LocalAABB:
     m_Center: {x: 0.74661124, y: -3.8042374, z: 0}
     m_Extent: {x: 1.7738558, y: 23.823246, z: 0}
