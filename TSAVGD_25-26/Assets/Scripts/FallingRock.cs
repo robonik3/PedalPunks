@@ -17,7 +17,7 @@ public class FallingRock : MonoBehaviour
 
         transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, timer *720);
         GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1-timer);
-        transform.localScale = 2 * (1-timer) * Vector3.one ;
+        transform.localScale = 4 * (1-timer) * Vector3.one ;
         transform.GetChild(0).transform.localPosition = new Vector3(0, timer*15/transform.localScale.x);
         if (timer < 0)
         {
