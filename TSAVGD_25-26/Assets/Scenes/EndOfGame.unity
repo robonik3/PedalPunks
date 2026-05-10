@@ -820,6 +820,7 @@ MonoBehaviour:
   skiptext: {fileID: 0}
   loadAsScene: 1
   credits: 1
+  InputActions: {fileID: -944628639613478452, guid: 3528042d5604d7d48b8e5f544fccc31b, type: 3}
 --- !u!4 &578473224
 Transform:
   m_ObjectHideFlags: 0

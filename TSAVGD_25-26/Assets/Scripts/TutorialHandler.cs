@@ -4,8 +4,10 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 public class TutorialHandler : MonoBehaviour
 {
+    [SerializeField] private InputActionAsset InputActions;
     [SerializeField] private GameObject gasTank;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private GameObject progressBarManager;
@@ -44,7 +46,10 @@ public class TutorialHandler : MonoBehaviour
     }
     IEnumerator Tutorial()
     {
-
+        InputAction move = InputActions.FindAction("Movement");
+        InputAction punch = InputActions.FindAction("Attack");
+        InputAction jump = InputActions.FindAction("Trick");
+        InputAction ability = InputActions.FindAction("Accelerate");
         float timer = -1;
         bool press=false;
         yield return new WaitForFixedUpdate();
@@ -53,7 +58,7 @@ public class TutorialHandler : MonoBehaviour
         {
 
             PlayerScript.instance.fuel = 1;
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > .1f|| Mathf.Abs(Input.GetAxis("Vertical")) > .1f||Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.X))
+            if (move.ReadValue<Vector2>().magnitude>0 || punch.WasPressedThisFrame() || jump.WasPressedThisFrame()||ability.WasPressedThisFrame())
             {
                 press = true;
             }
@@ -79,7 +84,7 @@ public class TutorialHandler : MonoBehaviour
         {
             PlayerScript.instance.fuel = 1;
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (punch.WasPerformedThisFrame())
             {
                 press = true;
             }

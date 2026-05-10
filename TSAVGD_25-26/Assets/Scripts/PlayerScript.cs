@@ -532,7 +532,14 @@ public class PlayerScript : MonoBehaviour
         //Fade to black
         FadeScript screenFade = FindFirstObjectByType<FadeScript>();
         if(screenFade != null) yield return StartCoroutine(screenFade.FadeIn());
-        SceneLoader.LoadLevel(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name != "Tutorial") 
+        { 
+            SceneLoader.LoadLevel(SceneManager.GetActiveScene().name);
+        } 
+        else
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
     }
     IEnumerator ShowAbilityCooldown(float max)
     {

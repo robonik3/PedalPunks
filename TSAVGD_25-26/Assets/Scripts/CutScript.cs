@@ -1,5 +1,6 @@
 using System.Threading;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CutScript : MonoBehaviour
@@ -10,17 +11,21 @@ public class CutScript : MonoBehaviour
     [SerializeField] private GameObject skiptext;
     [SerializeField] private bool loadAsScene;
     [SerializeField] private bool credits;
+    [SerializeField] private InputActionAsset InputActions;
+    private InputAction skip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timer = 0;
+        skip = InputActions.FindAction("SkipCutscene");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.KeypadEnter)) { timer = length; }
-        timer+=Time.deltaTime;
+        if (skip.WasPressedThisFrame()) { timer = length; }
+
+        timer += Time.deltaTime;
 
         if (timer>=length)
         {

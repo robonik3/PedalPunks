@@ -41,6 +41,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TapOn",
+                    "type": "Button",
+                    "id": "5cc26820-dc2b-4cd7-9e42-8d7e846bccdb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TapOff",
+                    "type": "Button",
+                    "id": "6804d4d5-e589-4d62-896c-650a27d6f9a3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipCutscene",
+                    "type": "Button",
+                    "id": "74fe3bbe-affe-48b1-82a2-c60a707c92d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -105,7 +132,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Controller",
+                    "groups": ";Controller;Xbox Controller",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -127,7 +154,7 @@
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Controller",
+                    "groups": ";Controller;Xbox Controller",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -138,7 +165,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Xbox Controller;Controller",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -156,8 +183,8 @@
                 },
                 {
                     "name": "",
-                    "id": "7f4f0024-fe84-4296-8695-c5865df755ab",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "feb0d74f-1cd9-406a-93ba-a1c276414a4d",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -167,11 +194,11 @@
                 },
                 {
                     "name": "",
-                    "id": "feb0d74f-1cd9-406a-93ba-a1c276414a4d",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "34141403-44f7-4568-9d03-643baf79d924",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Controller",
+                    "groups": ";Xbox Controller",
                     "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -190,11 +217,66 @@
                 {
                     "name": "",
                     "id": "3f202c62-3d1c-43a3-83e4-a49792d29389",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Xbox Controller",
+                    "action": "Trick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0dd5f7d1-87c8-4025-bce7-a86ccb0edc1d",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
                     "action": "Trick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fdceb374-1d0f-4816-9790-e71acb62cfeb",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller;Xbox Controller;Keyboard;Touchscreen",
+                    "action": "TapOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f039c3f-1938-4256-859a-72789f3b4993",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "MultiTap(tapCount=20)",
+                    "processors": "",
+                    "groups": ";Keyboard;Controller;Xbox Controller;Touchscreen",
+                    "action": "TapOff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50846093-50fb-4982-bd3f-9a054a0c659c",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard;Controller;Xbox Controller;Touchscreen",
+                    "action": "SkipCutscene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aece0496-4d00-4687-97a5-d55ca4746d90",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard;Controller;Xbox Controller;Touchscreen",
+                    "action": "SkipCutscene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -219,6 +301,28 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Xbox Controller",
+            "bindingGroup": "Xbox Controller",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Touchscreen",
+            "bindingGroup": "Touchscreen",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
                     "isOptional": false,
                     "isOR": false
                 }
